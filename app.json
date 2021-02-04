@@ -1,0 +1,12 @@
+{
+  "name": "vaivex",
+  "displayName": "vaivex",
+  "expo": {
+    "name": "vaivex",
+    "slug": "vaivex",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
