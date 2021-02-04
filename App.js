@@ -3,6 +3,7 @@ import 'react-native-gesture-handler';
 import Login from './views/login';
 import Home from './views/home';
 import Cadastro from './views/cadastro';
+import Loading from './views/loading'
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
@@ -13,6 +14,7 @@ const Stack = createStackNavigator();
 Stack.Navigator.defaultProps = {
   headerMode: 'none',
 };
+
 export default function App() {
   return (
     <NavigationContainer>
@@ -20,6 +22,7 @@ export default function App() {
         <Stack.Screen name="Home" component={Home}/>
         <Stack.Screen name="Login" component={Login}/>
         <Stack.Screen name="Cadastro" component={Cadastro}/>
+        <Stack.Screen name="Loading" component={Loading}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
