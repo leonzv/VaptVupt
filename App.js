@@ -8,7 +8,6 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
-
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 
@@ -44,11 +43,22 @@ export default function App(){
   return(
     <NavigationContainer>
       <Drawer.Navigator 
-      initialRouteName="Home"
       drawerStyle={{
       backgroundColor: '#00298F',
-      width: 240,
-      }}>
+      width: 320,
+      }}
+      drawerContentOptions={{
+          activeTintColor: '#00298F',
+          activeBackgroundColor: '#00298F',
+          inactiveTintColor: '#00298F',
+          inactiveBackgroundColor: '#00298F',
+          labelStyle:{
+            marginLeft: 5,
+            color: '#fff',
+            fontSize: 24,
+          }
+        }}>
+      
         <Drawer.Screen name="Página Inicial" component={Stackers} />
         <Drawer.Screen name="Sair" component={Login} />
       </Drawer.Navigator>
