@@ -30,35 +30,40 @@ export default function Home({navigation}, props) {
     marginRight: 90,
     marginTop: 60,
     color: '#000'}}> Escolha o serviço desejado abaixo</Text>
-    <Swiper style={Style.wrapper} loop={true}>
-    <View style={Style.retanguloAzulHome}>
+    <Swiper style={Style.wrapper} loop={false}>
+    <TouchableOpacity style={Style.retanguloAzulHome}
+    onPress={() => navigation.navigate('Procurar')}>
     <Image
           style={Style.imgHome}
           source={require('../img/bicicleta.png')}
     />
     <Text style={Style.textRetanguloHome}> Bicicleta</Text>
-    </View>
-    <View style={Style.retanguloAzulHome}>
+    </TouchableOpacity>
+    <TouchableOpacity style={Style.retanguloAzulHome}
+    onPress={() => navigation.navigate('Procurar')}>
     <Image
           style={Style.imgHome}
-          source={require('../img/dinheiro.png')}
+          source={require('../img/moto-branca.png')}
     />
-    <Text style={Style.textRetanguloHome}> Carro</Text>
-    </View>
-    <View style={Style.retanguloAzulHome}>
+    <Text style={Style.textRetanguloHome}> Moto </Text>
+    </TouchableOpacity>
+    <TouchableOpacity style={Style.retanguloAzulHome}
+    onPress={() => navigation.navigate('Procurar')}>
     <Image
           style={Style.imgHome}
-          source={require('../img/dinheiro.png')}
+          source={require('../img/moto-branca.png')}
     />
-    <Text style={Style.textRetanguloHome}> Carro</Text>
-    </View>
-    <View style={Style.retanguloAzulHome}>
+    <Text style={Style.textRetanguloHome}> VUC </Text>
+    </TouchableOpacity>
+    <TouchableOpacity style={Style.retanguloAzulHome}
+    onPress={() => navigation.navigate('Procurar')}>
     <Image
           style={Style.imgHome}
-          source={require('../img/dinheiro.png')}
+          source={require('../img/moto-branca.png')}
     />
-    <Text style={Style.textRetanguloHome}>Carro</Text>
-    </View>
+    <Text style={Style.textRetanguloHome}> Caminhão </Text>
+    
+    </TouchableOpacity>
     </Swiper> 
     <View>
     <Text
@@ -84,7 +89,7 @@ export default function Home({navigation}, props) {
       </View>
       <TouchableOpacity
               style={Style.btnAdmin}
-              onPress={() => navigation.navigate('Login')}>
+              onPress={() => navigation.navigate('Procurar')}>
               <Text style={Style.btnAdminFont}> Ir para o admin </Text>
     </TouchableOpacity>
     </View>

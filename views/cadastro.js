@@ -116,7 +116,7 @@ export default function Cadastro(props) {
     /></View>
     <TouchableOpacity
               style={Style.btnComecar}
-              onPress={() => props.navigation.navigate('Loading')}>
+              onPress={() => props.navigation.navigate('LoadHome')}>
               <Text style={Style.btnComecarFont}> Começar </Text>
     </TouchableOpacity>
     </View>
