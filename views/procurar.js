@@ -13,15 +13,25 @@ export default function LoadToHome(props) {
             </View>
         <View style={Style.procurarContainer}>
             <View style={Style.procurarBox}>
-                <Text style={{fontSize: 12, color: '#fff',}}> Endereço de partida: </Text>
-                <Text style={{fontSize: 12, color: '#fff',}}> Endereço de entrega: </Text>
+                <Text style={Style.procurarFont}> Endereço de partida: </Text>
+                <View style={Style.whiteLineHorizontal}/>
+                <Text style={Style.procurarFont}> Endereço de entrega: </Text>
             </View>
             <View style={Style.procurarBox2}>
             <View style={{flexDirection: 'row',}}>
                 <TouchableOpacity style={Style.circleProcurar}>
                     <TouchableOpacity style={Style.circle2Procurar}/>
                 </TouchableOpacity>
-                <Text style={{color: '#fff',}}> Ruan Motoboy </Text>
+                <Text style={Style.nameText}> Ruan Motoboy </Text>
+                <View style={Style.whiteLineVertical}/>
+                <View style={{flexDirection: 'column',}}>
+                    <Text style={Style.horarioFont}>13:36</Text>
+                    <Text style={Style.horarioFont1}>Horário do Pedido</Text>
+                </View>
+                <View style={{flexDirection: 'column',}}>
+                    <Text style={Style.horarioFont}>14:36</Text>
+                    <Text style={Style.horarioFont1}>Horario da Entrega</Text>
+                </View>
             </View>
             </View>
         </View>
