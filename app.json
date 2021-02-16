@@ -1,9 +1,9 @@
 {
-  "name": "vaivex",
-  "displayName": "vaivex",
+  "name": "VaptVupt",
+  "displayName": "VaptVupt",
   "expo": {
-    "name": "vaivex",
-    "slug": "vaivex",
+    "name": "VaptVupt",
+    "slug": "VaptVupt",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"

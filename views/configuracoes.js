@@ -6,6 +6,6 @@ import react from 'react';
 
 export default function Configuracoes(props) {
     return(
-        <View><Text>a</Text></View>
+        <View style={{backgroundColor: '#fff',}}><Text>a</Text></View>
     );
 }
