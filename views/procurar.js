@@ -1,11 +1,56 @@
 import "react-native-gesture-handler";
-import { View, Text, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Animated,
+} from "react-native";
 import Style from "../style/style";
-import * as React from "react";
-import Fake from './fakeload';
-export default function LoadToHome(props) {
+import React, { useRef, useState, useEffect } from "react";
+
+function useInterval(callback, delay) {
+  const savedCallback = useRef();
+
+  // lembrar o ultimo callback
+  useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  // configurar o intervalo.
+  useEffect(() => {
+    function tick() {
+      savedCallback.current();
+    }
+    if (delay !== null) {
+      let id = setInterval(tick, delay);
+      return () => clearInterval(id);
+    }
+  }, [delay]);
+}
+
+export default function Procurar(props) {
+  let animation = useRef(new Animated.Value(0));
+  const [progress, setProgress] = useState(0);
+  useInterval(() => {
+    // atualizar até 100
+    if (progress < 100) {
+      setProgress(progress + 25);
+    }
+  }, 1000);
+
+  useEffect(() => {
+    Animated.timing(animation.current, {
+      toValue: progress,
+      duration: 100,
+    }).start();
+  }, [progress]);
+
+  if (progress === 100) {
+    props.navigation.navigate("Chamar");
+  }
+
   return (
-    <View style={{backgroundColor: '#fff',}}>
+    <View style={Style.container}>
       <View style={{ flexDirection: "row" }}>
         <TouchableOpacity
           style={Style.circle}
@@ -21,7 +66,6 @@ export default function LoadToHome(props) {
           </View>
         </View>
       </View>
-      <Fake></Fake>
       <View style={Style.procurarContainer}>
         <View style={Style.procurarBox}>
           <Text style={Style.procurarFont}> Endereço de partida: </Text>

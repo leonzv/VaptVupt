@@ -1,14 +1,25 @@
 import "react-native-gesture-handler";
-import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  TextInput,
+  TouchableOpacity,
+  Animated,
+  Alert,
+  Modal,
+  Pressable,
+} from "react-native";
 import Style from "../style/style";
-import * as React from "react";
-import react from "react";
+import React, { useState } from "react";
 
 export default function Chamar(props) {
-  const [endereco, setEndereco] = react.useState("");
-  const [mercadoria, setMercadoria] = react.useState("");
+  const [endereco, setEndereco] = useState("");
+  const [mercadoria, setMercadoria] = useState("");
+  const [modalVisible, setModalVisible] = useState(false);
+  const [modalVisible1, setModalVisible1] = useState(false);
   return (
-    <View style={{ backgroundColor: "#fff" }}>
+    <View style={Style.container}>
       <View style={{ flexDirection: "row" }}>
         <TouchableOpacity style={Style.circle}>
           <TouchableOpacity
@@ -23,7 +34,7 @@ export default function Chamar(props) {
             alignSelf: "flex-end",
             resizeMode: "contain",
             width: 80,
-            marginRight: 18.5,
+            marginRight: '10%',
             bottom: 20,
           }}
           source={require("../img/vai-vex-logo.png")}
@@ -69,13 +80,66 @@ export default function Chamar(props) {
           <Text style={Style.textBoxFontCadastro}>{mercadoria}</Text>
         </View>
       </View>
-      <View style={{ backgroundColor: "white", flexDirection: "row" }}>
-        <TouchableOpacity style={Style.blueBtn}>
-          <Text style={Style.btnAdminFont}> Gravar Endereço </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={Style.blueBtn}>
-          <Text style={Style.btnAdminFont}>Agendar Entrega</Text>
-        </TouchableOpacity>
+      <View style={{ flex: 1, backgroundColor: "white", flexDirection: "row" }}>
+        <Pressable
+          style={[Style.buttonLeft, Style.buttonOpen]}
+          onPress={() => setModalVisible(true)}
+        >
+          <Text style={Style.textStyle}>Gravar Endereço</Text>
+        </Pressable>
+        <View style={Style.centeredView}>
+          <Modal //começo modal gravar
+            animationType="slide"
+            transparent={true}
+            visible={modalVisible}
+            onRequestClose={() => {
+              Alert.alert("Modal has been closed.");
+              setModalVisible(!modalVisible);
+            }}
+          >
+            <View style={Style.centeredView}>
+              <View style={Style.modalView}>
+                <Text style={Style.modalText}>Gravar o seguinte endereço:</Text>
+                <Text style={Style.enderecoStyle}>
+                  Rua Arlindo, 654, Jd Toca do tatu
+                </Text>
+                <Pressable
+                  style={[Style.button, Style.buttonClose]}
+                  onPress={() => setModalVisible(!modalVisible)}
+                >
+                  <Text style={Style.textStyleClose}>OK</Text>
+                </Pressable>
+              </View>
+            </View>
+          </Modal>
+          <Pressable
+            style={[Style.buttonRight, Style.buttonOpen]}
+            onPress={() => setModalVisible1(true)}
+          >
+            <Text style={Style.textStyle}>Agendar Entrega</Text>
+          </Pressable>
+        </View>
+        <Modal //começo modal entrega
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible1}
+          onRequestClose={() => {
+            Alert.alert("Modal has been closed.");
+            setModalVisible1(!modalVisible1);
+          }}
+        >
+          <View style={Style.centeredView}>
+            <View style={Style.modalView}>
+              <Text style={Style.modalText}>Agendar Entrega</Text>
+              <Pressable
+                style={[Style.button, Style.buttonClose]}
+                onPress={() => setModalVisible1(!modalVisible1)}
+              >
+                <Text style={Style.textStyleClose}>OK</Text>
+              </Pressable>
+            </View>
+          </View>
+        </Modal>
       </View>
       <TouchableOpacity style={Style.greenBtn}>
         <Text style={Style.motoboyText}>Chamar Motoboy</Text>

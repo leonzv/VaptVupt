@@ -60,7 +60,7 @@ export default function Cadastro(props) {
         </View>
         <TouchableOpacity
           style={Style.btnCadastrar}
-          onPress={() => props.navigation.navigate("Home")}
+          onPress={() => props.navigation.navigate("LoadHome")}
         >
           <Text style={Style.btnCadastrarFont}> Entrar </Text>
         </TouchableOpacity>
