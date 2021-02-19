@@ -120,7 +120,7 @@ export default function Chamar(props) {
           </Pressable>
         </View>
         <Modal //começo modal entrega
-          animationType="slide"
+          animationType='slide'
           transparent={true}
           visible={modalVisible1}
           onRequestClose={() => {

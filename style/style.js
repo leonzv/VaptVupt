@@ -7,7 +7,7 @@ export default StyleSheet.create({
     backgroundColor: "#fff",
     width: '100%',
     height: '100%',
-    fontFamily: 'bariol_bold-webfont, bariol_regular',
+    fontFamily: 'bariol_bold-webfont, bariol_regular-webfont',
   },
   containerLoad: {
     justifyContent: "center",
