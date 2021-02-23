@@ -2,7 +2,6 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
     flexDirection: "column",
     backgroundColor: "#fff",
     width: '100%',
@@ -11,13 +10,12 @@ export default StyleSheet.create({
   },
   containerLoad: {
     justifyContent: "center",
-    flex: 1,
     flexDirection: "column",
     backgroundColor: "#fff",
   },
   textCircle: {
     textAlign: "center",
-    fontSize: 14,
+    fontSize: 15,
     marginTop: '14%',
     marginRight: '4%',
     marginLeft: '4%',

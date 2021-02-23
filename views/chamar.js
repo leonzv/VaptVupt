@@ -101,7 +101,7 @@ export default function Chamar(props) {
               <View style={Style.modalView}>
                 <Text style={Style.modalText}>Gravar o seguinte endereço:</Text>
                 <Text style={Style.enderecoStyle}>
-                  Rua Arlindo, 654, Jd Toca do tatu
+                  {endereco}
                 </Text>
                 <Pressable
                   style={[Style.button, Style.buttonClose]}
