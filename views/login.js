@@ -13,7 +13,13 @@ export default function Login(props) {
           source={require("../img/vai-vex-logo.png")}
         />
       </View>
-      <Swiper style={Style.wrapper} loop={false}>
+      <Swiper
+        style={Style.wrapper}
+        autoplay={true}
+        autoplayTimeout={4}
+        loop={false}  
+        showsPagination
+      >
         <View style={Style.retanguloAzul}>
           <Text style={Style.loginText}>
             {" "}

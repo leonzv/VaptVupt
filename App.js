@@ -4,13 +4,12 @@ import Login from "./views/login";
 import Home from "./views/home";
 import Cadastro from "./views/cadastro";
 import LoadHome from "./views/loadHome";
-import Procurar from "./views/procurar";
+import Gps from "./views/gps";
 import Condutores from "./views/condutores";
 import Contato from "./views/contato";
 import Pagamentos from "./views/pagamentos";
 import Configuracoes from "./views/configuracoes";
 import Sobre from "./views/sobre";
-import Mapa from "./views/mapa";
 import Chamar from "./views/chamar";
 import LoginConfirm from "./views/loginConfirm";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -31,13 +30,12 @@ function Stackers() {
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Cadastro" component={Cadastro} />
       <Stack.Screen name="LoadHome" component={LoadHome} />
-      <Stack.Screen name="Procurar" component={Procurar} />
+      <Stack.Screen name="Gps" component={Gps} />
       <Stack.Screen name="Condutores" component={Condutores} />
       <Stack.Screen name="Contato" component={Contato} />
       <Stack.Screen name="Configuracoes" component={Configuracoes} />
       <Stack.Screen name="Sobre" component={Sobre} />
       <Stack.Screen name="Pagamentos" component={Pagamentos} />
-      <Stack.Screen name="Mapa" component={Mapa} />
       <Stack.Screen name="LoginConfirm" component={LoginConfirm} />
       <Stack.Screen name="Chamar" component={Chamar} />
     </Stack.Navigator>
@@ -78,7 +76,7 @@ export default function App() {
       >
         <Drawer.Screen name="Início" component={Stackers} />
         <Drawer.Screen name="Condutores" component={Condutores} />
-        <Drawer.Screen name="Mapa" component={Mapa} />
+        <Drawer.Screen name="Mapa" component={Gps} />
         <Drawer.Screen name="Configurações" component={Configuracoes} />
         <Drawer.Screen name="Pagamentos" component={Pagamentos} />
         <Drawer.Screen name="Contato" component={Contato} />

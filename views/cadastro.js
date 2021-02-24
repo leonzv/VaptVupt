@@ -2,19 +2,18 @@ import "react-native-gesture-handler";
 import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
 import Style from "../style/style";
 import * as React from "react";
-import react from "react";
 
 export default function Cadastro(props) {
-  const [nome, setNome] = react.useState("");
-  const [sobrenome, setSobrenome] = react.useState("");
-  const [cpfcnpj, setCpfcnpj] = react.useState("");
-  const [endereco, setEndereco] = react.useState("");
-  const [numero, setNumero] = react.useState("");
-  const [bairro, setBairro] = react.useState("");
-  const [uf, setUf] = react.useState("");
-  const [cidade, setCidade] = react.useState("");
-  const [pais, setPais] = react.useState("");
-  const [cep, setCep] = react.useState("");
+  const [nome, setNome] = React.useState("");
+  const [sobrenome, setSobrenome] = React.useState("");
+  const [cpfcnpj, setCpfcnpj] = React.useState("");
+  const [endereco, setEndereco] = React.useState("");
+  const [numero, setNumero] = React.useState("");
+  const [bairro, setBairro] = React.useState("");
+  const [uf, setUf] = React.useState("");
+  const [cidade, setCidade] = React.useState("");
+  const [pais, setPais] = React.useState("");
+  const [cep, setCep] = React.useState("");
   return (
     <View style={Style.container}>
       <View>

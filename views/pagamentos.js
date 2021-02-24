@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "react-native-gesture-handler";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import Style from "../style/style";
 import Swiper from "react-native-swiper";
+import CheckBox from "@react-native-community/checkbox";
 
 export default function Pagamentos({ navigation }, props) {
+  const [toggleCheckBox, setToggleCheckBox] = useState(false);
   return (
     <View style={Style.container}>
-      <View style={{ flexDirection: "row" }}>
+      <View style={{ flexDirection: "row"}}>
         <TouchableOpacity style={Style.circle}>
           <TouchableOpacity
             style={Style.circle2}
@@ -20,9 +22,9 @@ export default function Pagamentos({ navigation }, props) {
           style={{
             alignSelf: "flex-end",
             resizeMode: "contain",
-            width: 80,
+            width: 75,
             marginRight: 18.5,
-            bottom: 20,
+            bottom: 15,
           }}
           source={require("../img/vai-vex-logo.png")}
         />
@@ -40,9 +42,10 @@ export default function Pagamentos({ navigation }, props) {
         {" "}
         Pagamentos
       </Text>
+      <View style={{flex: 1, minHeight: '12%'}}>
       <Swiper style={Style.wrapper} loop={false}>
         <TouchableOpacity
-          style={Style.retanguloAzulHome}
+          style={Style.retanguloAzulPag}
           onPress={() => navigation.navigate("Procurar")}
         >
           <Image
@@ -51,39 +54,35 @@ export default function Pagamentos({ navigation }, props) {
           />
           <Text style={Style.textRetanguloHome}> Dinheiro</Text>
         </TouchableOpacity>
-        
       </Swiper>
-      <View>
-        <Text
+     </View>
+      <View style={{ flex: 1, flexDirection: "row" }}>
+        <CheckBox
           style={{
-            fontSize: 22,
             marginLeft: 30,
-            textAlign: "left",
-            marginRight: 90,
-            color: "#000",
-            marginBottom: 5,
+            marginTop: 80,
           }}
-        >
-          Corridas
+          disabled={false}
+          value={toggleCheckBox}
+          onValueChange={(newValue) => setToggleCheckBox(newValue)}
+        />
+        <Text style={Style.textPagamento}>
+          Declaro informar ao condutor que o pagamento será feito em dinheiro.
         </Text>
-        <View style={Style.grayBox}>
-          <View>
-            <Text style={Style.grayBoxBigText}>25</Text>
-            <Text style={Style.grayBoxSmallText}>Entregas</Text>
-            <Text style={Style.grayBoxSmallText}>Realizadas</Text>
-          </View>
-          <View>
-            <Text style={Style.grayBoxBigText}>25</Text>
-            <Text style={Style.grayBoxSmallText}>Pedidos</Text>
-            <Text style={Style.grayBoxSmallText}>Realizados</Text>
-          </View>
-          <TouchableOpacity
-            style={Style.btnAdmin}
-            onPress={() => navigation.navigate("Procurar")}
+      </View>
+      <View style={{ flex: 1, justifyContent: "flex-end" }}>
+        <TouchableOpacity style={Style.greenPag}>
+          <Text
+            style={{
+              fontSize: 16,
+              color: "white",
+              alignSelf: "center",
+              textAlign: "center",
+            }}
           >
-            <Text style={Style.btnAdminFont}> Ir para o admin </Text>
-          </TouchableOpacity>
-        </View>
+            Voltar
+          </Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
