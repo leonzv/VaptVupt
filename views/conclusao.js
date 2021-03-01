@@ -1,18 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import "react-native-gesture-handler";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import Style from "../style/style";
-import Swiper from "react-native-swiper";
-import CheckBox from "@react-native-community/checkbox";
 
 export default function Pagamentos({ navigation }, props) {
-  const [toggleCheckBox, setToggleCheckBox] = useState(false);
-  if(toggleCheckBox == true) {
-    alert("Voce concordou!")
-  }
   return (
     <View style={Style.container}>
-      <View style={{ flexDirection: "row"}}>
+      <View style={{ flexDirection: "row" }}>
         <TouchableOpacity style={Style.circle}>
           <TouchableOpacity
             style={Style.circle2}
@@ -25,8 +19,8 @@ export default function Pagamentos({ navigation }, props) {
           style={{
             alignSelf: "flex-end",
             resizeMode: "contain",
+            marginRight: 30,
             width: 75,
-            marginRight: 18.5,
             bottom: 15,
           }}
           source={require("../img/vai-vex-logo.png")}
@@ -38,40 +32,37 @@ export default function Pagamentos({ navigation }, props) {
           marginLeft: 30,
           textAlign: "left",
           marginRight: 90,
-          marginTop: 60,
+          marginTop: 30,
           color: "#000",
         }}
       >
         {" "}
-        Pagamentos
+        Conclusão de entrega
       </Text>
-      <View style={{flex: 1, minHeight: '12%'}}>
-      <Swiper style={Style.wrapper} loop={false}>
-        <TouchableOpacity
-          style={Style.retanguloAzulPag}
-          onPress={() => navigation.navigate("Procurar")}
-        >
-          <Image
-            style={Style.imgHome}
-            source={require("../img/dinheiro2.png")}
+      <View style={{ alignSelf: "center" }}>
+        <View style={Style.bigCircle}>
+          <View
+            style={Style.bigCircle2}
+            title="Toggle drawer"
+            onPress={() => navigation.toggleDrawer()}
           />
-          <Text style={Style.textRetanguloHome}> Dinheiro</Text>
-        </TouchableOpacity>
-      </Swiper>
-     </View>
-      <View style={{ flex: 1, flexDirection: "row" }}>
-        <CheckBox
-          style={{
-            marginLeft: 30,
-            marginTop: 80,
-          }}
-          disabled={false}
-          value={toggleCheckBox}
-          onValueChange={(newValue) => setToggleCheckBox(newValue)}
-        />
-        <Text style={Style.textPagamento}>
-          Declaro informar ao condutor que o pagamento será feito em dinheiro.
-        </Text>
+        </View>
+      </View>
+      <View style={{ alignItems: "center", marginTop: 20 }}>
+        <Text>Nome do motoboy: José Fernandes dos Santos</Text>
+        <Text>Tipo de transporte: Motofrete</Text>
+        <Text>Forma de pagamento: Dinheiro</Text>
+        <Text> Protocolo: VXS000252019</Text>
+      </View>
+      <View style={{ alignItems: "center", marginTop: 20,}}>
+        <View style={Style.grayBoxConc}>
+          <Text style={{alignSelf: 'center', textAlign: "center", fontSize: 24, color: "black" }}>
+            Total(R$):{" "}
+          </Text>
+            <Text style={{alignSelf: 'center', textAlign: "center", fontSize: 48, color: "black" }}>
+              135,00
+            </Text>
+        </View>
       </View>
       <View style={{ flex: 1, justifyContent: "flex-end" }}>
         <TouchableOpacity style={Style.greenPag}>

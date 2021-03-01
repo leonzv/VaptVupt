@@ -56,6 +56,7 @@ export default function Cadastro(props) {
           value={senha}
           placeholderTextColor="#fff"
           autoCapitalize="words"
+          secureTextEntry={true}
         />
         </View>
         <TouchableOpacity

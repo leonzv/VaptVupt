@@ -5,7 +5,6 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
-  Animated,
   Alert,
   Modal,
   Pressable,
