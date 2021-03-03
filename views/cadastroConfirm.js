@@ -1,11 +1,13 @@
 import "react-native-gesture-handler";
-import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, Image, TextInput, TouchableOpacity} from "react-native";
 import Style from "../style/style";
-import * as React from "react";
+import React, { useState } from "react";
+import CheckBox from "@react-native-community/checkbox";
 
-export default function Cadastro(props) {
-  const [nome, setNome] = React.useState("");
-  const [sobrenome, setSobrenome] = React.useState("");
+
+
+export default function CadastroConfirm(props) {
+
   const [cpfcnpj, setCpfcnpj] = React.useState("");
   const [endereco, setEndereco] = React.useState("");
   const [numero, setNumero] = React.useState("");
@@ -14,6 +16,10 @@ export default function Cadastro(props) {
   const [cidade, setCidade] = React.useState("");
   const [pais, setPais] = React.useState("");
   const [cep, setCep] = React.useState("");
+  const [toggleCheckBox, setToggleCheckBox] = useState(false);
+  if(toggleCheckBox == true) {
+    alert("Voce concordou!")
+  }
   return (
     <View style={Style.containerCadastro}>
       <View>
@@ -31,26 +37,6 @@ export default function Cadastro(props) {
         >
           Preencha o forumário completo:
         </Text>
-      </View>
-      <View style={Style.textBox}>
-        <Text style={Style.textBoxFontCadastro}>Nome:</Text>
-        <TextInput
-          style={Style.textBoxFont}
-          onChangeText={(text) => setNome(text)}
-          value={nome}
-          placeholderTextColor="#fff"
-          autoCapitalize="words"
-        />
-      </View>
-      <View style={Style.textBox}>
-        <Text style={Style.textBoxFontCadastro}>Sobrenome:</Text>
-        <TextInput
-          style={Style.textBoxFont}
-          onChangeText={(text) => setSobrenome(text)}
-          value={sobrenome}
-          placeholderTextColor="#fff"
-          autoCapitalize="words"
-        />
       </View>
       <View style={Style.textBox}>
         <Text style={Style.textBoxFontCadastro}>CPF/CNPJ:</Text>
@@ -136,9 +122,23 @@ export default function Cadastro(props) {
           autoCapitalize="words"
         />
       </View>
+      <View style={{ flex: 1, flexDirection: "row" }}>
+        <CheckBox
+          style={{
+            marginTop: 10,
+            marginLeft: 30,
+          }}
+          disabled={false}
+          value={toggleCheckBox}
+          onValueChange={(newValue) => setToggleCheckBox(newValue)}
+        />
+        <Text style={{color: 'black', fontSize: 14, marginTop: 15,}}>
+          Li e estou de acordo com o termo de serviço
+        </Text> 
+      </View>
       <TouchableOpacity
         style={Style.btnComecar}
-        onPress={() => props.navigation.navigate("CadastroConfirm")}
+        onPress={() => props.navigation.navigate("LoadHome")}
       >
         <Text style={Style.btnComecarFont}> Começar </Text>
       </TouchableOpacity>

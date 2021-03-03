@@ -10,7 +10,7 @@ export default function Login(props) {
       <View>
         <Image
           style={Style.vaiVexImg}
-          source={require("../img/vai-vex-logo.png")}
+          source={require("../src/assets/img/vai-vex-logo.png")}
         />
       </View>
       <Swiper
@@ -27,7 +27,7 @@ export default function Login(props) {
           </Text>
           <Image
             style={Style.firstImg}
-            source={require("../img/moto-branca.png")}
+            source={require("../src/assets/img/moto-branca.png")}
           />
         </View>
         <View style={Style.retanguloVermelho}>
@@ -37,7 +37,7 @@ export default function Login(props) {
           </Text>
           <Image
             style={Style.firstImg}
-            source={require("../img/dinheiro.png")}
+            source={require("../src/assets/img/dinheiro.png")}
           />
         </View>
       </Swiper>

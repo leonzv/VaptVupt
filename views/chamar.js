@@ -36,7 +36,7 @@ export default function Chamar(props) {
             marginRight: '10%',
             bottom: 20,
           }}
-          source={require("../img/vai-vex-logo.png")}
+          source={require("../src/assets/img/vai-vex-logo.png")}
         />
       </View>
       <View>

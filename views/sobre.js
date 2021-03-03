@@ -23,7 +23,7 @@ export default function Sobre(props) {
             width: 75,
             bottom: 15,
           }}
-          source={require("../img/vai-vex-logo.png")}
+          source={require("../src/assets/img/vai-vex-logo.png")}
         />
       </View>
       <Text

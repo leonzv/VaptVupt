@@ -12,6 +12,8 @@ import Configuracoes from "./views/configuracoes";
 import Sobre from "./views/sobre";
 import Chamar from "./views/chamar";
 import Conclusao from "./views/conclusao";
+import Dashboard from "./views/dashboard";
+import CadastroConfirm from "./views/cadastroConfirm";
 import LoginConfirm from "./views/loginConfirm";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
@@ -40,6 +42,7 @@ function Stackers() {
       <Stack.Screen name="LoginConfirm" component={LoginConfirm} />
       <Stack.Screen name="Chamar" component={Chamar} />
       <Stack.Screen name="Conclusao" component={Conclusao} />
+      <Stack.Screen name="CadastroConfirm" component={CadastroConfirm} />
     </Stack.Navigator>
   );
 }
@@ -84,6 +87,7 @@ export default function App() {
         <Drawer.Screen name="Contato" component={Contato} />
         <Drawer.Screen name="Sobre" component={Sobre} />
         <Drawer.Screen name="Conclusao" component={Conclusao} />
+        <Drawer.Screen name="Dashboard" component={Dashboard}/>
         <Drawer.Screen name="Sair" component={Login} />
       </Drawer.Navigator>
     </NavigationContainer>

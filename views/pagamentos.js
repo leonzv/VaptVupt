@@ -29,7 +29,7 @@ export default function Pagamentos({ navigation }, props) {
             marginRight: 18.5,
             bottom: 15,
           }}
-          source={require("../img/vai-vex-logo.png")}
+          source={require("../src/assets/img/vai-vex-logo.png")}
         />
       </View>
       <Text
@@ -53,7 +53,7 @@ export default function Pagamentos({ navigation }, props) {
         >
           <Image
             style={Style.imgHome}
-            source={require("../img/dinheiro2.png")}
+            source={require("../src/assets/img/dinheiro2.png")}
           />
           <Text style={Style.textRetanguloHome}> Dinheiro</Text>
         </TouchableOpacity>

@@ -4,7 +4,7 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import Style from "../style/style";
 import Swiper from "react-native-swiper";
 
-export default function Home({ navigation }, props) {
+export default function Dashboard({ navigation }, props) {
   return (
     <View style={Style.container}>
       <View style={{ flexDirection: "row" }}>
@@ -38,7 +38,7 @@ export default function Home({ navigation }, props) {
         }}
       >
         {" "}
-        Escolha o serviço desejado abaixo
+        Dashboard
       </Text>
       <Swiper style={Style.wrapper} loop={false}>
         <TouchableOpacity
@@ -47,9 +47,9 @@ export default function Home({ navigation }, props) {
         >
           <Image
             style={Style.imgHome}
-            source={require("../src/assets/img/bicicleta.png")}
+            source={require("../src/assets/img/condutor.png")}
           />
-          <Text style={Style.textRetanguloHome}> Bicicleta</Text>
+          <Text style={Style.textRetanguloHome}> Condutores</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={Style.retanguloAzulHome}
@@ -98,20 +98,16 @@ export default function Home({ navigation }, props) {
         <View style={Style.grayBox}>
           <View>
             <Text style={Style.grayBoxBigText}>25</Text>
-            <Text style={Style.grayBoxSmallText}>Entregas</Text>
-            <Text style={Style.grayBoxSmallText}>Realizadas</Text>
+            <Text style={Style.grayBoxSmallText}>Entregas realizadas</Text>
           </View>
           <View>
             <Text style={Style.grayBoxBigText}>25</Text>
-            <Text style={Style.grayBoxSmallText}>Pedidos</Text>
-            <Text style={Style.grayBoxSmallText}>Realizados</Text>
+            <Text style={Style.grayBoxSmallText}>Pedidos realizados</Text>
           </View>
-          <TouchableOpacity
-            style={Style.btnAdmin}
-            onPress={() => navigation.navigate("Chamar")}
-          >
-            <Text style={Style.btnAdminFont}> Ir para o admin </Text>
-          </TouchableOpacity>
+          <View>
+            <Text style={Style.grayBoxBigText}>25</Text>
+            <Text style={Style.grayBoxSmallText}>Créditos realizados</Text>    
+          </View>
         </View>
       </View>
     </View>
