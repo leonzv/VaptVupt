@@ -2,7 +2,7 @@ import "react-native-gesture-handler";
 import { View, Text, Image, TextInput, TouchableOpacity} from "react-native";
 import Style from "../style/style";
 import React, { useState } from "react";
-import CheckBox from "@react-native-community/checkbox";
+import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 
 
@@ -123,16 +123,13 @@ export default function CadastroConfirm(props) {
         />
       </View>
       <View style={{ flex: 1, flexDirection: "row" }}>
-        <CheckBox
-          style={{
-            marginTop: 10,
-            marginLeft: 30,
-          }}
-          disabled={false}
-          value={toggleCheckBox}
-          onValueChange={(newValue) => setToggleCheckBox(newValue)}
-        />
-        <Text style={{color: 'black', fontSize: 14, marginTop: 15,}}>
+      <BouncyCheckbox
+          isChecked={false}
+          unfillColor="#CFCFCF"
+          fillColor= "#CFCFCF"
+          onPress={(checked) => console.log("Checked: ", checked)}
+          />
+        <Text style={{color: 'black', fontSize: 14, marginTop: 40,}}>
           Li e estou de acordo com o termo de serviço
         </Text> 
       </View>

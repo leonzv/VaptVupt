@@ -3,27 +3,13 @@ import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
 import Style from "../style/style";
 import React, { useState, useEffect }  from "react";
 import Swiper from "react-native-swiper";
-import auth from '@react-native-firebase/auth';
+
+
 
 export default function LoginConfirm(props) {
-auth()
-  .createUserWithEmailAndPassword('jane.doe@example.com', 'SuperSecretPassword!')
-  .then(() => {
-    console.log('User account created & signed in!');
-  })
-  .catch(error => {
-    if (error.code === 'auth/email-already-in-use') {
-      console.log('That email address is already in use!');
-    }
-
-    if (error.code === 'auth/invalid-email') {
-      console.log('That email address is invalid!');
-    }
-
-    console.error(error);
-  });
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+
   return (
     <View style={Style.container}>
       <View>

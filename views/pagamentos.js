@@ -3,16 +3,16 @@ import "react-native-gesture-handler";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import Style from "../style/style";
 import Swiper from "react-native-swiper";
-import CheckBox from "@react-native-community/checkbox";
+import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 export default function Pagamentos({ navigation }, props) {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
-  if(toggleCheckBox == true) {
-    alert("Voce concordou!")
+  if (toggleCheckBox == true) {
+    alert("Voce concordou!");
   }
   return (
     <View style={Style.container}>
-      <View style={{ flexDirection: "row"}}>
+      <View style={{ flexDirection: "row" }}>
         <TouchableOpacity style={Style.circle}>
           <TouchableOpacity
             style={Style.circle2}
@@ -45,34 +45,29 @@ export default function Pagamentos({ navigation }, props) {
         {" "}
         Pagamentos
       </Text>
-      <View style={{flex: 1, minHeight: '12%'}}>
-      <Swiper style={Style.wrapper} loop={false}>
-        <TouchableOpacity
-          style={Style.retanguloAzulPag}
-          onPress={() => navigation.navigate("Procurar")}
-        >
-          <Image
-            style={Style.imgHome}
-            source={require("../src/assets/img/dinheiro2.png")}
-          />
-          <Text style={Style.textRetanguloHome}> Dinheiro</Text>
-        </TouchableOpacity>
-      </Swiper>
-     </View>
-      <View style={{ flex: 1, flexDirection: "row" }}>
-        <CheckBox
-          style={{
-            marginLeft: 30,
-            marginTop: 80,
-          }}
-          disabled={false}
-          value={toggleCheckBox}
-          onValueChange={(newValue) => setToggleCheckBox(newValue)}
-        />
-        <Text style={Style.textPagamento}>
-          Declaro informar ao condutor que o pagamento será feito em dinheiro.
-        </Text>
+      <View style={{ flex: 1, minHeight: "12%" }}>
+        <Swiper style={Style.wrapper} loop={false}>
+          <TouchableOpacity
+            style={Style.retanguloAzulPag}
+            onPress={() => navigation.navigate("Procurar")}
+          >
+            <Image
+              style={Style.imgHome}
+              source={require("../src/assets/img/dinheiro2.png")}
+            />
+            <Text style={Style.textRetanguloHome}> Dinheiro</Text>
+          </TouchableOpacity>
+        </Swiper>
       </View>
+      <View style={{ flex: 1, flexDirection: "row",}}>
+        <BouncyCheckbox
+          isChecked={false}
+          unfillColor="#CFCFCF"
+          fillColor= "#CFCFCF"
+          onPress={(checked) => console.log("Checked: ", checked)}
+          />
+          <Text style={Style.textPagamento}>Declaro informar ao condutor que o pagamento será feito em dinheiro.</Text>
+          </View>
       <View style={{ flex: 1, justifyContent: "flex-end" }}>
         <TouchableOpacity style={Style.greenPag}>
           <Text
