@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "488564606373",
+    "project_id": "vaptvupt-8eadf",
+    "storage_bucket": "vaptvupt-8eadf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488564606373:android:17b4588c6b60e98e4d544c",
+        "android_client_info": {
+          "package_name": "com.vaptvupt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "488564606373-g66h6kklqojr5n6ilagifc6ko506l321.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzVNTi8MiNYoZxU_L22Bdg54PCVT6SuwQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "488564606373-g66h6kklqojr5n6ilagifc6ko506l321.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
