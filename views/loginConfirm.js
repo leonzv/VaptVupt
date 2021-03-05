@@ -3,13 +3,33 @@ import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
 import Style from "../style/style";
 import React, { useState, useEffect }  from "react";
 import Swiper from "react-native-swiper";
-
+import auth from '@react-native-firebase/auth';
 
 
 export default function LoginConfirm(props) {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-
+  const loginUser  = () => {
+    auth()
+    .signInWithEmailAndPassword(email, senha)
+    .then(() => {
+      console.log('User account logged in');
+    })
+    .catch(error => {
+      if (error.code === 'auth/email-already-in-use') {
+        console.log('That email address is already in use!');
+      }
+  
+      if (error.code === 'auth/invalid-email') {
+        console.log('That email address is invalid!');
+      }
+      if (error.code === 'auth/invalid-password'){
+        console.log('Senha incorreta')
+      }
+  
+      console.error(error);
+    });
+  }
   return (
     <View style={Style.container}>
       <View>
@@ -64,6 +84,7 @@ export default function LoginConfirm(props) {
         <TouchableOpacity
           style={Style.btnCadastrar}
           onPress={() => props.navigation.navigate("LoadHome")}
+          onPress={() => loginUser()}
         >
           <Text style={Style.btnCadastrarFont}> Entrar </Text>
         </TouchableOpacity>
@@ -71,4 +92,5 @@ export default function LoginConfirm(props) {
     </View>
   );
 }
+
 

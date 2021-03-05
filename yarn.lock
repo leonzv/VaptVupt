@@ -2394,6 +2394,11 @@
     native-url "^0.2.6"
     schema-utils "^2.6.5"
 
+"@react-native-community/checkbox@^0.5.7":
+  version "0.5.7"
+  resolved "https://registry.npmjs.org/@react-native-community/checkbox/-/checkbox-0.5.7.tgz#ac818de88736acc1a4539188f2d435cf5e845ae1"
+  integrity sha512-CiHBAMWy5fsFIHLd1pf8frlWrLT8DnCXUSxdlGKazHm7srQSReKH4R5absShjmYOHRo9raWEnKZO/cm7MUDHZg==
+
 "@react-native-community/cli-debugger-ui@^4.13.1", "@react-native-community/cli-debugger-ui@^4.9.0":
   version "4.13.1"
   resolved "https://registry.npmjs.org/@react-native-community/cli-debugger-ui/-/cli-debugger-ui-4.13.1.tgz#07de6d4dab80ec49231de1f1fbf658b4ad39b32c"
@@ -2545,6 +2550,11 @@
   dependencies:
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
+
+"@react-native-firebase/auth@^11.0.0":
+  version "11.0.0"
+  resolved "https://registry.npmjs.org/@react-native-firebase/auth/-/auth-11.0.0.tgz#1bf3afd53c88d7c6701440bb2530477fb4ac53ac"
+  integrity sha512-N5nsK0S6jWWUSGEzSNkCdlAzEdZRa5xA0VOklKlQ29uYiKwegog+bY0zxmDK+m6hqbLF0IABf4k6goZ/D0P9qg==
 
 "@react-navigation/core@^5.15.2":
   version "5.15.2"
@@ -11988,11 +11998,6 @@ react-native-appearance@^0.3.4:
     fbemitter "^2.1.1"
     invariant "^2.2.4"
     use-subscription "^1.0.0"
-
-react-native-bouncy-checkbox@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.npmjs.org/react-native-bouncy-checkbox/-/react-native-bouncy-checkbox-1.0.8.tgz#84287dfdee29a8a39e09c53ac2ca2ccc5d317bdd"
-  integrity sha512-SbOo5rU4cAxhNnV0WKI9CqsIVgwMmcPSEp3zNYtWhNq4HISvFbwOXq2teCJGmIhvoeoG7Iiph0perEmiKfMo0Q==
 
 react-native-geocoding@^0.5.0:
   version "0.5.0"

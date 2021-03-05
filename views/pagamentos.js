@@ -3,7 +3,7 @@ import "react-native-gesture-handler";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import Style from "../style/style";
 import Swiper from "react-native-swiper";
-import BouncyCheckbox from "react-native-bouncy-checkbox";
+import CheckBox from '@react-native-community/checkbox';
 
 export default function Pagamentos({ navigation }, props) {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
@@ -59,15 +59,17 @@ export default function Pagamentos({ navigation }, props) {
           </TouchableOpacity>
         </Swiper>
       </View>
-      <View style={{ flex: 1, flexDirection: "row",}}>
-        <BouncyCheckbox
-          isChecked={false}
-          unfillColor="#CFCFCF"
-          fillColor= "#CFCFCF"
-          onPress={(checked) => console.log("Checked: ", checked)}
-          />
-          <Text style={Style.textPagamento}>Declaro informar ao condutor que o pagamento será feito em dinheiro.</Text>
-          </View>
+      <View style={{ flex: 1, flexDirection: "row" }}>
+        <CheckBox
+        style={{marginLeft: 30,marginTop: 55,}}
+          disabled={false}
+          value={toggleCheckBox}
+          onValueChange={(newValue) => setToggleCheckBox(newValue)}
+        />
+        <Text style={Style.textPagamento}>
+          Declaro informar ao condutor que o pagamento será feito em dinheiro.
+        </Text>
+      </View>
       <View style={{ flex: 1, justifyContent: "flex-end" }}>
         <TouchableOpacity style={Style.greenPag}>
           <Text

@@ -1,13 +1,10 @@
 import "react-native-gesture-handler";
-import { View, Text, Image, TextInput, TouchableOpacity} from "react-native";
+import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
 import Style from "../style/style";
 import React, { useState } from "react";
-import BouncyCheckbox from "react-native-bouncy-checkbox";
-
-
+import CheckBox from "@react-native-community/checkbox";
 
 export default function CadastroConfirm(props) {
-
   const [cpfcnpj, setCpfcnpj] = React.useState("");
   const [endereco, setEndereco] = React.useState("");
   const [numero, setNumero] = React.useState("");
@@ -17,9 +14,32 @@ export default function CadastroConfirm(props) {
   const [pais, setPais] = React.useState("");
   const [cep, setCep] = React.useState("");
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
-  if(toggleCheckBox == true) {
-    alert("Voce concordou!")
+  if (toggleCheckBox == true) {
+    alert("Voce concordou!");
   }
+  const createUser  = () => {
+    auth()
+    .createUserWithEmailAndPassword('jane.doe@example.com', 'SuperSecretPassword!')
+    .then(() => {
+      console.log('User account created & signed in!');
+    })
+    .catch(error => {
+      if (error.code === 'auth/email-already-in-use') {
+        console.log('That email address is already in use!');
+      }
+  
+      if (error.code === 'auth/invalid-email') {
+        console.log('That email address is invalid!');
+      }
+  
+      console.error(error);
+    });
+  }
+    const logoff = () => {
+      auth()
+    .signOut()
+    .then(() => console.log('User signed out!'));
+    }
   return (
     <View style={Style.containerCadastro}>
       <View>
@@ -123,15 +143,15 @@ export default function CadastroConfirm(props) {
         />
       </View>
       <View style={{ flex: 1, flexDirection: "row" }}>
-      <BouncyCheckbox
-          isChecked={false}
-          unfillColor="#CFCFCF"
-          fillColor= "#CFCFCF"
-          onPress={(checked) => console.log("Checked: ", checked)}
-          />
-        <Text style={{color: 'black', fontSize: 14, marginTop: 40,}}>
+        <CheckBox
+        style={{marginTop: 20, marginLeft: 30,}}
+          disabled={false}
+          value={toggleCheckBox}
+          onValueChange={(newValue) => setToggleCheckBox(newValue)}
+        />
+        <Text style={{ color: "black", fontSize: 14, marginTop: 25 }}>
           Li e estou de acordo com o termo de serviço
-        </Text> 
+        </Text>
       </View>
       <TouchableOpacity
         style={Style.btnComecar}

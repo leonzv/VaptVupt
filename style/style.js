@@ -560,7 +560,7 @@ export default StyleSheet.create({
   textPagamento:{
     fontSize: 12,
     color: 'black',
-    marginTop: 65,
+    marginTop: 55,
     marginRight: 30,
     marginLeft: 5,
     flex:1,

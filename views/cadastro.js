@@ -2,10 +2,12 @@ import "react-native-gesture-handler";
 import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
 import Style from "../style/style";
 import * as React from "react";
+import auth from '@react-native-firebase/auth';
 
 export default function Cadastro(props) {
   const [nome, setNome] = React.useState("");
-  const [sobrenome, setSobrenome] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [senha, setSenha] = React.useState("");
   const [cpfcnpj, setCpfcnpj] = React.useState("");
   const [endereco, setEndereco] = React.useState("");
   const [numero, setNumero] = React.useState("");
@@ -14,6 +16,32 @@ export default function Cadastro(props) {
   const [cidade, setCidade] = React.useState("");
   const [pais, setPais] = React.useState("");
   const [cep, setCep] = React.useState("");
+  function createdUser(){
+    alert('Usuario criado com sucesso!, Volte e faça login.')
+  }
+  const createUser  = () => {
+    auth()
+    .createUserWithEmailAndPassword(email, senha)
+    .then(() => {
+      console.log('User account created & signed in!');
+    })
+    .catch(error => {
+      if (error.code === 'auth/email-already-in-use') {
+        console.log('That email address is already in use!');
+      }
+  
+      if (error.code === 'auth/invalid-email') {
+        console.log('That email address is invalid!');
+      }
+  
+      console.error(error);
+    });
+  }
+    const logoff = () => {
+      auth()
+    .signOut()
+    .then(() => console.log('User signed out!'));
+    }
   return (
     <View style={Style.containerCadastro}>
       <View>
@@ -43,16 +71,27 @@ export default function Cadastro(props) {
         />
       </View>
       <View style={Style.textBox}>
-        <Text style={Style.textBoxFontCadastro}>Sobrenome:</Text>
+        <Text style={Style.textBoxFontCadastro}>Email:</Text>
         <TextInput
           style={Style.textBoxFont}
-          onChangeText={(text) => setSobrenome(text)}
-          value={sobrenome}
+          onChangeText={(text) => setEmail(text)}
+          value={email}
           placeholderTextColor="#fff"
           autoCapitalize="words"
         />
       </View>
       <View style={Style.textBox}>
+        <Text style={Style.textBoxFontCadastro}>Senha:</Text>
+        <TextInput
+          style={Style.textBoxFont}
+          onChangeText={(text) => setSenha(text)}
+          value={senha}
+          placeholderTextColor="#fff"
+          autoCapitalize="words"
+          secureTextEntry={true}
+        />
+      </View>
+      {/* <View style={Style.textBox}>
         <Text style={Style.textBoxFontCadastro}>CPF/CNPJ:</Text>
         <TextInput
           style={Style.textBoxFont}
@@ -125,7 +164,7 @@ export default function Cadastro(props) {
           placeholderTextColor="#fff"
           autoCapitalize="words"
         />
-      </View>
+      </View> */}
       <View style={Style.textBox}>
         <Text style={Style.textBoxFontCadastro}>CEP:</Text>
         <TextInput
@@ -139,6 +178,8 @@ export default function Cadastro(props) {
       <TouchableOpacity
         style={Style.btnComecar}
         onPress={() => props.navigation.navigate("CadastroConfirm")}
+        onPress={() => createUser()}
+        onPress={() => createdUser()}
       >
         <Text style={Style.btnComecarFont}> Começar </Text>
       </TouchableOpacity>

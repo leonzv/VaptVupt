@@ -8,9 +8,11 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-native-community/checkbox": "^0.5.7",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-native-community/slider": "^3.0.3",
     "@react-native-firebase/app": "^11.0.0",
+    "@react-native-firebase/auth": "^11.0.0",
     "@react-navigation/core": "^5.15.2",
     "@react-navigation/drawer": "^5.12.4",
     "@react-navigation/native": "^5.9.3",
@@ -26,7 +28,6 @@
     "react-dom": "16.13.1",
     "react-native": "^0.63.4",
     "react-native-appearance": "^0.3.4",
-    "react-native-bouncy-checkbox": "^1.0.8",
     "react-native-geocoding": "^0.5.0",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-maps": "^0.27.1",
