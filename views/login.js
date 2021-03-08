@@ -15,10 +15,10 @@ export default function Login(props) {
       </View>
       <Swiper
         style={Style.wrapper}
-        autoplay={true}
-        autoplayTimeout={4}
-        loop={false}  
-        showsPagination
+        loop={false}
+        activeDotColor="rgb(0,41,143)"
+        dotStyle={{ width: 35, marginHorizontal: 10 }}
+        activeDotStyle={{ width: 55, marginHorizontal: 10 }}
       >
         <View style={Style.retanguloAzul}>
           <Text style={Style.loginText}>

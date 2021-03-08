@@ -1,10 +1,9 @@
 import "react-native-gesture-handler";
 import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
 import Style from "../style/style";
-import React, { useState, useEffect }  from "react";
+import React, { useState, useEffect } from "react";
 import Swiper from "react-native-swiper";
-import auth from '@react-native-firebase/auth';
-
+import auth from "@react-native-firebase/auth";
 
 export default function LoginConfirm(props) {
   const [email, setEmail] = useState("");
@@ -13,22 +12,16 @@ export default function LoginConfirm(props) {
     auth()
     .signInWithEmailAndPassword(email, senha)
     .then(() => {
-      console.log('User account logged in');
-    })
-    .catch(error => {
-      if (error.code === 'auth/email-already-in-use') {
-        console.log('That email address is already in use!');
+      console.log('Usuário criado com sucesso!');
+      alert('Usuario logado com sucesso!')
+      props.navigation.navigate("LoadHome")
+      if (email == "") {
+        alert("Insira um email");
       }
-  
-      if (error.code === 'auth/invalid-email') {
-        console.log('That email address is invalid!');
+      if (senha == "") {
+        alert("Insira uma senha");
       }
-      if (error.code === 'auth/invalid-password'){
-        console.log('Senha incorreta')
-      }
-  
-      console.error(error);
-    });
+    }) 
   }
   return (
     <View style={Style.container}>
@@ -38,7 +31,13 @@ export default function LoginConfirm(props) {
           source={require("../src/assets/img/vai-vex-logo.png")}
         />
       </View>
-      <Swiper style={Style.wrapper} loop={false}>
+      <Swiper
+        style={Style.wrapper}
+        loop={false}
+        activeDotColor="rgb(0,41,143)"
+        dotStyle={{ width: 35, marginHorizontal: 10 }}
+        activeDotStyle={{ width: 55, marginHorizontal: 10 }}
+      >
         <View style={Style.retanguloAzul1}>
           <Text style={Style.loginText}>
             {" "}
@@ -80,17 +79,13 @@ export default function LoginConfirm(props) {
           autoCapitalize="words"
           secureTextEntry={true}
         />
-        </View>
-        <TouchableOpacity
-          style={Style.btnCadastrar}
-          onPress={() => props.navigation.navigate("LoadHome")}
-          onPress={() => loginUser()}
-        >
-          <Text style={Style.btnCadastrarFont}> Entrar </Text>
-        </TouchableOpacity>
-      
+      </View>
+      <TouchableOpacity
+        style={Style.btnCadastrar}
+        onPress={() => loginUser()}
+      >
+        <Text style={Style.btnCadastrarFont}> Entrar </Text>
+      </TouchableOpacity>
     </View>
   );
-}
-
-
+  }

@@ -108,7 +108,7 @@ export default function Home({ navigation }, props) {
           </View>
           <TouchableOpacity
             style={Style.btnAdmin}
-            onPress={() => navigation.navigate("Chamar")}
+            onPress={() => navigation.navigate("Dashboard")}
           >
             <Text style={Style.btnAdminFont}> Ir para o admin </Text>
           </TouchableOpacity>

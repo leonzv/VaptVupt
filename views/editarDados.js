@@ -1,64 +1,50 @@
+import React from "react";
 import "react-native-gesture-handler";
-import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity,TextInput } from "react-native";
 import Style from "../style/style";
-import * as React from "react";
-import auth from '@react-native-firebase/auth';
 
-export default function Cadastro(props) {
-  const [nome, setNome] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [senha, setSenha] = React.useState("");
-  const [cpfcnpj, setCpfcnpj] = React.useState("");
-  const [endereco, setEndereco] = React.useState("");
-  const [numero, setNumero] = React.useState("");
-  const [bairro, setBairro] = React.useState("");
-  const [uf, setUf] = React.useState("");
-  const [cidade, setCidade] = React.useState("");
-  const [pais, setPais] = React.useState("");
-  const [cep, setCep] = React.useState("");
-
-  const createUser  = () => {
-    auth()
-    .createUserWithEmailAndPassword(email, senha)
-    .then(() => {
-      console.log('Usuário criado com sucesso!');
-      alert('Usuario criado com sucesso!, Volte e faça login.')
-      props.navigation.navigate("CadastroConfirm")
-    })
-    .catch(error => {
-      if (error.code === 'auth/email-already-in-use') {
-        console.log('Esse email já está sendo usado');
-      }
-  
-      if (error.code === 'auth/invalid-email') {
-        console.log('Esse email é invalido!');
-      }
-  
-      console.error(error);
-    });
-    
-  }
-    const logoff = () => {
-      auth()
-    .signOut()
-    .then(() => console.log('User signed out!'));
-    }
-  return (
-    <View style={Style.containerCadastro}>
+export default function EditarDados({ navigation }, props) {
+    const [nome, setNome] = React.useState("");
+    const [cpfcnpj, setCpfcnpj] = React.useState("");
+    const [endereco, setEndereco] = React.useState("");
+    const [numero, setNumero] = React.useState("");
+    const [bairro, setBairro] = React.useState("");
+    const [uf, setUf] = React.useState("");
+    const [cidade, setCidade] = React.useState("");
+    const [pais, setPais] = React.useState("");
+    const [cep, setCep] = React.useState("");
+    return(
+<View style={Style.containerCadastro}>
       <View>
+      <View style={{ flexDirection: "row" }}>
+        <TouchableOpacity style={Style.circle}>
+          <TouchableOpacity
+            style={Style.circle2}
+            title="Toggle drawer"
+            onPress={() => navigation.toggleDrawer()}
+          />
+        </TouchableOpacity>
+        <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>
         <Image
-          style={Style.vaiVexImgCadastro}
+          style={{
+            alignSelf: "flex-end",
+            resizeMode: "contain",
+            width: 80,
+            marginRight: 18.5,
+            bottom: 20,
+          }}
           source={require("../src/assets/img/vai-vex-logo.png")}
         />
+      </View>
         <Text
           style={{
             marginLeft: 30,
-            fontSize: 20,
-            marginBottom: 15,
-            fontWeight: "bold",
+            fontSize: 22,
+            marginBottom: 30,
+            marginVertical: 30,
           }}
         >
-          Preencha o forumário completo:
+          Editar dados pessoais
         </Text>
       </View>
       <View style={Style.textBox}>
@@ -69,27 +55,6 @@ export default function Cadastro(props) {
           value={nome}
           placeholderTextColor="#fff"
           autoCapitalize="words"
-        />
-      </View>
-      <View style={Style.textBox}>
-        <Text style={Style.textBoxFontCadastro}>Email:</Text>
-        <TextInput
-          style={Style.textBoxFont}
-          onChangeText={(text) => setEmail(text)}
-          value={email}
-          placeholderTextColor="#fff"
-          autoCapitalize="words"
-        />
-      </View>
-      <View style={Style.textBox}>
-        <Text style={Style.textBoxFontCadastro}>Senha:</Text>
-        <TextInput
-          style={Style.textBoxFont}
-          onChangeText={(text) => setSenha(text)}
-          value={senha}
-          placeholderTextColor="#fff"
-          autoCapitalize="words"
-          secureTextEntry={true}
         />
       </View>
       <View style={Style.textBox}>
@@ -176,12 +141,14 @@ export default function Cadastro(props) {
           autoCapitalize="words"
         />
       </View>
-      <TouchableOpacity
-        style={Style.btnComecar}
-        onPress={() => createUser()}
-      >
-        <Text style={Style.btnComecarFont}> Começar </Text>
-      </TouchableOpacity>
+      <View style={{flexDirection: 'row', justifyContent: 'center', width: '100%', marginBottom: 30, marginTop: 50,}}>
+          <TouchableOpacity style={Style.deletarDados}>
+          <Text style={{ color: "white", textAlign: "center", fontSize: 16,}}>Deletar dados</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={Style.atualizarDados}>
+          <Text style={{ color: "white", textAlign: "center", fontSize: 16,}}>Atualizar dados</Text>
+          </TouchableOpacity>
+      </View>
     </View>
   );
 }

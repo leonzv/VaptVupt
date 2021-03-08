@@ -46,7 +46,13 @@ export default function Pagamentos({ navigation }, props) {
         Pagamentos
       </Text>
       <View style={{ flex: 1, minHeight: "12%" }}>
-        <Swiper style={Style.wrapper} loop={false}>
+      <Swiper
+        style={Style.wrapper}
+        loop={false}
+        activeDotColor="rgb(0,41,143)"
+        dotStyle={{ width: 35, marginHorizontal: 10 }}
+        activeDotStyle={{ width: 55, marginHorizontal: 10 }}
+      >
           <TouchableOpacity
             style={Style.retanguloAzulPag}
             onPress={() => navigation.navigate("Procurar")}
