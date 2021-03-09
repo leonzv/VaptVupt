@@ -5,6 +5,10 @@ export default StyleSheet.create({
     backgroundColor: "#fff",
     flex: 1,
   },
+  mapContainer:{
+    position: "absolute",
+    flex: 1,
+  },
   containerCadastro: {
     backgroundColor: "#fff",
     flex: 1,
@@ -345,13 +349,13 @@ export default StyleSheet.create({
     marginHorizontal: 10,
     borderRadius: 10,
     alignSelf: "center",
-    bottom: 270,
     justifyContent: "center",
+    marginBottom: 20,
   },
   procurarContainer: {
-    flexDirection: "column-reverse",
-    justifyContent: "flex-end",
-    opacity: 0.55,
+    width: '111%',
+    height: '200%',
+    justifyContent: 'flex-end'
   },
   procurarBox2: {
     width: "90%",
@@ -359,9 +363,8 @@ export default StyleSheet.create({
     backgroundColor: "#00298F",
     marginHorizontal: 10,
     borderRadius: 10,
-    marginBottom: 30,
+    marginBottom: 20,
     alignSelf: "center",
-    bottom: 492,
     justifyContent: "center",
   },
   circleProcurar: {
@@ -566,7 +569,7 @@ export default StyleSheet.create({
   },
   greenPag: {
     width: "85%",
-    minHeight: 40,
+    minHeight: 50,
     maxHeight: 60,
     alignSelf: "center",
     justifyContent: "center",
@@ -739,7 +742,7 @@ export default StyleSheet.create({
     justifyContent: "center",
   },
   enderecoBox: {
-    width: "85%",
+    maxWidth: "85%",
     height: 85,
     borderBottomColor: "#707070",
     borderBottomWidth: 1,
@@ -749,10 +752,10 @@ export default StyleSheet.create({
     marginHorizontal: 30,
   },
   enderecoText: {
+    maxWidth: '55%',
     fontSize: 14,
     color: "#8F8F8F",
     textAlign: "left",
-    marginLeft: 10,
   },
   enderecoListBtn: {
     backgroundColor: "#346CFF",
@@ -760,7 +763,7 @@ export default StyleSheet.create({
     height: 45,
     borderRadius: 6,
     justifyContent: "center",
-    marginHorizontal: 25,
+    marginHorizontal: 20,
   },
   enderecoListText: {
     color: "white",

@@ -4,7 +4,7 @@ import Login from "./views/login";
 import Home from "./views/home";
 import Cadastro from "./views/cadastro";
 import LoadHome from "./views/loadHome";
-import Gps from "./views/gps";
+import Gps from "./views/mapview";
 import Condutores from "./views/condutores";
 import Contato from "./views/contato";
 import Pagamentos from "./views/pagamentos";
