@@ -55,9 +55,10 @@ export default function Gps(props) {
       <View style={{ flexDirection: "row" }}>
         <TouchableOpacity
           style={Style.circle}
-          onPress={() => props.navigation.navigate("Chamar")} //mudar isso depois
         >
-          <TouchableOpacity style={Style.circle2} />
+          <TouchableOpacity style={Style.circle2}
+          title="Toggle drawer"
+          onPress={() => navigation.toggleDrawer()} />
         </TouchableOpacity>
       </View>
       <View>

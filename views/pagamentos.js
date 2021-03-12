@@ -79,12 +79,12 @@ export default function Pagamentos({ navigation }, props) {
       <View style={{ flex: 1, justifyContent: "flex-end" }}>
         <TouchableOpacity style={Style.greenPag}>
           <Text
-            style={{
+           style={{
               fontSize: 16,
               color: "white",
               alignSelf: "center",
               textAlign: "center",
-            }}
+            }} 
           >
             Voltar
           </Text>

@@ -29,7 +29,8 @@ export default class Map extends Component {
       <View style={{ flexDirection: "row" }}>
         <TouchableOpacity
           style={Style.circle}
-          onPress={() => props.navigation.navigate("Chamar")} //mudar isso depois
+          title="Toggle drawer"
+            onPress={() => navigation.toggleDrawer()} 
         >
           <TouchableOpacity style={Style.circle2} />
         </TouchableOpacity>

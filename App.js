@@ -17,6 +17,7 @@ import CadastroConfirm from "./views/cadastroConfirm";
 import LoginConfirm from "./views/loginConfirm";
 import EditarDados from "./views/editarDados";
 import EnderecosList from "./views/enderecosList";
+import Mensagem from "./views/mensagem";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
@@ -47,6 +48,7 @@ function Stackers() {
       <Stack.Screen name="CadastroConfirm" component={CadastroConfirm} />
       <Stack.Screen name="EditarDados" component={EditarDados} />
       <Stack.Screen name="EnderecosList" component={EnderecosList} />
+      <Stack.Screen name="Mensagem" component={Mensagem} />
     </Stack.Navigator>
   );
 }
@@ -92,6 +94,7 @@ export default function App() {
         <Drawer.Screen name="Sobre" component={Sobre} />
         <Drawer.Screen name="Conclusao" component={Conclusao} />
         <Drawer.Screen name="Dashboard" component={Dashboard} />
+        <Drawer.Screen name="Mensagem" component={Mensagem} />
         <Drawer.Screen name="Sair" component={Login} />
       </Drawer.Navigator>
     </NavigationContainer>
