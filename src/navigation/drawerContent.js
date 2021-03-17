@@ -112,15 +112,16 @@ export function DrawerContent({ navigation }, props) {
           />
         </DrawerContentScrollView>
       </View>
-      <View style={{ backgroundColor: "black" }}>
+      <View style={{backgroundColor: '#00298F'}}>
+        <View style={{backgroundColor: "rgba(255,255,255,0.25)"}}>
         <DrawerItem
-          labelStyle={{ textAlign: "center" }}
+          labelStyle={{ textAlign: "center", fontSize: 18, color: 'white'}}
           label="S A I R    D O    A P P"
-          inactiveTintColor="white"
           onPress={() => {
             navigation.navigate("Login");
           }}
         />
+      </View>
       </View>
     </View>
   );
