@@ -28,6 +28,7 @@ const Drawer = createDrawerNavigator();
 const StackDrawer = () => {
   return (
     <Drawer.Navigator
+    drawerStyle={{ width: '75%' }}
     drawerContent={(props) => <DrawerContent {...props} />}>
       <Drawer.Screen name="Pagina Inicial" component={MainStackNavigator} />
     </Drawer.Navigator>
