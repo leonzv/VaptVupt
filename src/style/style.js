@@ -895,10 +895,10 @@ export default StyleSheet.create({
     fontFamily: "bariol_regular",
   },
   drawerBox:{
-    backgroundColor: 'rgba(255,255,255,0.4)',
+    backgroundColor: 'rgba(255,255,255,0.25)',
     alignSelf: 'center',
     width: '85%',
-    height: 50,
+    height: 45,
     justifyContent: 'center',
     marginHorizontal: 20,
     marginTop: 50,
