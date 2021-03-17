@@ -20,52 +20,16 @@ import EnderecosList from "../views/enderecosList";
 import Mensagem from "../views/mensagem";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { startClock } from "react-native-reanimated";
+import { DrawerContent } from './drawerContent';
 
 const Drawer = createDrawerNavigator();
 
-function CustomDrawerContent(props) {
-  return (
-    <DrawerContentScrollView {...props}>
-      <DrawerItemList {...props} />
-      <DrawerItem
-        label="Toggle drawer"
-        onPress={() => props.navigation.toggleDrawer()}
-      />
-    </DrawerContentScrollView>
-  );
-}
 
 const StackDrawer = () => {
   return (
     <Drawer.Navigator
-      drawerStyle={{
-        backgroundColor: "#00298F",
-        width: 320,
-      }}
-      drawerContentOptions={{
-        activeTintColor: "#00298F",
-        activeBackgroundColor: "#00298F",
-        inactiveTintColor: "#00298F",
-        inactiveBackgroundColor: "#00298F",
-        labelStyle: {
-          marginLeft: 5,
-          color: "#fff",
-          fontSize: 24,
-        },
-      }}
-    >
+    drawerContent={(props) => <DrawerContent {...props} />}>
       <Drawer.Screen name="Pagina Inicial" component={MainStackNavigator} />
-      <Drawer.Screen name="Condutores" component={Condutores} />
-      <Drawer.Screen name="Mapa" component={Gps} />
-      <Drawer.Screen name="Configurações" component={Configuracoes} />
-      <Drawer.Screen name="Pagamentos" component={Pagamentos} />
-      <Drawer.Screen name="Contato" component={Contato} />
-      <Drawer.Screen name="Sobre" component={Sobre} />
-      <Drawer.Screen name="Conclusao" component={Conclusao} />
-      <Drawer.Screen name="Dashboard" component={Dashboard} />
-      <Drawer.Screen name="Mensagem" component={Mensagem} />
-      <Drawer.Screen name="Sair" component={LoginStackNavigator} />
     </Drawer.Navigator>
   );
 }
@@ -92,20 +56,12 @@ const MainStackNavigator = () => {
         <Stack.Screen name="EnderecosList" component={EnderecosList} />
         <Stack.Screen name="Mensagem" component={Mensagem} />
         <Stack.Screen name="Dashboard" component={Dashboard} />
-      </Stack.Navigator>
-  );
-}
- 
-const LoginStackNavigator = () => {
-    return(
-    <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="Home" component={MainStackNavigator} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Cadastro" component={Cadastro} />
         <Stack.Screen name="CadastroConfirm" component={CadastroConfirm} />
         <Stack.Screen name="LoginConfirm" component={LoginConfirm} />
-    </Stack.Navigator>
-    )
+      </Stack.Navigator>
+  );
 }
 
-export { MainStackNavigator, LoginStackNavigator, StackDrawer}
+export { MainStackNavigator, StackDrawer}

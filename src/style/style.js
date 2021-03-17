@@ -46,6 +46,17 @@ export default StyleSheet.create({
     width: 48,
     alignSelf: "center",
   },
+  circleDraw: {
+    borderRadius: 50,
+    backgroundColor: "#00298F",
+    height: 60,
+    width: 60,
+    borderWidth: 2,
+    borderColor: "white",
+    marginLeft: 35,
+    marginTop: 35,
+    justifyContent: "center",
+  },
   bigCircle: {
     borderRadius: 100,
     backgroundColor: "white",
@@ -207,6 +218,16 @@ export default StyleSheet.create({
     marginLeft: 10,
     color: "#656565",
     minWidth: "95%",
+    maxWidth: "90%",
+    maxHeight: 100,
+    fontFamily: "bariol_regular",
+  },
+  textBoxDraw: {
+    fontSize: 14,
+    textAlign: "left",
+    marginHorizontal: 20,
+    color: "white",
+    minWidth: "90%",
     maxWidth: "90%",
     maxHeight: 100,
     fontFamily: "bariol_regular",
@@ -864,4 +885,23 @@ export default StyleSheet.create({
     marginBottom: 30,
     justifyContent: "center",
   },
+  drawerContent: {
+    flex: 1,
+    backgroundColor: "#00298F",
+  },
+  textDrawer: {
+    color: "white",
+    fontSize: 26,
+    fontFamily: "bariol_regular",
+  },
+  drawerBox:{
+    backgroundColor: 'rgba(255,255,255,0.4)',
+    alignSelf: 'center',
+    width: '85%',
+    height: 50,
+    justifyContent: 'center',
+    marginHorizontal: 20,
+    marginTop: 50,
+    borderRadius: 5,
+  }
 });
