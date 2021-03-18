@@ -115,7 +115,7 @@ export function DrawerContent({ navigation }, props) {
       <View style={{backgroundColor: '#00298F'}}>
         <View style={{backgroundColor: "rgba(255,255,255,0.25)"}}>
         <DrawerItem
-          labelStyle={{ textAlign: "center", fontSize: 18, color: 'white'}}
+          labelStyle={{ textAlign: "left", fontSize: 18, color: 'white'}}
           label="Sair"
           onPress={() => {
             navigation.navigate("Login");

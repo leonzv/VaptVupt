@@ -55,7 +55,7 @@ export default function Chamar({ navigation }, props) {
         <View style={Style.textBoxChamar}>
           <Text style={Style.textBoxFontCadastro}>Endereço de entrega:</Text>
           <TextInput
-            style={Style.textBoxFont}
+            style={Style.textBoxFontChamar}
             onChangeText={(text) => setEndereco(text)}
             value={endereco}
             placeholderTextColor="#fff"
@@ -65,7 +65,7 @@ export default function Chamar({ navigation }, props) {
         <View style={Style.textBoxChamar}>
           <Text style={Style.textBoxFontCadastro}>Tipo de mercadoria:</Text>
           <TextInput
-            style={Style.textBoxFont}
+            style={Style.textBoxFontChamar}
             onChangeText={(text) => setMercadoria(text)}
             value={mercadoria}
             placeholderTextColor="#fff"
