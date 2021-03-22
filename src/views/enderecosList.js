@@ -3,7 +3,7 @@ import "react-native-gesture-handler";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import Style from "../style/style";
 
-export default function EnderecosList({ navigation }, props) {
+export default function EnderecosList(props) {
   return (
     <View style={Style.container}>
       <View style={{ flexDirection: "row" }}>
@@ -41,89 +41,118 @@ export default function EnderecosList({ navigation }, props) {
         {" "}
         Lista de endereços{" "}
       </Text>
-      <View style={{flex: 1,}}>
-        <ScrollView style={{marginBottom: 30}}>
+      <View style={{ flex: 1 }}>
+        <ScrollView style={{ marginBottom: 30 }}>
           <View style={Style.enderecoBox}>
             <Text style={Style.enderecoText}>
               Avenida Maracá, 800, Jd Satélite
             </Text>
-            <TouchableOpacity style={Style.enderecoListBtn}><Text style={Style.enderecoListText}>Ver mais</Text></TouchableOpacity>
+            <TouchableOpacity
+              style={Style.enderecoListBtn}
+              onPress={() => props.navigation.navigate("MaisFavoritos")}
+            >
+              <Text style={Style.enderecoListText}>Ver mais</Text>
+            </TouchableOpacity>
           </View>
           <View style={Style.enderecoBox}>
             <Text style={Style.enderecoText}>
               Avenida Maracá, 800, Jd Satélite
             </Text>
-            <TouchableOpacity style={Style.enderecoListBtn}><Text style={Style.enderecoListText}>Ver mais</Text></TouchableOpacity>
+            <TouchableOpacity style={Style.enderecoListBtn}>
+              <Text style={Style.enderecoListText}>Ver mais</Text>
+            </TouchableOpacity>
           </View>
           <View style={Style.enderecoBox}>
             <Text style={Style.enderecoText}>
               Avenida Maracá, 800, Jd Satélite
             </Text>
-            <TouchableOpacity style={Style.enderecoListBtn}><Text style={Style.enderecoListText}>Ver mais</Text></TouchableOpacity>
+            <TouchableOpacity style={Style.enderecoListBtn}>
+              <Text style={Style.enderecoListText}>Ver mais</Text>
+            </TouchableOpacity>
           </View>
           <View style={Style.enderecoBox}>
             <Text style={Style.enderecoText}>
               Avenida Maracá, 800, Jd Satélite
             </Text>
-            <TouchableOpacity style={Style.enderecoListBtn}><Text style={Style.enderecoListText}>Ver mais</Text></TouchableOpacity>
+            <TouchableOpacity style={Style.enderecoListBtn}>
+              <Text style={Style.enderecoListText}>Ver mais</Text>
+            </TouchableOpacity>
           </View>
           <View style={Style.enderecoBox}>
             <Text style={Style.enderecoText}>
               Avenida Maracá, 800, Jd Satélite
             </Text>
-            <TouchableOpacity style={Style.enderecoListBtn}><Text style={Style.enderecoListText}>Ver mais</Text></TouchableOpacity>
+            <TouchableOpacity style={Style.enderecoListBtn}>
+              <Text style={Style.enderecoListText}>Ver mais</Text>
+            </TouchableOpacity>
           </View>
           <View style={Style.enderecoBox}>
             <Text style={Style.enderecoText}>
               Avenida Maracá, 800, Jd Satélite
             </Text>
-            <TouchableOpacity style={Style.enderecoListBtn}><Text style={Style.enderecoListText}>Ver mais</Text></TouchableOpacity>
+            <TouchableOpacity style={Style.enderecoListBtn}>
+              <Text style={Style.enderecoListText}>Ver mais</Text>
+            </TouchableOpacity>
           </View>
           <View style={Style.enderecoBox}>
             <Text style={Style.enderecoText}>
               Avenida Maracá, 800, Jd Satélite
             </Text>
-            <TouchableOpacity style={Style.enderecoListBtn}><Text style={Style.enderecoListText}>Ver mais</Text></TouchableOpacity>
+            <TouchableOpacity style={Style.enderecoListBtn}>
+              <Text style={Style.enderecoListText}>Ver mais</Text>
+            </TouchableOpacity>
           </View>
           <View style={Style.enderecoBox}>
             <Text style={Style.enderecoText}>
               Avenida Maracá, 800, Jd Satélite
             </Text>
-            <TouchableOpacity style={Style.enderecoListBtn}><Text style={Style.enderecoListText}>Ver mais</Text></TouchableOpacity>
+            <TouchableOpacity style={Style.enderecoListBtn}>
+              <Text style={Style.enderecoListText}>Ver mais</Text>
+            </TouchableOpacity>
           </View>
           <View style={Style.enderecoBox}>
             <Text style={Style.enderecoText}>
               Avenida Maracá, 800, Jd Satélite
             </Text>
-            <TouchableOpacity style={Style.enderecoListBtn}><Text style={Style.enderecoListText}>Ver mais</Text></TouchableOpacity>
+            <TouchableOpacity style={Style.enderecoListBtn}>
+              <Text style={Style.enderecoListText}>Ver mais</Text>
+            </TouchableOpacity>
           </View>
           <View style={Style.enderecoBox}>
             <Text style={Style.enderecoText}>
               Avenida Maracá, 800, Jd Satélite
             </Text>
-            <TouchableOpacity style={Style.enderecoListBtn}><Text style={Style.enderecoListText}>Ver mais</Text></TouchableOpacity>
+            <TouchableOpacity style={Style.enderecoListBtn}>
+              <Text style={Style.enderecoListText}>Ver mais</Text>
+            </TouchableOpacity>
           </View>
           <View style={Style.enderecoBox}>
             <Text style={Style.enderecoText}>
               Avenida Maracá, 800, Jd Satélite
             </Text>
-            <TouchableOpacity style={Style.enderecoListBtn}><Text style={Style.enderecoListText}>Ver mais</Text></TouchableOpacity>
+            <TouchableOpacity style={Style.enderecoListBtn}>
+              <Text style={Style.enderecoListText}>Ver mais</Text>
+            </TouchableOpacity>
           </View>
           <View style={Style.enderecoBox}>
             <Text style={Style.enderecoText}>
               Avenida Maracá, 800, Jd Satélite
             </Text>
-            <TouchableOpacity style={Style.enderecoListBtn}><Text style={Style.enderecoListText}>Ver mais</Text></TouchableOpacity>
+            <TouchableOpacity style={Style.enderecoListBtn}>
+              <Text style={Style.enderecoListText}>Ver mais</Text>
+            </TouchableOpacity>
           </View>
           <View style={Style.enderecoBox}>
             <Text style={Style.enderecoText}>
               Avenida Maracá, 800, Jd Satélite
             </Text>
-            <TouchableOpacity style={Style.enderecoListBtn}><Text style={Style.enderecoListText}>Ver mais</Text></TouchableOpacity>
+            <TouchableOpacity style={Style.enderecoListBtn}>
+              <Text style={Style.enderecoListText}>Ver mais</Text>
+            </TouchableOpacity>
           </View>
         </ScrollView>
       </View>
-      <View style={{justifyContent: "flex-end", flex:1, maxHeight: 80, }}>
+      <View style={{ justifyContent: "flex-end", flex: 1, maxHeight: 80 }}>
         <TouchableOpacity style={Style.greenPag}>
           <Text
             style={{

@@ -21,6 +21,7 @@ import Mensagem from "../views/mensagem";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { DrawerContent } from './drawerContent';
+import MaisFavoritos from "../views/maisFavoritos";
 
 const Drawer = createDrawerNavigator();
 
@@ -61,6 +62,7 @@ const MainStackNavigator = () => {
         <Stack.Screen name="Cadastro" component={Cadastro} />
         <Stack.Screen name="CadastroConfirm" component={CadastroConfirm} />
         <Stack.Screen name="LoginConfirm" component={LoginConfirm} />
+        <Stack.Screen name="MaisFavoritos" component={MaisFavoritos} />
       </Stack.Navigator>
   );
 }
