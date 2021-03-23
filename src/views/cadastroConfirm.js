@@ -2,7 +2,7 @@ import "react-native-gesture-handler";
 import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
 import Style from "../style/style";
 import React, { useState } from "react";
-import CheckBox from "@react-native-community/checkbox";
+import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 export default function CadastroConfirm(props) {
   const [cpfcnpj, setCpfcnpj] = React.useState("");
@@ -13,8 +13,8 @@ export default function CadastroConfirm(props) {
   const [cidade, setCidade] = React.useState("");
   const [pais, setPais] = React.useState("");
   const [cep, setCep] = React.useState("");
-  const [toggleCheckBox, setToggleCheckBox] = useState(false);
-  if (toggleCheckBox == true) {
+  const [Check, setCheck] = useState(false);
+  if (Check == true) {
     alert("Voce concordou!");
   }
   return (
@@ -121,11 +121,17 @@ export default function CadastroConfirm(props) {
         />
       </View>
       <View style={{ flex: 1, flexDirection: "row" }}>
-        <CheckBox
-        style={{marginTop: 20, marginLeft: 30,}}
-          disabled={false}
-          value={toggleCheckBox}
-          onValueChange={(newValue) => setToggleCheckBox(newValue)}
+      <BouncyCheckbox
+          size={28}
+          fillColor="#0087ff"
+          unfillColor="#CFCFCF"
+          iconStyle={{
+            borderColor: "white",
+            borderWidth: 5,
+            marginLeft: 20,
+            marginTop: 30,
+          }}
+          onPress={(newValue) => setCheck(newValue)}
         />
         <Text style={{ color: "black", fontSize: 14, marginTop: 25, fontFamily: "bariol_regular", }}>
           Li e estou de acordo com o termo de serviço

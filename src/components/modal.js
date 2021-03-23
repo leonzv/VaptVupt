@@ -9,13 +9,10 @@ import {
   TextInput,
   Touchable,
 } from "react-native";
-import style from "../style/style";
 import Style from "../style/style";
 
 export default function modal() {
-  const [check, setCheck] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
-  const [modelo, setModelo] = useState("");
   return (
     <View>
       <View>
@@ -133,7 +130,8 @@ export default function modal() {
               </TouchableOpacity>
             </View>
             <View style={{flex: 1, justifyContent: 'flex-end', marginBottom: 20,}}>
-                <TouchableOpacity style={Style.fecharBtn}>
+                <TouchableOpacity style={Style.fecharBtn}
+                onPress={() => setModalVisible(false)}>
                     <Text style={Style.fecharText}> Fechar </Text>
                 </TouchableOpacity>
             </View>

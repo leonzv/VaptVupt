@@ -7,26 +7,28 @@ import Swiper from "react-native-swiper";
 export default function Condutores({ navigation }, props) {
   return (
     <View style={Style.container}>
-      <View style={{ flexDirection: "row" }}>
-        <TouchableOpacity style={Style.circle}>
-          <TouchableOpacity
-            style={Style.circle2}
-            title="Toggle drawer"
-            onPress={() => navigation.toggleDrawer()}
-          />
-        </TouchableOpacity>
-        <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>
-        <Image
-          style={{
-            alignSelf: "flex-end",
-            resizeMode: "contain",
-            width: 80,
-            marginRight: 18.5,
-            bottom: 20,
-          }}
-          source={require("../assets/img/vai-vex-logo.png")}
+    <View style={{ flexDirection: "row",}}>
+      <TouchableOpacity style={Style.circle}>
+        <TouchableOpacity
+          style={Style.circle2}
+          title="Toggle drawer"
+          onPress={() => navigation.toggleDrawer()}
         />
-      </View>
+      </TouchableOpacity>
+      <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>    
+      <Image
+        style={{
+          alignSelf: "center",
+          resizeMode: "contain",
+          width: 80,
+          marginLeft: '20%',
+          marginRight: 30,
+          flex: 1,
+          top: 12,
+        }}
+        source={require("../assets/img/vai-vex-logo.png")}
+      />
+    </View>
       <Text
         style={{
           fontSize: 22,
@@ -43,7 +45,10 @@ export default function Condutores({ navigation }, props) {
       </Text>
       <View style={{ flex: 1 }}>
         <Swiper style={Style.wrapper} loop={false}
-        paginationStyle={{ bottom: 15, }}>
+        paginationStyle={{ bottom: 15, }}
+        activeDotColor="rgb(0,41,143)"
+        dotStyle={{ width: 35, marginHorizontal: 10 }}
+        activeDotStyle={{ width: 55, marginHorizontal: 10 }}>
         <View style={{flexDirection: 'column'}}>
             <View style={{ alignSelf: "flex-start",flexDirection: "row" }}>
               <View style={Style.bigCircleCond}>

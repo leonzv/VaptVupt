@@ -19,7 +19,7 @@ export default function Chamar({ navigation }, props) {
   const [modalVisible1, setModalVisible1] = useState(false);
   return (
     <View style={Style.container}>
-      <View style={{ flexDirection: "row" }}>
+      <View style={{ flexDirection: "row",}}>
         <TouchableOpacity style={Style.circle}>
           <TouchableOpacity
             style={Style.circle2}
@@ -27,14 +27,16 @@ export default function Chamar({ navigation }, props) {
             onPress={() => navigation.toggleDrawer()}
           />
         </TouchableOpacity>
-        <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>
+        <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>    
         <Image
           style={{
-            alignSelf: "flex-end",
+            alignSelf: "center",
             resizeMode: "contain",
             width: 80,
-            marginRight: '10%',
-            bottom: 20,
+            marginLeft: '20%',
+            marginRight: 30,
+            flex: 1,
+            top: 12,
           }}
           source={require("../assets/img/vai-vex-logo.png")}
         />
@@ -80,7 +82,7 @@ export default function Chamar({ navigation }, props) {
           <Text style={Style.textBoxFontCadastro}>{mercadoria}</Text>
         </View>
       </View>
-      <View style={{ flex: 1, backgroundColor: "white", flexDirection: "row" }}>
+      <View style={{flexDirection: "row", alignItems: 'center', }}>
         <Pressable
           style={[Style.buttonLeft, Style.buttonOpen]}
           onPress={() => setModalVisible(true)}
@@ -104,7 +106,7 @@ export default function Chamar({ navigation }, props) {
                   {endereco}
                 </Text>
                 <Pressable
-                  style={[Style.button, Style.buttonClose]}
+                  style={[Style.button, Style.buttonCloseChamar]}
                   onPress={() => setModalVisible(!modalVisible)}
                 >
                   <Text style={Style.textStyleClose}>OK</Text>
@@ -132,7 +134,7 @@ export default function Chamar({ navigation }, props) {
             <View style={Style.modalView}>
               <Text style={Style.modalText}>Agendar Entrega</Text>
               <Pressable
-                style={[Style.button, Style.buttonClose]}
+                style={[Style.button, Style.buttonCloseChamar]}
                 onPress={() => setModalVisible1(!modalVisible1)}
               >
                 <Text style={Style.textStyleClose}>OK</Text>
@@ -141,9 +143,11 @@ export default function Chamar({ navigation }, props) {
           </View>
         </Modal>
       </View>
+      <View style={{flex: 1, justifyContent: 'flex-end'}}>
       <TouchableOpacity style={Style.greenBtn}>
         <Text style={Style.motoboyText}>Chamar Motoboy</Text>
       </TouchableOpacity>
+      </View>
     </View>
   );
 }

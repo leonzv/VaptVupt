@@ -11,26 +11,28 @@ export default function Configuracoes(props) {
   const toggleSwitch1 = () => setIsEnabled1((previousState) => !previousState);
   return (
     <View style={Style.container}>
-      <View style={{ flexDirection: "row" }}>
-        <TouchableOpacity style={Style.circle}>
-          <TouchableOpacity
-            style={Style.circle2}
-            title="Toggle drawer"
-            onPress={() => navigation.toggleDrawer()}
-          />
-        </TouchableOpacity>
-        <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>
-        <Image
-          style={{
-            alignSelf: "flex-end",
-            resizeMode: "contain",
-            marginRight: 30,
-            width: 75,
-            bottom: 15,
-          }}
-          source={require("../assets/img/vai-vex-logo.png")}
+    <View style={{ flexDirection: "row",}}>
+      <TouchableOpacity style={Style.circle}>
+        <TouchableOpacity
+          style={Style.circle2}
+          title="Toggle drawer"
+          onPress={() => navigation.toggleDrawer()}
         />
-      </View>
+      </TouchableOpacity>
+      <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>    
+      <Image
+        style={{
+          alignSelf: "center",
+          resizeMode: "contain",
+          width: 80,
+          marginLeft: '20%',
+          marginRight: 30,
+          flex: 1,
+          top: 12,
+        }}
+        source={require("../assets/img/vai-vex-logo.png")}
+      />
+    </View>
       <Text
         style={{
           fontSize: 24,

@@ -15,7 +15,7 @@ export default function mensagem({ navigation }, props) {
 
   return (
     <KeyboardAvoidingView style={Style.container} behavior='height'>
-      <View style={{ flexDirection: "row" }}>
+      <View style={{ flexDirection: "row",}}>
         <TouchableOpacity style={Style.circle}>
           <TouchableOpacity
             style={Style.circle2}
@@ -23,14 +23,16 @@ export default function mensagem({ navigation }, props) {
             onPress={() => navigation.toggleDrawer()}
           />
         </TouchableOpacity>
-        <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>
+        <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>    
         <Image
           style={{
-            alignSelf: "flex-end",
+            alignSelf: "center",
             resizeMode: "contain",
             width: 80,
-            marginRight: 18.5,
-            bottom: 20,
+            marginLeft: '20%',
+            marginRight: 30,
+            flex: 1,
+            top: 12,
           }}
           source={require("../assets/img/vai-vex-logo.png")}
         />
@@ -108,7 +110,7 @@ export default function mensagem({ navigation }, props) {
         <TouchableOpacity style={Style.greenMessageBtn}>
           <Text
             style={{
-              fontSize: 16,
+              fontSize: 20,
               color: "white",
               alignSelf: "center",
               textAlign: "center",

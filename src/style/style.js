@@ -24,7 +24,6 @@ export default StyleSheet.create({
     textAlign: "center",
     fontSize: 14,
     marginTop: 55,
-    marginRight: 30,
     marginLeft: 15,
     fontFamily: "bariol_regular",
   },
@@ -465,8 +464,8 @@ export default StyleSheet.create({
     alignSelf: "center",
   },
   blackLineHorizontal: {
-    backgroundColor: "#656565",
-    width: "90%",
+    backgroundColor: "#111",
+    width: "85%",
     height: 1,
     alignSelf: "center",
     marginVertical: 20,
@@ -542,7 +541,7 @@ export default StyleSheet.create({
   greenMessageBtn: {
     backgroundColor: "#00AA33",
     width: "85%",
-    height: 40,
+    height: 50,
     marginHorizontal: 15,
     alignSelf: "center",
     borderRadius: 5,
@@ -583,17 +582,20 @@ export default StyleSheet.create({
   buttonLeft: {
     width: 135,
     height: 50,
-    alignSelf: "center",
     borderRadius: 5,
-    marginLeft: "8%",
+    marginLeft: 30,
+    marginTop: 15,
     justifyContent: "center",
+    alignSelf: 'flex-start',
   },
   buttonRight: {
     width: 135,
     height: 50,
-    alignSelf: "center",
+    marginRight: 30,
+    marginTop: 15,
     borderRadius: 5,
     justifyContent: "center",
+    alignSelf: 'flex-end',
   },
   buttonOpen: {
     backgroundColor: "#346CFF",
@@ -601,6 +603,14 @@ export default StyleSheet.create({
   buttonClose: {
     backgroundColor: "white",
     borderRadius: 3,
+    width: 45,
+    height: 30,
+    margin: 10,
+  },
+  buttonCloseChamar: {
+    backgroundColor: "white",
+    borderRadius: 3,
+    alignSelf: 'center',
     width: 45,
     height: 30,
     margin: 10,
@@ -622,6 +632,7 @@ export default StyleSheet.create({
     marginTop: 30,
     textAlign: "center",
     color: "white",
+    fontFamily: "bariol_regular",
   },
   enderecoStyle: {
     textAlign: "center",
@@ -641,11 +652,10 @@ export default StyleSheet.create({
     marginBottom: 3,
   },
   textPagamento: {
-    fontSize: 12,
+    fontSize: 14,
     color: "black",
     marginTop: 55,
     marginRight: 30,
-    marginLeft: 5,
     fontFamily: "bariol_regular",
     flex: 1,
   },
@@ -721,7 +731,7 @@ export default StyleSheet.create({
     borderRadius: 6,
   },
   textSobre: {
-    fontSize: 12,
+    fontSize: 14,
     marginLeft: 30,
     fontFamily: "bariol_regular",
   },
@@ -887,7 +897,7 @@ export default StyleSheet.create({
     color: "white",
     fontSize: 16,
     fontFamily: "bariol_regular",
-    margin: 20,
+    margin: 15,
   },
   enviarBtn: {
     backgroundColor: "#346CFF",
@@ -915,7 +925,7 @@ export default StyleSheet.create({
     height: 45,
     justifyContent: 'center',
     marginHorizontal: 20,
-    marginTop: 50,
+    marginTop: 35,
     borderRadius: 5,
   },
   maisText:{
@@ -977,5 +987,10 @@ export default StyleSheet.create({
     fontFamily: 'bariol_regular',
     textAlign: 'center',
     fontSize: 14,
+  },
+  conclusaoText:{
+    fontFamily: 'bariol_regular',
+    textAlign: 'center',
+    fontSize: 16,
   },
 });

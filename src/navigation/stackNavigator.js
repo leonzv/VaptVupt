@@ -32,6 +32,10 @@ const StackDrawer = () => {
     drawerStyle={{ width: '75%' }}
     drawerContent={(props) => <DrawerContent {...props} />}>
       <Drawer.Screen name="Pagina Inicial" component={MainStackNavigator} />
+      <Drawer.Screen options={{ swipeEnabled: false }} name="Login" component={Login} />
+      <Drawer.Screen options={{ swipeEnabled: false }} name="Cadastro" component={Cadastro} />
+      <Drawer.Screen options={{ swipeEnabled: false }} name="CadastroConfirm" component={CadastroConfirm} />
+      <Drawer.Screen options={{ swipeEnabled: false }} name="LoginConfirm" component={LoginConfirm} />
     </Drawer.Navigator>
   );
 }

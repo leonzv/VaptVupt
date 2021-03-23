@@ -7,27 +7,29 @@ import Swiper from "react-native-swiper";
 export default function Dashboard({ navigation }, props) {
   return (
     <View style={Style.container}>
-      <ScrollView>
-        <View style={{ flexDirection: "row" }}>
-          <TouchableOpacity style={Style.circle}>
-            <TouchableOpacity
-              style={Style.circle2}
-              title="Toggle drawer"
-              onPress={() => navigation.toggleDrawer()}
-            />
-          </TouchableOpacity>
-          <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>
-          <Image
-            style={{
-              alignSelf: "flex-end",
-              resizeMode: "contain",
-              width: 80,
-              marginRight: 18.5,
-              bottom: 20,
-            }}
-            source={require("../assets/img/vai-vex-logo.png")}
-          />
-        </View>
+    <ScrollView>
+    <View style={{ flexDirection: "row",}}>
+      <TouchableOpacity style={Style.circle}>
+        <TouchableOpacity
+          style={Style.circle2}
+          title="Toggle drawer"
+          onPress={() => navigation.toggleDrawer()}
+        />
+      </TouchableOpacity>
+      <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>    
+      <Image
+        style={{
+          alignSelf: "center",
+          resizeMode: "contain",
+          width: 80,
+          marginLeft: '20%',
+          marginRight: 30,
+          flex: 1,
+          top: 12,
+        }}
+        source={require("../assets/img/vai-vex-logo.png")}
+      />
+    </View>
         <View style={{ height: 420 }}>
           <Text
             style={{

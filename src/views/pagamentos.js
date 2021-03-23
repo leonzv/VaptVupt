@@ -3,35 +3,37 @@ import "react-native-gesture-handler";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import Style from "../style/style";
 import Swiper from "react-native-swiper";
-import CheckBox from '@react-native-community/checkbox';
+import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 export default function Pagamentos({ navigation }, props) {
-  const [toggleCheckBox, setToggleCheckBox] = useState(false);
-  if (toggleCheckBox == true) {
+  const [check, setCheck] = useState(false);
+  if (check == true) {
     alert("Voce concordou!");
   }
   return (
     <View style={Style.container}>
-      <View style={{ flexDirection: "row" }}>
-        <TouchableOpacity style={Style.circle}>
-          <TouchableOpacity
-            style={Style.circle2}
-            title="Toggle drawer"
-            onPress={() => navigation.toggleDrawer()}
-          />
-        </TouchableOpacity>
-        <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>
-        <Image
-          style={{
-            alignSelf: "flex-end",
-            resizeMode: "contain",
-            width: 75,
-            marginRight: 18.5,
-            bottom: 15,
-          }}
-          source={require("../assets/img/vai-vex-logo.png")}
+    <View style={{ flexDirection: "row",}}>
+      <TouchableOpacity style={Style.circle}>
+        <TouchableOpacity
+          style={Style.circle2}
+          title="Toggle drawer"
+          onPress={() => navigation.toggleDrawer()}
         />
-      </View>
+      </TouchableOpacity>
+      <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>    
+      <Image
+        style={{
+          alignSelf: "center",
+          resizeMode: "contain",
+          width: 80,
+          marginLeft: '20%',
+          marginRight: 30,
+          flex: 1,
+          top: 12,
+        }}
+        source={require("../assets/img/vai-vex-logo.png")}
+      />
+    </View>
       <Text
         style={{
           fontSize: 24,
@@ -47,13 +49,13 @@ export default function Pagamentos({ navigation }, props) {
         Pagamentos
       </Text>
       <View style={{ flex: 1, minHeight: "12%" }}>
-      <Swiper
-        style={Style.wrapper}
-        loop={false}
-        activeDotColor="rgb(0,41,143)"
-        dotStyle={{ width: 35, marginHorizontal: 10 }}
-        activeDotStyle={{ width: 55, marginHorizontal: 10 }}
-      >
+        <Swiper
+          style={Style.wrapper}
+          loop={false}
+          activeDotColor="rgb(0,41,143)"
+          dotStyle={{ width: 35, marginHorizontal: 10 }}
+          activeDotStyle={{ width: 55, marginHorizontal: 10 }}
+        >
           <TouchableOpacity
             style={Style.retanguloAzulPag}
             onPress={() => navigation.navigate("Procurar")}
@@ -67,11 +69,18 @@ export default function Pagamentos({ navigation }, props) {
         </Swiper>
       </View>
       <View style={{ flex: 1, flexDirection: "row" }}>
-        <CheckBox
-        style={{marginLeft: 30,marginTop: 55,}}
-          disabled={false}
-          value={toggleCheckBox}
-          onValueChange={(newValue) => setToggleCheckBox(newValue)}
+        <BouncyCheckbox
+          size={32}
+          fillColor="rgb(0,41,143)"
+          unfillColor="#CFCFCF"
+          iconStyle={{
+            borderRadius: 4,
+            borderColor: "white",
+            borderWidth: 0,
+            marginLeft: 40,
+            bottom: 8,
+          }}
+          onPress={(newValue) => setCheck(newValue)}
         />
         <Text style={Style.textPagamento}>
           Declaro informar ao condutor que o pagamento será feito em dinheiro.
@@ -80,13 +89,13 @@ export default function Pagamentos({ navigation }, props) {
       <View style={{ flex: 1, justifyContent: "flex-end" }}>
         <TouchableOpacity style={Style.greenPag}>
           <Text
-           style={{
+            style={{
               fontSize: 16,
               color: "white",
               alignSelf: "center",
               textAlign: "center",
               fontFamily: "bariol_regular",
-            }} 
+            }}
           >
             Voltar
           </Text>

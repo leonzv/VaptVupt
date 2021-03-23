@@ -6,7 +6,7 @@ import Style from "../style/style";
 export default function Pagamentos({ navigation }, props) {
   return (
     <View style={Style.container}>
-      <View style={{ flexDirection: "row" }}>
+      <View style={{ flexDirection: "row",}}>
         <TouchableOpacity style={Style.circle}>
           <TouchableOpacity
             style={Style.circle2}
@@ -14,14 +14,16 @@ export default function Pagamentos({ navigation }, props) {
             onPress={() => navigation.toggleDrawer()}
           />
         </TouchableOpacity>
-        <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>
+        <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>    
         <Image
           style={{
-            alignSelf: "flex-end",
+            alignSelf: "center",
             resizeMode: "contain",
+            width: 80,
+            marginLeft: '20%',
             marginRight: 30,
-            width: 75,
-            bottom: 15,
+            flex: 1,
+            top: 12,
           }}
           source={require("../assets/img/vai-vex-logo.png")}
         />
@@ -50,10 +52,10 @@ export default function Pagamentos({ navigation }, props) {
         </View>
       </View>
       <View style={{ alignItems: "center", marginTop: 20 }}>
-        <Text>Nome do motoboy: José Fernandes dos Santos</Text>
-        <Text>Tipo de transporte: Motofrete</Text>
-        <Text>Forma de pagamento: Dinheiro</Text>
-        <Text> Protocolo: VXS000252019</Text>
+        <Text style={Style.conclusaoText}>Nome do motoboy: José Fernandes dos Santos</Text>
+        <Text style={Style.conclusaoText}>Tipo de transporte: Motofrete</Text>
+        <Text style={Style.conclusaoText}>Forma de pagamento: Dinheiro</Text>
+        <Text style={Style.conclusaoText}> Protocolo: VXS000252019</Text>
       </View>
       <View style={{ alignItems: "center", marginTop: 20,}}>
         <View style={Style.grayBoxConc}>

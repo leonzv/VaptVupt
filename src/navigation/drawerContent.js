@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, TextInput } from "react-native";
+import { View, Text, TouchableOpacity, TextInput, Image } from "react-native";
 import Style from "../style/style";
 import { DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
 
@@ -43,7 +43,7 @@ export function DrawerContent({ navigation }, props) {
               />
             </View>
           </View>
-          <View style={{ marginTop: 50 }} />
+          <View style={{ marginTop: 30 }} />
           <DrawerItem
             labelStyle={{
               color: "white",
@@ -116,18 +116,40 @@ export function DrawerContent({ navigation }, props) {
               fontSize: 26,
               fontFamily: "bariol_regular",
             }}
+            label="Contato"
+            onPress={() => {
+              navigation.navigate("Contato");
+            }}
+          />
+          <DrawerItem
+            labelStyle={{
+              color: "white",
+              fontSize: 26,
+              fontFamily: "bariol_regular",
+            }}
             label="Mensagem"
             onPress={() => {
               navigation.navigate("Mensagem");
             }}
           />
+          <DrawerItem
+            labelStyle={{
+              color: "white",
+              fontSize: 26,
+              fontFamily: "bariol_regular",
+            }}
+            label="Conclusão"
+            onPress={() => {
+              navigation.navigate("Conclusao");
+            }}
+          />
         </DrawerContentScrollView>
       </View>
-      <View style={{backgroundColor: '#00298F'}}>
-        <View style={{backgroundColor: "rgba(255,255,255,0.25)"}}>
+      <View style={{backgroundColor: '#00298F',}}>
+        <View style={{backgroundColor: "rgba(255,255,255,0.25)",}}>
         <DrawerItem
-          labelStyle={{ textAlign: "left", fontSize: 18, color: 'white'}}
-          label="Sair"
+          labelStyle={{fontSize: 20, color: 'white', fontFamily: 'bariol_regular', }}
+          label="↩ Sair"
           onPress={() => {
             navigation.navigate("Login");
           }}
