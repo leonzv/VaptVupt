@@ -1,8 +1,8 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import "react-native-gesture-handler";
 import { View, Text, TouchableOpacity } from "react-native";
 import Style from "../style/style.js";
-import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
+import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import Geocoder from "react-native-geocoding";
 
 

@@ -3,7 +3,7 @@ import "react-native-gesture-handler";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import Style from "../style/style";
 
-export default function EnderecosList(props) {
+export default function EnderecosList({ navigation }, props) {
   return (
     <View style={Style.container}>
       <View style={{ flexDirection: "row",}}>
@@ -51,7 +51,7 @@ export default function EnderecosList(props) {
             </Text>
             <TouchableOpacity
               style={Style.enderecoListBtn}
-              onPress={() => props.navigation.navigate("MaisFavoritos")}
+              onPress={() => navigation.navigate("MaisFavoritos")}
             >
               <Text style={Style.enderecoListText}>Ver mais</Text>
             </TouchableOpacity>

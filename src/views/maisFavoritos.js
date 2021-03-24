@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import Style from "../style/style";
 import Modal from "../components/modal";
 
-export default function maisFavoritos(props) {
+export default function maisFavoritos({navigation}, props) {
   return (
     <View style={Style.container}>
       <View style={{ flexDirection: "row",}}>
@@ -11,7 +11,7 @@ export default function maisFavoritos(props) {
           <TouchableOpacity
             style={Style.circle2}
             title="Toggle drawer"
-            onPress={() => navigation.toggleDrawer()}
+            onPress={() => props.navigation.toggleDrawer()}
           />
         </TouchableOpacity>
         <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>    

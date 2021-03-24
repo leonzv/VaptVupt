@@ -22,7 +22,6 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { DrawerContent } from './drawerContent';
 import MaisFavoritos from "../views/maisFavoritos";
-
 const Drawer = createDrawerNavigator();
 
 
