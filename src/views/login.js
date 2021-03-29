@@ -1,60 +1,77 @@
+import React from "react";
 import "react-native-gesture-handler";
 import { View, Image, Text, TouchableOpacity } from "react-native";
 import Style from "../style/style.js";
-import React from "react";
+import LinearGradient from "react-native-linear-gradient";
 import Swiper from "react-native-swiper";
 
 export default function Login(props) {
   return (
     <View style={Style.container}>
-      <View>
-        <Image
-          style={Style.vaiVexImg}
-          source={require("../assets/img/vai-vex-logo.png")}
-        />
+      <View style={Style.topContainer}>
+        <Image style={Style.car} source={require("../assets/img/carro.png")} />
+        <Text
+          style={{
+            fontSize: 24,
+            fontWeight: "bold",
+            color: "#000",
+            fontFamily: "Rubik-Regular",
+          }}
+        >
+          Estacione Aí
+        </Text>
       </View>
-      <Swiper
-        style={Style.wrapper}
-        loop={false}
-        activeDotColor="rgb(0,41,143)"
-        dotStyle={{ width: 35, marginHorizontal: 10 }}
-        activeDotStyle={{ width: 55, marginHorizontal: 10 }}
+      <View style={Style.botContainer}>
+        <LinearGradient
+          colors={["#FF002B", "#FF5510"]}
+          style={Style.linearGradient}
         >
-        <View style={Style.retanguloAzul}>
-          <Text style={Style.loginText}>
-            {" "}
-            Um jeito simples e descomplicado de fazer entregas
-          </Text>
-          <Image
-            style={Style.firstImg}
-            source={require("../assets/img/moto-branca.png")}
-          />
+          <Swiper
+            style={Style.wrapper}
+            loop={false}
+            paginationStyle={{ top: 160, right: 270, marginLeft: 30 }}
+            activeDotColor="rgb(255,255,255)"
+            dotColor="rgba(255,255,255,0.5)"
+            dotStyle={{ width: 30, height: 6, marginHorizontal: 10 }}
+            activeDotStyle={{ width: 50, height: 6, marginHorizontal: 10 }}
+          >
+            <View style={Style.swiperLogin}>
+              <Text style={Style.swiperText}>
+                {" "}
+                Estacione seu carro ou moto de um jeito fácil e intuitivo
+              </Text>
+            </View>
+            <View style={Style.swiperLogin}>
+              <Text style={Style.swiperText}>
+                {" "}
+                Chame um carro de forma simples e escolha o valor que pode pagar
+              </Text>
+            </View>
+          </Swiper>
+        </LinearGradient>
         </View>
-        <View style={Style.retanguloVermelho}>
-          <Text style={Style.loginText}>
-            {" "}
-            Uma simplicidade que cabe na sua mão
-          </Text>
-          <Image
-            style={Style.firstImg}
-            source={require("../assets/img/dinheiro.png")}
-          />
+        
+          <TouchableOpacity
+            style={Style.boxLogin}
+            onPress={() => props.navigation.navigate("LoginConfirm")}
+          >
+            <Text style={Style.boxLoginText}>L O G I N</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={Style.boxLogin}
+            onPress={() => props.navigation.navigate("Cadastro")}
+          >
+            <Text style={Style.boxLoginText}>C A D A S T R A R</Text>
+          </TouchableOpacity>
+        
+        <View style={Style.containerBoxLogin}>
+          <TouchableOpacity style={Style.boxLoginFacebook}>
+            <Text style={Style.loginSocialText}>LOGIN COM FACEBOOK</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={Style.boxLoginGoogle}>
+            <Text style={Style.loginSocialText}>LOGIN COM GOOGLE</Text>
+          </TouchableOpacity>
         </View>
-      </Swiper>
-      <View>
-        <TouchableOpacity
-          style={Style.btnCadastrar}
-          onPress={() => props.navigation.navigate("LoginConfirm")}
-        >
-          <Text style={Style.btnCadastrarFont}> Entrar </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={Style.btnCadastrar}
-          onPress={() => props.navigation.navigate("Cadastro")}
-        >
-          <Text style={Style.btnCadastrarFont}> Cadastre-se </Text>
-        </TouchableOpacity>
-      </View>
     </View>
   );
 }

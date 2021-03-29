@@ -1,67 +1,30 @@
-import "react-native-gesture-handler";
-import { View, Text, Image, TouchableOpacity } from "react-native";
-import Style from "../style/style";
 import React from "react";
+import { Text, View,TouchableOpacity} from "react-native";
+import Style from "../style/style";
 
-export default function Sobre(props) {
+export default function Sobre() {
   return (
-    <View style={Style.container}>
-      <View style={{ flexDirection: "row",}}>
-        <TouchableOpacity style={Style.circle}>
-          <TouchableOpacity
-            style={Style.circle2}
-            title="Toggle drawer"
-            onPress={() => navigation.toggleDrawer()}
-          />
-        </TouchableOpacity>
-        <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>    
-        <Image
-          style={{
-            alignSelf: "center",
-            resizeMode: "contain",
-            width: 80,
-            marginLeft: '20%',
-            marginRight: 30,
-            flex: 1,
-            top: 12,
-          }}
-          source={require("../assets/img/vai-vex-logo.png")}
-        />
+    <View style={Style.containerDraw}>
+      <View style={Style.headerEditar}>
+        <Text style={Style.textGps}>Bem vindo, João!</Text>
       </View>
-      <Text
-        style={{
-          fontSize: 24,
-          marginLeft: 30,
-          textAlign: "left",
-          marginRight: 90,
-          marginTop: 70,
-          marginBottom: 50,
-          color: "#000",
-          fontFamily: "bariol_regular",
-        }}
-      >
-        Sobre
-      </Text>
-      <Text style={Style.textSobre}>Nome do app: VaptVupt</Text>
-      <Text style={Style.textSobre}>Versão: 1.0</Text>
-      <Text style={Style.textSobre}>Ano: 2019</Text>
-      <View
-        style={{ flex: 1, justifyContent: "flex-end", alignItems: "flex-end" }}
-      >
-        <TouchableOpacity style={Style.greenBtn}>
-          <Text
-            style={{
-              fontSize: 16,
-              color: "white",
-              alignSelf: "center",
-              textAlign: "center",
-              fontFamily: "bariol_regular",
-            }}
-          >
-            Voltar
-          </Text>
-        </TouchableOpacity>
+      <View style={{ backgroundColor: "black" }}>
+        <Text style={Style.textSobreTop}>Sobre</Text>
       </View>
+      <View style={Style.boxSobre}>
+        <Text style={Style.userText}>Estacione Aí</Text>
+      </View>
+      <View style={Style.boxSobre}>
+        <Text style={Style.userText}>Versão: 1.0</Text>
+      </View>
+      <View style={Style.boxSobre}>
+        <Text style={Style.userText}>2021</Text>
+      </View>
+    <View style={{flex:1,justifyContent: 'flex-end'}}>
+      <TouchableOpacity style={Style.voltarBoxCode}>
+          <Text style={Style.textVoltar}>V O L T A R</Text>
+    </TouchableOpacity>
+    </View>
     </View>
   );
 }

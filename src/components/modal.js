@@ -1,76 +1,40 @@
 import React, { useState } from "react";
-import { Text, View, Modal, TouchableOpacity, Alert } from "react-native";
+import {
+  Text,
+  View,
+  Modal,
+  TouchableOpacity,
+  Alert,
+  Image,
+  TextInput,
+} from "react-native";
 import Style from "../style/style";
+import BouncyCheckbox from "react-native-bouncy-checkbox";
 
-export default function modal({ navigation }) {
-  function switchModal() {
-    if (modalVisible == true) {
-      setModalVisible(!modalVisible);
-      setModalVisible1(!modalVisible1);
-    }
+export default function modal() {
+  const [check, setCheck] = useState(false);
+  const [check1, setCheck1] = useState(false);
+  const [check2, setCheck2] = useState(false);
+  if(check1 && check == true){
+    alert("Apenas um pode ser selecionado")
   }
   const [modalVisible, setModalVisible] = useState(false);
-  const [modalVisible1, setModalVisible1] = useState(false);
   return (
     <View>
       <View>
-        <Modal
-          transparent={true}
-          animationType="slide"
-          visible={modalVisible1}
-          onRequestClose={() => {
-            Alert.alert("Modal has been closed.");
-            setModalVisible1(!modalVisible1);
-          }}
-        >
-          <View style={Style.centeredView1}>
-            <View style={Style.modalView1}>
-              <View style={Style.circleCorrida}>
-                <View
-                  style={Style.circle2Corrida}
-                  title="Toggle drawer"
-                  onPress={() => navigation.toggleDrawer()}
-                />
-              </View>
-              <Text style={Style.corridaText}>Ruan</Text>
-              <Text style={Style.corridaText}>Motoboy</Text>
-              <View
-                style={{
-                  flexDirection: "row",
-                  alignItems: "center",
-                  flex: 1,
-                  justifyContent: "center",
-                  marginTop: 30,
-                }}
-              >
-                <Text style={Style.aceitarText}>Aceitou fazer a corrida!</Text>
-                <View style={Style.greenCircle} />
-              </View>
-              <View
-                style={{
-                  flex: 1,
-                  justifyContent: "flex-end",
-                  marginBottom: 20,
-                }}
-              >
-                <TouchableOpacity
-                  style={Style.acompanharBtn}
-                  onPress={() => setModalVisible(false)}
-                >
-                  <Text style={Style.acompanharText}> Acompanhar mapa </Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View>
-        </Modal>
-      </View>
-      {/* fim do primeiro modal */}
-      <View>
         <TouchableOpacity
-          style={[Style.button, Style.buttonOpen]}
+          style={[Style.buttonFav, Style.buttonOpen]}
           onPress={() => setModalVisible(true)}
         >
-          <Text style={Style.maisFav}>Escolher condutor favorito</Text>
+          <Image
+            style={{
+              width: 25,
+              height: 25,
+              alignSelf: "center",
+              resizeMode: "contain",
+            }}
+            source={require("../assets/img/note.png")}
+          />
         </TouchableOpacity>
       </View>
       <Modal
@@ -82,140 +46,115 @@ export default function modal({ navigation }) {
           setModalVisible(!modalVisible);
         }}
       >
-        <View style={Style.centeredView}>
-          <View style={Style.modalView}>
+        <View style={Style.centeredViewFav}>
+          <View style={Style.modalViewFav}>
             <View
               style={{
                 flexDirection: "row",
-                borderBottomColor: "white",
-                borderBottomWidth: 1,
-                width: "90%",
-                alignSelf: "center",
+                justifyContent: "center",
               }}
             >
-              <View style={Style.circleFav}>
-                <View
-                  style={Style.circle2}
-                  title="Toggle drawer"
-                  onPress={() => navigation.toggleDrawer()}
-                />
-              </View>
+              <Text style={Style.topModalTextFav}>Joia Park</Text>
               <View
-                style={{ flexDirection: "column", justifyContent: "center" }}
+                style={{
+                  flex: 0,
+                  alignItems: "flex-end",
+                  justifyContent: "center",
+                }}
               >
-                <Text style={Style.modalFavText}>Luiz Silva</Text>
-                <Text style={Style.modalFavText}>Motoboy</Text>
-              </View>
-              <View style={Style.escolherView}>
                 <TouchableOpacity
-                  style={Style.btnModalFav}
-                  onPress={() => switchModal()}
+                  style={{
+                    backgroundColor: "#ff0000",
+                    borderRadius: 40,
+                    width: 38,
+                    height: 38,
+                    marginRight: 30,
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
                 >
-                  <Text style={Style.btnModalText}>Escolher</Text>
+                  <Image
+                    style={{
+                      width: 30,
+                      height: 30,
+                      alignSelf: "center",
+                      resizeMode: "contain",
+                      bottom: 1,
+                    }}
+                    source={require("../assets/img/lixeira.png")}
+                  />
                 </TouchableOpacity>
               </View>
             </View>
-            <View
-              style={{
-                flexDirection: "row",
-                borderBottomColor: "white",
-                borderBottomWidth: 1,
-                width: "90%",
-                alignSelf: "center",
-              }}
-            >
-              <View style={Style.circleFav}>
-                <View
-                  style={Style.circle2}
-                  title="Toggle drawer"
-                  onPress={() => navigation.toggleDrawer()}
-                />
-              </View>
-              <View
-                style={{ flexDirection: "column", justifyContent: "center" }}
-              >
-                <Text style={Style.modalFavText}>Luiz Silva</Text>
-                <Text style={Style.modalFavText}>Motoboy</Text>
-              </View>
-              <View style={Style.escolherView}>
-                <TouchableOpacity
-                  style={Style.btnModalFav}
-                  onPress={() => switchModal()}
-                >
-                  <Text style={Style.btnModalText}>Escolher</Text>
-                </TouchableOpacity>
-              </View>
+            <View>
+              <Text style={Style.modalFavoritoText}> Endereço: </Text>
+              <Text style={Style.modalFavoritoSmallText}>
+                {" "}
+                Avenida São João, 1460
+              </Text>
+              <Text style={Style.modalFavoritoSmallText}> São Paulo, SP</Text>
+              <Text style={Style.modalFavoritoText}>
+                {" "}
+                Formas de pagamento:{" "}
+              </Text>
             </View>
-            <View
-              style={{
-                flexDirection: "row",
-                borderBottomColor: "white",
-                borderBottomWidth: 1,
-                width: "90%",
-                alignSelf: "center",
-              }}
-            >
-              <View style={Style.circleFav}>
-                <View
-                  style={Style.circle2}
-                  title="Toggle drawer"
-                  onPress={() => navigation.toggleDrawer()}
-                />
-              </View>
-              <View
-                style={{ flexDirection: "column", justifyContent: "center" }}
-              >
-                <Text style={Style.modalFavText}>Luiz Silva</Text>
-                <Text style={Style.modalFavText}>Motoboy</Text>
-              </View>
-              <View style={Style.escolherView}>
-                <TouchableOpacity
-                  style={Style.btnModalFav}
-                  onPress={() => switchModal()}
-                >
-                  <Text style={Style.btnModalText}>Escolher</Text>
-                </TouchableOpacity>
-              </View>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <BouncyCheckbox
+                size={28}
+                fillColor="#0087ff"
+                unfillColor="black"
+                iconStyle={{
+                  borderColor: "white",
+                  borderWidth: 5,
+                  marginLeft: 30,
+                  marginTop: 20,
+                  marginBottom: 35,
+                }}
+                onPress={(newValue) => setCheck(newValue)}
+              />
+              <Text style={Style.checkTextLeft}>Dinheiro</Text>
+              <BouncyCheckbox
+                size={28}
+                fillColor="#0087ff"
+                unfillColor="black"
+                iconStyle={{
+                  borderColor: "white",
+                  borderWidth: 5,
+                  marginLeft: 30,
+                  marginTop: 20,
+                  marginBottom: 35,
+                }}
+                onPress={(newValue) => setCheck1(newValue)}
+              />
+              <Text style={Style.checkTextRight}>
+                Cartão de crédito ou débito
+              </Text>
             </View>
-            <View
-              style={{
-                flexDirection: "row",
-                borderBottomColor: "white",
-                borderBottomWidth: 1,
-                width: "90%",
-                alignSelf: "center",
-              }}
-            >
-              <View style={Style.circleFav}>
-                <View
-                  style={Style.circle2}
-                  title="Toggle drawer"
-                  onPress={() => navigation.toggleDrawer()}
-                />
-              </View>
-              <View
-                style={{ flexDirection: "column", justifyContent: "center" }}
-              >
-                <Text style={Style.modalFavText}>Luiz Silva</Text>
-                <Text style={Style.modalFavText}>Motoboy</Text>
-              </View>
-              <View style={Style.escolherView}>
-                <TouchableOpacity
-                  style={Style.btnModalFav}
-                  onPress={() => switchModal()}
-                >
-                  <Text style={Style.btnModalText}>Escolher</Text>
-                </TouchableOpacity>
-              </View>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <BouncyCheckbox
+                size={22}
+                fillColor="#0087ff"
+                unfillColor="white"
+                iconStyle={{
+                  borderColor: "white",
+                  borderWidth: 5,
+                  marginLeft: 30,
+                  marginTop: 20,
+                  marginBottom: 35,
+                  borderRadius: 0,
+                }}
+                onPress={(newValue) => setCheck2(newValue)}
+              />
+              <Text style={Style.checkTextBottom}>
+                Repetir o mesmo processo nas próximos vezes
+              </Text>
             </View>
-            <View
-              style={{ flex: 1, justifyContent: "flex-end", marginBottom: 20 }}
-            >
-              <TouchableOpacity
-                style={Style.fecharBtn}
-                onPress={() => setModalVisible(false)}
-              >
-                <Text style={Style.fecharText}> Fechar </Text>
+            <View style={{ flex: 1, justifyContent: "flex-end" }}>
+              <TouchableOpacity style={Style.btnReservar}>
+                <Text style={Style.textReservar}> R E S E R V A R   V A G A  </Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={Style.btnCancelar}>
+                <Text style={Style.textCancelar}> C A N C E L A R </Text>
               </TouchableOpacity>
             </View>
           </View>

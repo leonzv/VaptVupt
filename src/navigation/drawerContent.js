@@ -1,160 +1,104 @@
-import React, { useState } from "react";
-import { View, Text, TouchableOpacity, TextInput } from "react-native";
+import React from "react";
+import { View, Text } from "react-native";
 import Style from "../style/style";
 import { DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
+import LinearGradient from "react-native-linear-gradient";
 
-export function DrawerContent({ navigation }, props) {
-  const [search, setSearch] = useState("");
+export function DrawerContent(props) {
   return (
     <View style={{ flex: 1 }}>
-      <View style={Style.drawerContent}>
+      <LinearGradient colors={["#ff012b", "#f96d08"]} style={{ flex: 1 }}>
         <DrawerContentScrollView {...props}>
-          <View style={{ flexDirection: "row" }}>
-            <TouchableOpacity style={Style.circleDraw}>
-              <TouchableOpacity
-                style={Style.circle2}
-                title="Toggle drawer"
-                onPress={() => navigation.toggleDrawer()}
+          <View style={Style.drawerContent}>
+            <View style={{ flexDirection: "row" }}>
+              <View
+                style={{
+                  backgroundColor: "white",
+                  width: 60,
+                  height: 60,
+                  bottom: 5,
+                }}
               />
-            </TouchableOpacity>
-            <Text
-              style={{
-                color: "white",
-                textAlign: "center",
-                fontSize: 14,
-                marginTop: 55,
-                marginRight: 30,
-                marginLeft: 15,
-                fontFamily: "bariol_regular",
-              }}
-            >
-              Bem vindo, Emerson!
-            </Text>
-          </View>
-          <View style={{ flexDirection: "row" }}>
-            <View style={Style.drawerBox}>
-              <TextInput
-                style={Style.textBoxDraw}
-                onChangeText={(text) => setSearch(text)}
-                value={search}
-                placeholderTextColor="#fff"
-                autoCapitalize="words"
-                placeholder="Buscar..."
-              />
+              <View
+                style={{
+                  width: "80%",
+                  height: 50,
+                  alignSelf: "flex-end",
+                  justifyContent: "center",
+                  bottom: 5,
+                }}
+              >
+                <Text style={Style.textDrawer}>Bem vindo, João!</Text>
+              </View>
             </View>
+            <View style={{marginTop: 50,}}/>
+            <DrawerItem
+              labelStyle={{
+                color: "white",
+                fontSize: 18,
+                fontFamily: "Rubik-Regular",
+              }}
+              label="EDITAR DADOS"
+              onPress={() => {
+                props.navigation.navigate("EditarDados");
+              }}
+            />
+            <DrawerItem
+              labelStyle={{
+                color: "white",
+                fontSize: 18,
+                fontFamily: "Rubik-Regular",
+              }}
+              label="BUSCAR VAGA"
+              onPress={() => {
+                props.navigation.navigate("BuscarVaga");
+              }}
+            />
+            <DrawerItem
+              labelStyle={{
+                color: "white",
+                fontSize: 18,
+                fontFamily: "Rubik-Regular",
+              }}
+              label="CONFIGURAÇÕES"
+              onPress={() => {
+                props.navigation.navigate("Settings");
+              }}
+            />
+            <DrawerItem
+              labelStyle={{
+                color: "white",
+                fontSize: 18,
+                fontFamily: "Rubik-Regular",
+              }}
+              label="FAVORITOS"
+              onPress={() => {
+                props.navigation.navigate("Favoritos");
+              }}
+            />
+            <DrawerItem
+              labelStyle={{
+                color: "white",
+                fontSize: 18,
+                fontFamily: "Rubik-Regular",
+              }}
+              label="SOBRE"
+              onPress={() => {
+                props.navigation.navigate("Sobre");
+              }}
+            />
           </View>
-          <View style={{ marginTop: 30 }} />
-          <DrawerItem
-            labelStyle={{
-              color: "white",
-              fontSize: 26,
-              fontFamily: "bariol_regular",
-            }}
-            label="Início"
-            onPress={() => {
-              navigation.navigate("Home");
-            }}
-          />
-          <DrawerItem
-            labelStyle={{
-              color: "white",
-              fontSize: 26,
-              fontFamily: "bariol_regular",
-            }}
-            label="Condutores"
-            onPress={() => {
-              navigation.navigate("Condutores");
-            }}
-          />
-          <DrawerItem
-            labelStyle={{
-              color: "white",
-              fontSize: 26,
-              fontFamily: "bariol_regular",
-            }}
-            label="Mapa"
-            onPress={() => {
-              navigation.navigate("Gps");
-            }}
-          />
-          <DrawerItem
-            labelStyle={{
-              color: "white",
-              fontSize: 26,
-              fontFamily: "bariol_regular",
-            }}
-            label="Configurações"
-            onPress={() => {
-              navigation.navigate("Configuracoes");
-            }}
-          />
-          <DrawerItem
-            labelStyle={{
-              color: "white",
-              fontSize: 26,
-              fontFamily: "bariol_regular",
-            }}
-            label="Pagamentos"
-            onPress={() => {
-              navigation.navigate("Pagamentos");
-            }}
-          />
-          <DrawerItem
-            labelStyle={{
-              color: "white",
-              fontSize: 26,
-              fontFamily: "bariol_regular",
-            }}
-            label="Sobre"
-            onPress={() => {
-              navigation.navigate("Sobre");
-            }}
-          />
-          <DrawerItem
-            labelStyle={{
-              color: "white",
-              fontSize: 26,
-              fontFamily: "bariol_regular",
-            }}
-            label="Contato"
-            onPress={() => {
-              navigation.navigate("Contato");
-            }}
-          />
-          <DrawerItem
-            labelStyle={{
-              color: "white",
-              fontSize: 26,
-              fontFamily: "bariol_regular",
-            }}
-            label="Mensagem"
-            onPress={() => {
-              navigation.navigate("Mensagem");
-            }}
-          />
-          <DrawerItem
-            labelStyle={{
-              color: "white",
-              fontSize: 26,
-              fontFamily: "bariol_regular",
-            }}
-            label="Conclusão"
-            onPress={() => {
-              navigation.navigate("Conclusao");
-            }}
-          />
         </DrawerContentScrollView>
-      </View>
-      <View style={{backgroundColor: '#00298F',}}>
-        <View style={{backgroundColor: "rgba(255,255,255,0.25)",}}>
+      </LinearGradient>
+      <View style={{ backgroundColor: "black" }}>
         <DrawerItem
-          labelStyle={{fontSize: 20, color: 'white', fontFamily: 'bariol_regular', }}
-          label="↩ Sair"
+          labelStyle={{ textAlign: "center" , fontFamily: "Rubik-Regular",}}
+          label="S A I R    D O    A P P"
+          inactiveTintColor="rgb(255,61,23)"
           onPress={() => {
-            navigation.navigate("Login");
+            props.navigation.navigate("Login");
           }}
         />
-      </View>
       </View>
     </View>
   );

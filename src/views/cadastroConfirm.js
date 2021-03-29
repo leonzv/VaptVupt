@@ -1,148 +1,164 @@
-import "react-native-gesture-handler";
-import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
-import Style from "../style/style";
-import React, { useState } from "react";
-import BouncyCheckbox from "react-native-bouncy-checkbox";
+import React from 'react';
+import 'react-native-gesture-handler';
+import {View, Image, TextInput, Text, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
+import Style from '../style/style.js';
+import react from 'react';
 
 export default function CadastroConfirm(props) {
-  const [cpfcnpj, setCpfcnpj] = React.useState("");
-  const [endereco, setEndereco] = React.useState("");
-  const [numero, setNumero] = React.useState("");
-  const [bairro, setBairro] = React.useState("");
-  const [uf, setUf] = React.useState("");
-  const [cidade, setCidade] = React.useState("");
-  const [pais, setPais] = React.useState("");
-  const [cep, setCep] = React.useState("");
-  const [Check, setCheck] = useState(false);
-  if (Check == true) {
-    alert("Voce concordou!");
-  }
+    const [nome, setNome] = react.useState('');
+    const [cpf, setCpf] = react.useState('');
+    const [rg, setRg] = react.useState('');
+    const [cidade, setCidade] = react.useState('');
+    const [estado, setEstado] = react.useState('');
+    const [pais, setPais] = react.useState('');
+    const [placa, setPlaca] = react.useState('');
   return (
-    <View style={Style.containerCadastro}>
-      <View>
+    <KeyboardAvoidingView style={Style.container}>
+      <View style={{
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'white',
+        height: '16%',
+        flexDirection: 'row',
+      }}>
         <Image
-          style={Style.vaiVexImgCadastro}
-          source={require("../assets/img/vai-vex-logo.png")}
+          style={Style.car}
+          source={require('../assets/img/carro.png')}
         />
-        <Text
-          style={{
-            marginLeft: 30,
-            fontSize: 20,
-            marginBottom: 30,
-            fontWeight: "bold",
-            fontFamily: "bariol_regular",
-          }}
-        >
-          Preencha o forumário completo:
-        </Text>
+        <Text style={{fontSize: 24, fontFamily: 'Rubik-Bold', color: '#000'}}>Estacione Aí</Text>
       </View>
-      <View style={Style.textBox}>
-        <Text style={Style.textBoxFontCadastro}>CPF/CNPJ:</Text>
-        <TextInput
-          style={Style.textBoxFont}
-          onChangeText={(text) => setCpfcnpj(text)}
-          value={cpfcnpj}
-          placeholderTextColor="#fff"
-          autoCapitalize="words"
-        />
-      </View>
-      <View style={Style.textBox}>
-        <Text style={Style.textBoxFontCadastro}>Endereço:</Text>
-        <TextInput
-          style={Style.textBoxFont}
-          onChangeText={(text) => setEndereco(text)}
-          value={endereco}
-          placeholderTextColor="#fff"
-          autoCapitalize="words"
-        />
-      </View>
-      <View style={Style.box3070}>
-        <View style={Style.textBox30}>
-          <Text style={Style.textBoxFontCadastro}>Nº:</Text>
-          <TextInput
-            style={Style.textBoxFont}
-            onChangeText={(text) => setNumero(text)}
-            value={numero}
-            placeholderTextColor="#fff"
-            autoCapitalize="words"
-          />
+        <View style={Style.boxLoginConfirm}>
+            <Text style={Style.userText}>N o m e:</Text>
+            <TextInput
+              style={{width: '80%', height: '100%', color: '#fff',}}
+              onChangeText={(text) => setNome(text)}
+              value={nome}
+              placeholderTextColor="#fff"
+            />
         </View>
-        <View style={Style.textBox70}>
-          <Text style={Style.textBoxFontCadastro}>Bairro:</Text>
-          <TextInput
-            style={Style.textBoxFont}
-            onChangeText={(text) => setBairro(text)}
-            value={bairro}
-            placeholderTextColor="#fff"
-            autoCapitalize="words"
-          />
+        <View style={Style.boxLoginConfirm}>
+            <Text style={Style.userText}>C P F:</Text>
+            <TextInput
+              style={{width: '83%', height: '100%', color: '#fff',}}
+              onChangeText={(text) => setCpf(text)}
+              value={cpf}
+              placeholderTextColor="#fff"
+            />
         </View>
-      </View>
-      <View style={Style.box3070}>
-        <View style={Style.textBox30}>
-          <Text style={Style.textBoxFontCadastro}>UF:</Text>
-          <TextInput
-            style={Style.textBoxFont}
-            onChangeText={(text) => setUf(text)}
-            value={uf}
-            placeholderTextColor="#fff"
-            autoCapitalize="words"
-          />
+        <View style={Style.boxLoginConfirm}>
+            <Text style={Style.userText}>R G:</Text>
+            <TextInput
+              style={{width: '83%', height: '100%', color: '#fff',}}
+              onChangeText={(text) => setRg(text)}
+              value={rg}
+              placeholderTextColor="#fff"
+            />
         </View>
-        <View style={Style.textBox70}>
-          <Text style={Style.textBoxFontCadastro}>Cidade:</Text>
-          <TextInput
-            style={Style.textBoxFont}
-            onChangeText={(text) => setCidade(text)}
-            value={cidade}
-            placeholderTextColor="#fff"
-            autoCapitalize="words"
-          />
+        <View style={Style.boxLoginConfirm}>
+            <Text style={Style.userText}>C i d a d e:</Text>
+            <TextInput
+              style={{width: '83%', height: '100%', color: '#fff',}}
+              onChangeText={(text) => setCidade(text)}
+              value={cidade}
+              placeholderTextColor="#fff"
+            />
         </View>
-      </View>
-      <View style={Style.textBox}>
-        <Text style={Style.textBoxFontCadastro}>País:</Text>
-        <TextInput
-          style={Style.textBoxFont}
-          onChangeText={(text) => setPais(text)}
-          value={pais}
-          placeholderTextColor="#fff"
-          autoCapitalize="words"
-        />
-      </View>
-      <View style={Style.textBox}>
-        <Text style={Style.textBoxFontCadastro}>CEP:</Text>
-        <TextInput
-          style={Style.textBoxFont}
-          onChangeText={(text) => setCep(text)}
-          value={cep}
-          placeholderTextColor="#fff"
-          autoCapitalize="words"
-        />
-      </View>
-      <View style={{ flex: 1, flexDirection: "row" }}>
-      <BouncyCheckbox
-          size={28}
-          fillColor="#0087ff"
-          unfillColor="#CFCFCF"
-          iconStyle={{
-            borderColor: "white",
-            borderWidth: 5,
-            marginLeft: 20,
-            marginTop: 30,
-          }}
-          onPress={(newValue) => setCheck(newValue)}
-        />
-        <Text style={{ color: "black", fontSize: 14, marginTop: 25, fontFamily: "bariol_regular", }}>
-          Li e estou de acordo com o termo de serviço
-        </Text>
-      </View>
-      <TouchableOpacity
-        style={Style.btnComecar}
-        onPress={() => props.navigation.navigate("LoadHome")}
-      >
-        <Text style={Style.btnComecarFont}> Começar </Text>
-      </TouchableOpacity>
-    </View>
-  );
+        <View style={Style.boxLoginConfirm}>
+            <Text style={Style.userText}>E s t a d o:</Text>
+            <TextInput
+              style={{width: '83%', height: '100%', color: '#fff',}}
+              onChangeText={(text) => setEstado(text)}
+              value={estado}
+              placeholderTextColor="#fff"
+            />
+        </View>
+        <View style={Style.boxLoginConfirm}>
+            <Text style={Style.userText}>P a í s:</Text>
+            <TextInput
+              style={{width: '83%', height: '100%', color: '#fff',}}
+              onChangeText={(text) => setPais(text)}
+              value={pais}
+              placeholderTextColor="#fff"
+            />
+        </View>
+        <View style={Style.boxLoginConfirm}>
+            <Text style={Style.userText}>P l a c a:</Text>
+            <TextInput
+              style={{width: '83%', height: '100%', color: '#fff',}}
+              onChangeText={(text) => setPlaca(text)}
+              value={placa}
+              placeholderTextColor="#fff"
+            />
+        </View>
+        <View>
+            <View style={{flexDirection: 'row',}}>
+                <TouchableOpacity style={Style.carOption}>
+                    <Image
+                    style={Style.carBmw}
+                    source={require('../assets/img/carrobmw.png')}
+                    />
+                    <Text style={Style.textCar}>Bmw Série 3 2020</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={Style.carOption}>
+                    <Image
+                    style={Style.carBmw}
+                    source={require('../assets/img/carrobmw.png')}
+                    />
+                    <Text style={Style.textCar}>Bmw Série 3 2020</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={Style.carOption}>
+                    <Image
+                    style={Style.carBmw}
+                    source={require('../assets/img/carrobmw.png')}
+                    />
+                    <Text style={Style.textCar}>Bmw Série 3 2020</Text>
+                </TouchableOpacity>
+            </View>
+            <View style={{flexDirection: 'row',}}>
+            <TouchableOpacity style={Style.carOption}>
+                    <Image
+                    style={Style.carBmw}
+                    source={require('../assets/img/carrobmw.png')}
+                    />
+                    <Text style={Style.textCar}>Bmw Série 3 2020</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={Style.carOption}>
+                    <Image
+                    style={Style.carBmw}
+                    source={require('../assets/img/carrobmw.png')}
+                    />
+                    <Text style={Style.textCar}>Bmw Série 3 2020</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={Style.carOption}>
+                    <Image
+                    style={Style.carBmw}
+                    source={require('../assets/img/carrobmw.png')}
+                    />
+                    <Text style={Style.textCar}>Bmw Série 3 2020</Text>
+            </TouchableOpacity>
+            </View>
+        </View>
+        <View style={Style.containerBoxLogin}>
+        <TouchableOpacity style={Style.boxLeftLoginConfirm}
+        onPress={() => props.navigation.navigate('LocationEnable')}>
+        <Text style={Style.loginEntrarText}>A V A N Ç A R</Text>
+        </TouchableOpacity>
+          <TouchableOpacity style={Style.boxRightLoginConfirm}
+          onPress={() => props.navigation.navigate('Login')}>
+          <Text style={Style.loginSocialText}>C A N C E L A R</Text>
+          </TouchableOpacity>
+        </View>
+          <TouchableOpacity style={Style.boxLogin}>
+            <Text style={Style.boxLoginText}>C A D A S T R A R</Text>
+          </TouchableOpacity>
+        <View style={Style.containerBoxLogin}>
+          <TouchableOpacity style={Style.boxLoginFacebook}>
+          <Text style={Style.loginSocialText}>LOGIN COM FACEBOOK</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={Style.boxLoginGoogle}>
+          <Text style={Style.loginSocialText}>LOGIN COM GOOGLE</Text>
+          </TouchableOpacity>
+        </View>
+    </KeyboardAvoidingView>
+    );
 }
