@@ -78,7 +78,7 @@ export default function Contato(props) {
         <TouchableOpacity style={Style.blueBtnEnviar}>
           <Text
             style={{
-              fontSize: 16,
+              fontSize: 18,
               color: "white",
               alignSelf: "center",
               textAlign: "center",
@@ -92,10 +92,11 @@ export default function Contato(props) {
       <View
         style={{ flex: 1, justifyContent: "flex-end", alignItems: "flex-end" }}
       >
-        <TouchableOpacity style={Style.greenBtn}>
+        <TouchableOpacity style={Style.greenBtn}
+        onPress={() => props.navigation.navigate("Home")}>
           <Text
             style={{
-              fontSize: 16,
+              fontSize: 20,
               color: "white",
               alignSelf: "center",
               textAlign: "center",

@@ -51,10 +51,11 @@ export default function maisFavoritos({navigation}, props) {
       <Modal/>
       </View>
       <View style={{ justifyContent: "flex-end", flex: 1,}}>
-        <TouchableOpacity style={Style.greenPag}>
+        <TouchableOpacity style={Style.greenPag}
+        onPress={() => props.navigation.navigate("Home")}>
           <Text
             style={{
-              fontSize: 16,
+              fontSize: 20,
               color: "white",
               alignSelf: "center",
               textAlign: "center",

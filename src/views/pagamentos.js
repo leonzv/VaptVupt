@@ -53,8 +53,8 @@ export default function Pagamentos({ navigation }, props) {
           style={Style.wrapper}
           loop={false}
           activeDotColor="rgb(0,41,143)"
-          dotStyle={{ width: 35, marginHorizontal: 10 }}
-          activeDotStyle={{ width: 55, marginHorizontal: 10 }}
+          dotStyle={{ width: 35, marginHorizontal: 10, top: 60, }}
+          activeDotStyle={{ width: 55, marginHorizontal: 10, top: 60, }}
         >
           <TouchableOpacity
             style={Style.retanguloAzulPag}
@@ -65,6 +65,16 @@ export default function Pagamentos({ navigation }, props) {
               source={require("../assets/img/dinheiro2.png")}
             />
             <Text style={Style.textRetanguloHome}> Dinheiro</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={Style.retanguloAzulPag}
+            onPress={() => navigation.navigate("Procurar")}
+          >
+            <Image
+              style={Style.imgHome}
+              source={require("../assets/img/dinheiro2.png")}
+            />
+            <Text style={Style.textRetanguloHome}> Cartão de crédito ou debito</Text>
           </TouchableOpacity>
         </Swiper>
       </View>
@@ -79,6 +89,7 @@ export default function Pagamentos({ navigation }, props) {
             borderWidth: 0,
             marginLeft: 40,
             bottom: 8,
+            marginTop: 50,
           }}
           onPress={(newValue) => setCheck(newValue)}
         />
@@ -87,10 +98,11 @@ export default function Pagamentos({ navigation }, props) {
         </Text>
       </View>
       <View style={{ flex: 1, justifyContent: "flex-end" }}>
-        <TouchableOpacity style={Style.greenPag}>
+        <TouchableOpacity style={Style.greenPag}
+        onPress={() => navigation.navigate("Home")}>
           <Text
             style={{
-              fontSize: 16,
+              fontSize: 20,
               color: "white",
               alignSelf: "center",
               textAlign: "center",

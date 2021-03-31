@@ -47,7 +47,7 @@ export default function EnderecosList({ navigation }, props) {
         <ScrollView style={{ marginBottom: 30 }}>
           <View style={Style.enderecoBox}>
             <Text style={Style.enderecoText}>
-              Avenida Maracá, 800, Jd Satélite
+              Avenida Maracá, 800, Jd Satéliteeeee
             </Text>
             <TouchableOpacity
               style={Style.enderecoListBtn}
@@ -58,7 +58,7 @@ export default function EnderecosList({ navigation }, props) {
           </View>
           <View style={Style.enderecoBox}>
             <Text style={Style.enderecoText}>
-              Avenida Maracá, 800, Jd Satélite
+              Avenida Maracá, 800, Jd Satéliteeeeeeeeeee
             </Text>
             <TouchableOpacity style={Style.enderecoListBtn}>
               <Text style={Style.enderecoListText}>Ver mais</Text>
@@ -66,7 +66,7 @@ export default function EnderecosList({ navigation }, props) {
           </View>
           <View style={Style.enderecoBox}>
             <Text style={Style.enderecoText}>
-              Avenida Maracá, 800, Jd Satélite
+              Avenida Maracá, 800, Jd Satélitee
             </Text>
             <TouchableOpacity style={Style.enderecoListBtn}>
               <Text style={Style.enderecoListText}>Ver mais</Text>

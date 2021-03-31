@@ -85,14 +85,15 @@ export default function Configuracoes(props) {
         />
       </View>
       <View style={{ flex: 1, justifyContent: "flex-end" }}>
-        <TouchableOpacity style={Style.greenPag}>
+        <TouchableOpacity style={Style.greenPag}
+         onPress={() => props.navigation.navigate("Home")}>
           <Text style={{
-              fontSize: 16,
+              fontSize: 20,
               color: "white",
               alignSelf: "center",
               textAlign: "center",
               fontFamily: "bariol_regular",
-            }}>V O L T A R</Text>
+            }}>Voltar</Text>
         </TouchableOpacity>
       </View>
     </View>

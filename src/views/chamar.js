@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   Alert,
   Modal,
-  Pressable,
 } from "react-native";
 import Style from "../style/style";
 import React, { useState } from "react";
@@ -83,12 +82,12 @@ export default function Chamar({ navigation }, props) {
         </View>
       </View>
       <View style={{flexDirection: "row", alignItems: 'center', }}>
-        <Pressable
+        <TouchableOpacity
           style={[Style.buttonLeft, Style.buttonOpen]}
           onPress={() => setModalVisible(true)}
         >
           <Text style={Style.textStyle}>Gravar Endereço</Text>
-        </Pressable>
+        </TouchableOpacity>
         <View style={Style.centeredView}>
           <Modal //começo modal gravar
             animationType="slide"
@@ -105,21 +104,21 @@ export default function Chamar({ navigation }, props) {
                 <Text style={Style.enderecoStyle}>
                   {endereco}
                 </Text>
-                <Pressable
+                <TouchableOpacity
                   style={[Style.button, Style.buttonCloseChamar]}
                   onPress={() => setModalVisible(!modalVisible)}
                 >
                   <Text style={Style.textStyleClose}>OK</Text>
-                </Pressable>
+                </TouchableOpacity>
               </View>
             </View>
           </Modal>
-          <Pressable
+          <TouchableOpacity
             style={[Style.buttonRight, Style.buttonOpen]}
             onPress={() => setModalVisible1(true)}
           >
             <Text style={Style.textStyle}>Agendar Entrega</Text>
-          </Pressable>
+          </TouchableOpacity>
         </View>
         <Modal //começo modal entrega
           animationType='slide'
@@ -133,18 +132,19 @@ export default function Chamar({ navigation }, props) {
           <View style={Style.centeredView}>
             <View style={Style.modalView}>
               <Text style={Style.modalText}>Agendar Entrega</Text>
-              <Pressable
+              <TouchableOpacity
                 style={[Style.button, Style.buttonCloseChamar]}
                 onPress={() => setModalVisible1(!modalVisible1)}
               >
                 <Text style={Style.textStyleClose}>OK</Text>
-              </Pressable>
+              </TouchableOpacity>
             </View>
           </View>
         </Modal>
       </View>
       <View style={{flex: 1, justifyContent: 'flex-end'}}>
-      <TouchableOpacity style={Style.greenBtn}>
+      <TouchableOpacity style={Style.greenBtn}
+      onPress={() => navigation.navigate("Gps")}>
         <Text style={Style.motoboyText}>Chamar Motoboy</Text>
       </TouchableOpacity>
       </View>

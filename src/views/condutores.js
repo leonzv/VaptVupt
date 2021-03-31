@@ -127,16 +127,17 @@ export default function Condutores({ navigation }, props) {
           </View>
           <TouchableOpacity
             style={Style.btnAdmin}
-            onPress={() => navigation.navigate("Chamar")}
+            onPress={() => navigation.navigate("Dashboard")}
           >
             <Text style={Style.btnAdminFont}> Ir para o admin </Text>
           </TouchableOpacity>
         </View>
       </View>
-      <TouchableOpacity style={Style.greenPag}>
+      <TouchableOpacity style={Style.greenPag}
+       onPress={() => navigation.navigate("Home")}>
         <Text
           style={{
-            fontSize: 16,
+            fontSize: 20,
             color: "white",
             alignSelf: "center",
             textAlign: "center",

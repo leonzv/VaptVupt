@@ -68,10 +68,11 @@ export default function Pagamentos({ navigation }, props) {
         </View>
       </View>
       <View style={{ flex: 1, justifyContent: "flex-end" }}>
-        <TouchableOpacity style={Style.greenPag}>
+        <TouchableOpacity style={Style.greenPag}
+        onPress={() => navigation.navigate("Home")}>
           <Text
             style={{
-              fontSize: 16,
+              fontSize: 20,
               color: "white",
               alignSelf: "center",
               textAlign: "center",

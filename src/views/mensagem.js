@@ -107,7 +107,8 @@ export default function mensagem({ navigation }, props) {
             Enviar
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={Style.greenMessageBtn}>
+        <TouchableOpacity style={Style.greenMessageBtn}
+        onPress={() => props.navigation.navigate("Home")}>
           <Text
             style={{
               fontSize: 20,

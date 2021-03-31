@@ -1,167 +1,188 @@
-import React from "react";
 import "react-native-gesture-handler";
-import {
-  View,
-  Image,
-  TextInput,
-  Text,
-  TouchableOpacity,
-  KeyboardAvoidingView,
-} from "react-native";
-import Style from "../style/style.js";
-import react from "react";
+import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
+import Style from "../style/style";
+import * as React from "react";
+import auth from '@react-native-firebase/auth';
 
 export default function Cadastro(props) {
-  const [nome, setNome] = react.useState("");
-  const [cpf, setCpf] = react.useState("");
-  const [rg, setRg] = react.useState("");
-  const [cidade, setCidade] = react.useState("");
-  const [estado, setEstado] = react.useState("");
-  const [pais, setPais] = react.useState("");
-  const [placa, setPlaca] = react.useState("");
-  const [modelo, setModelo] = react.useState("");
-  const [senha, setSenha] = react.useState("");
-  const [senhaConfirm, setSenhaConfirm] = react.useState("");
+  const [nome, setNome] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [senha, setSenha] = React.useState("");
+  const [cpfcnpj, setCpfcnpj] = React.useState("");
+  const [endereco, setEndereco] = React.useState("");
+  const [numero, setNumero] = React.useState("");
+  const [bairro, setBairro] = React.useState("");
+  const [uf, setUf] = React.useState("");
+  const [cidade, setCidade] = React.useState("");
+  const [pais, setPais] = React.useState("");
+  const [cep, setCep] = React.useState("");
+
+  const createUser  = () => {
+    auth()
+    .createUserWithEmailAndPassword(email, senha)
+    .then(() => {
+      console.log('Usuário criado com sucesso!');
+      alert('Usuario criado com sucesso!, Volte e faça login.')
+      props.navigation.navigate("CadastroConfirm")
+    })
+    .catch(error => {
+      if (error.code === 'auth/email-already-in-use') {
+        console.log('Esse email já está sendo usado');
+      }
+  
+      if (error.code === 'auth/invalid-email') {
+        console.log('Esse email é invalido!');
+      }
+  
+      console.error(error);
+    });
+    
+  }
+    const logoff = () => {
+      auth()
+    .signOut()
+    .then(() => console.log('User signed out!'));
+    }
   return (
-    <KeyboardAvoidingView style={Style.container}>
-      <View
-        style={{
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: "white",
-          height: "19%",
-          flexDirection: "row",
-        }}
-      >
-        <Image style={Style.car} source={require("../assets/img/carro.png")} />
-        <Text style={{ fontSize: 24, fontFamily: "Rubik-Bold", color: "#000" }}>
-          Estacione Aí
+    <View style={Style.containerCadastro}>
+      <View>
+        <Image
+          style={Style.vaiVexImgCadastro}
+          source={require("../assets/img/vai-vex-logo.png")}
+        />
+        <Text
+          style={{
+            marginLeft: 30,
+            fontSize: 20,
+            marginBottom: 15,
+            fontWeight: "bold",
+            fontFamily: "bariol_regular",
+          }}
+        >
+          Preencha o forumário completo:
         </Text>
       </View>
-        <View style={Style.boxLoginConfirm}>
-          <Text style={Style.userText}>N o m e:</Text>
+      <View style={Style.textBox}>
+        <Text style={Style.textBoxFontCadastro}>Nome:</Text>
+        <TextInput
+          style={Style.textBoxFont}
+          onChangeText={(text) => setNome(text)}
+          value={nome}
+          placeholderTextColor="#fff"
+          autoCapitalize="words"
+        />
+      </View>
+      <View style={Style.textBox}>
+        <Text style={Style.textBoxFontCadastro}>Email:</Text>
+        <TextInput
+          style={Style.textBoxFont}
+          onChangeText={(text) => setEmail(text)}
+          value={email}
+          placeholderTextColor="#fff"
+          autoCapitalize="words"
+        />
+      </View>
+      <View style={Style.textBox}>
+        <Text style={Style.textBoxFontCadastro}>Senha:</Text>
+        <TextInput
+          style={Style.textBoxFont}
+          onChangeText={(text) => setSenha(text)}
+          value={senha}
+          placeholderTextColor="#fff"
+          autoCapitalize="words"
+          secureTextEntry={true}
+        />
+      </View>
+      <View style={Style.textBox}>
+        <Text style={Style.textBoxFontCadastro}>CPF/CNPJ:</Text>
+        <TextInput
+          style={Style.textBoxFont}
+          onChangeText={(text) => setCpfcnpj(text)}
+          value={cpfcnpj}
+          placeholderTextColor="#fff"
+          autoCapitalize="words"
+        />
+      </View>
+      <View style={Style.textBox}>
+        <Text style={Style.textBoxFontCadastro}>Endereço:</Text>
+        <TextInput
+          style={Style.textBoxFont}
+          onChangeText={(text) => setEndereco(text)}
+          value={endereco}
+          placeholderTextColor="#fff"
+          autoCapitalize="words"
+        />
+      </View>
+      <View style={Style.box3070}>
+        <View style={Style.textBox30}>
+          <Text style={Style.textBoxFontCadastro}>Nº:</Text>
           <TextInput
-            style={{ width: "80%", height: "100%", color: "#fff" }}
-            onChangeText={(text) => setNome(text)}
-            value={nome}
+            style={Style.textBoxFont}
+            onChangeText={(text) => setNumero(text)}
+            value={numero}
             placeholderTextColor="#fff"
+            autoCapitalize="words"
           />
         </View>
-        <View style={Style.boxLoginConfirm}>
-          <Text style={Style.userText}>C P F:</Text>
+        <View style={Style.textBox70}>
+          <Text style={Style.textBoxFontCadastro}>Bairro:</Text>
           <TextInput
-            style={{ width: "83%", height: "100%", color: "#fff" }}
-            onChangeText={(text) => setCpf(text)}
-            value={cpf}
+            style={Style.textBoxFont}
+            onChangeText={(text) => setBairro(text)}
+            value={bairro}
             placeholderTextColor="#fff"
+            autoCapitalize="words"
           />
         </View>
-        <View style={Style.boxLoginConfirm}>
-          <Text style={Style.userText}>R G:</Text>
+      </View>
+      <View style={Style.box3070}>
+        <View style={Style.textBox30}>
+          <Text style={Style.textBoxFontCadastro}>UF:</Text>
           <TextInput
-            style={{ width: "83%", height: "100%", color: "#fff" }}
-            onChangeText={(text) => setRg(text)}
-            value={rg}
+            style={Style.textBoxFont}
+            onChangeText={(text) => setUf(text)}
+            value={uf}
             placeholderTextColor="#fff"
+            autoCapitalize="words"
           />
         </View>
-        <View style={Style.boxLoginConfirm}>
-          <Text style={Style.userText}>C i d a d e:</Text>
+        <View style={Style.textBox70}>
+          <Text style={Style.textBoxFontCadastro}>Cidade:</Text>
           <TextInput
-            style={{ width: "83%", height: "100%", color: "#fff" }}
+            style={Style.textBoxFont}
             onChangeText={(text) => setCidade(text)}
             value={cidade}
             placeholderTextColor="#fff"
+            autoCapitalize="words"
           />
         </View>
-        <View style={Style.boxLoginConfirm}>
-          <Text style={Style.userText}>E s t a d o:</Text>
-          <TextInput
-            style={{ width: "83%", height: "100%", color: "#fff" }}
-            onChangeText={(text) => setEstado(text)}
-            value={estado}
-            placeholderTextColor="#fff"
-          />
-        </View>
-        <View style={Style.boxLoginConfirm}>
-          <Text style={Style.userText}>P a í s:</Text>
-          <TextInput
-            style={{ width: "83%", height: "100%", color: "#fff" }}
-            onChangeText={(text) => setPais(text)}
-            value={pais}
-            placeholderTextColor="#fff"
-          />
-        </View>
-        <View style={Style.boxLoginConfirm}>
-          <Text style={Style.userText}>P l a c a:</Text>
-          <TextInput
-            style={{ width: "83%", height: "100%", color: "#fff" }}
-            onChangeText={(text) => setPlaca(text)}
-            value={placa}
-            placeholderTextColor="#fff"
-          />
-        </View>
-        <View style={Style.boxLoginConfirm}>
-          <Text style={Style.userText}>M o d e l o:</Text>
-          <TextInput
-            style={{ width: "83%", height: "100%", color: "#fff" }}
-            onChangeText={(text) => setModelo(text)}
-            value={modelo}
-            placeholderTextColor="#fff"
-          />
-        </View>
-        <View style={Style.boxLoginConfirm}>
-          <Text style={Style.userText}>S e n h a:</Text>
-          <TextInput
-            style={{ width: "83%", height: "100%", color: "#fff" }}
-            onChangeText={(text) => setSenha(text)}
-            value={senha}
-            placeholderTextColor="#fff"
-            secureTextEntry={true}
-          />
-        </View>
-        <View style={Style.boxLoginConfirm}>
-          <Text
-            style={{
-              color: "#fff",
-              fontSize: 12,
-              textAlign: "left",
-              marginLeft: 15,
-            }}
-          >
-            C o n f i r m a r  S e n h a:
-          </Text>
-          <TextInput
-            style={{ width: "83%", height: "100%", color: "#fff" }}
-            onChangeText={(text) => setSenhaConfirm(text)}
-            value={senhaConfirm}
-            placeholderTextColor="#fff"
-            secureTextEntry={true}
-          />
-        </View>
-        <View style={Style.containerBoxLogin}>
-          <TouchableOpacity
-            style={Style.boxLeftLoginConfirm}
-            onPress={() => props.navigation.navigate("CadastroConfirm")}
-          >
-            <Text style={Style.loginEntrarText}>A V A N Ç A R</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={Style.boxRightLoginConfirm}
-            onPress={() => props.navigation.navigate("Login")}
-          >
-            <Text style={Style.loginSocialText}>C A N C E L A R</Text>
-          </TouchableOpacity>
-        </View>
-
-        <View style={Style.containerBoxLogin}>
-          <TouchableOpacity style={Style.boxLoginFacebook}>
-            <Text style={Style.loginSocialText}>LOGIN COM FACEBOOK</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={Style.boxLoginGoogle}>
-            <Text style={Style.loginSocialText}>LOGIN COM GOOGLE</Text>
-          </TouchableOpacity>
-        </View>
-    </KeyboardAvoidingView>
+      </View>
+      <View style={Style.textBox}>
+        <Text style={Style.textBoxFontCadastro}>País:</Text>
+        <TextInput
+          style={Style.textBoxFont}
+          onChangeText={(text) => setPais(text)}
+          value={pais}
+          placeholderTextColor="#fff"
+          autoCapitalize="words"
+        />
+      </View>
+      <View style={Style.textBox}>
+        <Text style={Style.textBoxFontCadastro}>CEP:</Text>
+        <TextInput
+          style={Style.textBoxFont}
+          onChangeText={(text) => setCep(text)}
+          value={cep}
+          placeholderTextColor="#fff"
+          autoCapitalize="words"
+        />
+      </View>
+      <TouchableOpacity
+        style={Style.btnComecar}
+        onPress={() => createUser()}
+      >
+        <Text style={Style.btnComecarFont}> Começar </Text>
+      </TouchableOpacity>
+    </View>
   );
 }
