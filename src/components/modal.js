@@ -1,8 +1,11 @@
-import React, { useState } from "react";
-import { Text, View, Modal, TouchableOpacity, Alert } from "react-native";
+import React,  {useState} from "react";
+import { Text, View, Modal, TouchableOpacity, } from "react-native";
 import Style from "../style/style";
 
+
+
 export default function modal({ navigation }) {
+
   function switchModal() {
     if (modalVisible == true) {
       setModalVisible(!modalVisible);
@@ -19,7 +22,6 @@ export default function modal({ navigation }) {
           animationType="slide"
           visible={modalVisible1}
           onRequestClose={() => {
-            Alert.alert("Modal has been closed.");
             setModalVisible1(!modalVisible1);
           }}
         >
@@ -78,7 +80,6 @@ export default function modal({ navigation }) {
         animationType="slide"
         visible={modalVisible}
         onRequestClose={() => {
-          Alert.alert("Modal has been closed.");
           setModalVisible(!modalVisible);
         }}
       >

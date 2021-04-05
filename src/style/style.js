@@ -7,10 +7,9 @@ export default StyleSheet.create({
     fontFamily: "bariol_regular",
   },
   mapContainer: {
-    position: "absolute",
     flex: 1,
-    minWidth: "100%",
     minHeight: "100%",
+    minWidth: "100%",
   },
   containerCadastro: {
     backgroundColor: "#fff",
@@ -21,6 +20,7 @@ export default StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#fff",
     flex: 1,
+    alignItems: "center",
   },
   textCircle: {
     textAlign: "center",
@@ -431,7 +431,7 @@ export default StyleSheet.create({
     fontFamily: "bariol_regular",
   },
   procurarBox: {
-    width: "90%",
+    width: "95%",
     height: 80,
     backgroundColor: "#00298F",
     marginHorizontal: 15,
@@ -441,12 +441,13 @@ export default StyleSheet.create({
     marginBottom: 20,
   },
   procurarContainer: {
-    width: "100%",
-    height: "225%",
     justifyContent: "flex-end",
+    position: "absolute",
+    alignSelf: "center",
+    bottom: 30,
   },
   procurarBox2: {
-    width: "90%",
+    width: "95%",
     height: 100,
     backgroundColor: "#00298F",
     marginHorizontal: 15,
@@ -1069,76 +1070,118 @@ export default StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
   },
-  LocationBox:{
-    backgroundColor: '#fff',
+  LocationBox: {
+    backgroundColor: "#fff",
     elevation: 1,
     borderWidth: 1,
     borderRadius: 3,
-    flexDirection: 'row',
+    flexDirection: "row",
   },
-  LocationText:{
+  LocationText: {
     margin: 10,
     fontSize: 18,
-    color: '#333',
+    color: "#333",
   },
-  LocationTimeBox:{
-    backgroundColor: '#222',
+  LocationTimeBox: {
+    backgroundColor: "#222",
     padding: 5,
   },
-  LocationTimeText:{
-    color: '#fff',
+  LocationTimeText: {
+    color: "#fff",
     fontSize: 12,
-    textAlign: 'center',
+    textAlign: "center",
   },
-  LocationTimeTextSmall:{
-    color: '#fff',
+  LocationTimeTextSmall: {
+    color: "#fff",
     fontSize: 12,
-    textAlign: 'center',
+    textAlign: "center",
   },
-  Back:{
-    position: 'absolute',
+  Back: {
+    position: "absolute",
     top: 40,
     left: 20,
   },
-  TypeContainer:{
-  backgroundColor: '#fff',
-  height: 300,
-  width: '100%',
-  position: 'absolute',
-  bottom: 0,
-  elevation: 3,
-  borderWidth:1,
-  borderColor: '#fff',
-  alignItems: 'center',
-  padding: 20,
-},
+  TypeContainer: {
+    backgroundColor: "#fff",
+    height: 300,
+    width: "100%",
+    position: "absolute",
+    bottom: 0,
+    elevation: 3,
+    borderWidth: 1,
+    borderColor: "#fff",
+    alignItems: "center",
+    padding: 20,
+  },
 
-TypeTitle:{
-  fontSize: 20,
-  color: '#222',
-},
+  TypeTitle: {
+    fontSize: 20,
+    color: "#222",
+  },
 
-TypeDescription:{
-  color: '#666',
-  fontSize: 14,
-},
-TypeImage:{
-  height: 80,
-  margin: 10,
-},
+  TypeDescription: {
+    color: "#666",
+    fontSize: 14,
+  },
+  TypeImage: {
+    height: 80,
+    margin: 10,
+  },
 
-RequestButton:{
-  backgroundColor: '#222',
-  justifyContent: 'center',
-  alignItems: 'center',
-  height: 44,
-  alignSelf: 'stretch',
-  marginTop: 10,
-},
+  RequestButton: {
+    backgroundColor: "#222",
+    justifyContent: "center",
+    alignItems: "center",
+    height: 44,
+    alignSelf: "stretch",
+    marginTop: 10,
+  },
 
-RequestButtonText:{
-  color: '#fff',
-  fontWeight: 'bold',
-  fontSize: 18,
-},
+  RequestButtonText: {
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 18,
+  },
+  modalViewLoad: {
+    backgroundColor: "transparent",
+    borderRadius: 5,
+    elevation: 10,
+  },
+  centeredViewLoad: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(255,255,255,0.65)",
+  },
+  redCircleLoad: {
+    backgroundColor: "#ED1C24",
+    borderRadius: 300,
+    width: 240,
+    height: 240,
+    justifyContent: "center",
+    alignSelf: "center",
+    position: "absolute",
+    right: 50,
+    bottom: 20,
+    alignItems: "center",
+    alignContent: "center",
+  },
+  blueCircleLoad: {
+    backgroundColor: "#00298F",
+    borderRadius: 300,
+    width: 240,
+    height: 240,
+    alignSelf: "center",
+    position: "absolute",
+    justifyContent: "center",
+    marginTop: 70,
+    alignItems: "center",
+    alignContent: "center",
+  },
+  modalLoadText: {
+    fontSize: 30,
+    fontFamily: "bariol-regular",
+    color: "white",
+    textAlign: "center",
+  },
 });
