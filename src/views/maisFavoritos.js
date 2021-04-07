@@ -3,7 +3,8 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import Style from "../style/style";
 import Modal from "../components/modal";
 
-export default function maisFavoritos({navigation}, props) {
+export default function maisFavoritos(props) {
+  const {goBack} = props.navigation;
   return (
     <View style={Style.container}>
       <View style={{ flexDirection: "row",}}>
@@ -52,7 +53,7 @@ export default function maisFavoritos({navigation}, props) {
       </View>
       <View style={{ justifyContent: "flex-end", flex: 1,}}>
         <TouchableOpacity style={Style.greenPag}
-        onPress={() => props.navigation.navigate("Home")}>
+        onPress={() => goBack('B')}>
           <Text
             style={{
               fontSize: 20,

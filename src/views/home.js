@@ -4,7 +4,7 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import Style from "../style/style";
 import Swiper from "react-native-swiper";
 
-export default function Home({ navigation }, props) {
+export default function Home(props) {
   return (
     <View style={Style.container}>
       <View style={{ flexDirection: "row",}}>
@@ -12,7 +12,7 @@ export default function Home({ navigation }, props) {
           <TouchableOpacity
             style={Style.circle2}
             title="Toggle drawer"
-            onPress={() => navigation.toggleDrawer()}
+            onPress={() => props.navigation.toggleDrawer()}
           />
         </TouchableOpacity>
         <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>    
@@ -52,7 +52,7 @@ export default function Home({ navigation }, props) {
       >
         <TouchableOpacity
           style={Style.retanguloAzulHome}
-          onPress={() => navigation.navigate("Chamar")}
+          onPress={() => props.navigation.navigate("Chamar")}
         >
           <Image
             style={Style.imgHome}
@@ -62,7 +62,7 @@ export default function Home({ navigation }, props) {
         </TouchableOpacity>
         <TouchableOpacity
           style={Style.retanguloAzulHome}
-          onPress={() => navigation.navigate("Chamar")}
+          onPress={() => props.navigation.navigate("Chamar")}
         >
           <Image
             style={Style.imgHome}
@@ -72,7 +72,7 @@ export default function Home({ navigation }, props) {
         </TouchableOpacity>
         <TouchableOpacity
           style={Style.retanguloAzulHome}
-          onPress={() => navigation.navigate("Chamar")}
+          onPress={() => props.navigation.navigate("Chamar")}
         >
           <Image
             style={Style.imgHome}
@@ -82,7 +82,7 @@ export default function Home({ navigation }, props) {
         </TouchableOpacity>
         <TouchableOpacity
           style={Style.retanguloAzulHome}
-          onPress={() => navigation.navigate("Chamar")}
+          onPress={() => props.navigation.navigate("Chamar")}
         >
           <Image
             style={Style.imgHome}
@@ -118,7 +118,7 @@ export default function Home({ navigation }, props) {
           </View>
           <TouchableOpacity
             style={Style.btnAdmin}
-            onPress={() => navigation.navigate("Dashboard")}
+            onPress={() => props.navigation.navigate("Dashboard")}
           >
             <Text style={Style.btnAdminFont}> Ir para o admin </Text>
           </TouchableOpacity>

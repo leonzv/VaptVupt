@@ -263,7 +263,7 @@ export default class Map extends Component {
           customMapStyle={mapStyle}
           ref={(el) => (this.mapView = el)}
         ></MapView>
-
+        <View style={Style.mapDrawerOverlay} />
         <View style={{ flexDirection: "row", position: "absolute" }}>
           <TouchableOpacity
             style={Style.circle}

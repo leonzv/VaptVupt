@@ -4,6 +4,7 @@ import Style from "../style/style";
 import React from "react";
 
 export default function Sobre(props) {
+  const {goBack} = props.navigation;
   return (
     <View style={Style.container}>
       <View style={{ flexDirection: "row",}}>
@@ -11,7 +12,7 @@ export default function Sobre(props) {
           <TouchableOpacity
             style={Style.circle2}
             title="Toggle drawer"
-            onPress={() => navigation.toggleDrawer()}
+            onPress={() => props.navigation.toggleDrawer()}
           />
         </TouchableOpacity>
         <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>    
@@ -49,7 +50,7 @@ export default function Sobre(props) {
         style={{ flex: 1, justifyContent: "flex-end", alignItems: "flex-end" }}
       >
         <TouchableOpacity style={Style.greenBtn}
-        onPress={() => props.navigation.navigate("Home")}>
+        onPress={() => goBack('B')}>
           <Text
             style={{
               fontSize: 16,

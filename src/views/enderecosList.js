@@ -3,7 +3,8 @@ import "react-native-gesture-handler";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import Style from "../style/style";
 
-export default function EnderecosList({ navigation }, props) {
+export default function EnderecosList(props) {
+  const {goBack} = props.navigation;
   return (
     <View style={Style.container}>
       <View style={{ flexDirection: "row",}}>
@@ -11,7 +12,7 @@ export default function EnderecosList({ navigation }, props) {
           <TouchableOpacity
             style={Style.circle2}
             title="Toggle drawer"
-            onPress={() => navigation.toggleDrawer()}
+            onPress={() => props.navigation.toggleDrawer()}
           />
         </TouchableOpacity>
         <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>    
@@ -51,7 +52,7 @@ export default function EnderecosList({ navigation }, props) {
             </Text>
             <TouchableOpacity
               style={Style.enderecoListBtn}
-              onPress={() => navigation.navigate("MaisFavoritos")}
+              onPress={() => props.navigation.navigate("MaisFavoritos")}
             >
               <Text style={Style.enderecoListText}>Ver mais</Text>
             </TouchableOpacity>
@@ -155,10 +156,11 @@ export default function EnderecosList({ navigation }, props) {
         </ScrollView>
       </View>
       <View style={{ justifyContent: "flex-end", flex: 1, maxHeight: 80 }}>
-        <TouchableOpacity style={Style.greenPag}>
+        <TouchableOpacity style={Style.greenPag}
+        onPress={() => goBack('B')}>
           <Text
             style={{
-              fontSize: 16,
+              fontSize: 18,
               color: "white",
               alignSelf: "center",
               textAlign: "center",

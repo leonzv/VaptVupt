@@ -4,7 +4,8 @@ import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import Style from "../style/style";
 import Swiper from "react-native-swiper";
 
-export default function Dashboard({ navigation }, props) {
+export default function Dashboard(props) {
+  const {goBack} = props.navigation;
   return (
     <View style={Style.container}>
     <ScrollView>
@@ -13,7 +14,7 @@ export default function Dashboard({ navigation }, props) {
         <TouchableOpacity
           style={Style.circle2}
           title="Toggle drawer"
-          onPress={() => navigation.toggleDrawer()}
+          onPress={() => props.navigation.toggleDrawer()}
         />
       </TouchableOpacity>
       <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>    
@@ -54,7 +55,7 @@ export default function Dashboard({ navigation }, props) {
           >
             <TouchableOpacity
               style={Style.retanguloAzulHome}
-              onPress={() => navigation.navigate("Condutores")}
+              onPress={() => props.navigation.navigate("Condutores")}
             >
               <Image
                 style={Style.imgHome}
@@ -64,7 +65,7 @@ export default function Dashboard({ navigation }, props) {
             </TouchableOpacity>
             <TouchableOpacity
               style={Style.retanguloAzulHome}
-              onPress={() => navigation.navigate("Chamar")}
+              onPress={() => props.navigation.navigate("Chamar")}
             >
               <Image
                 style={Style.imgHome}
@@ -74,7 +75,7 @@ export default function Dashboard({ navigation }, props) {
             </TouchableOpacity>
             <TouchableOpacity
               style={Style.retanguloAzulHome}
-              onPress={() => navigation.navigate("Mensagem")}
+              onPress={() => props.navigation.navigate("Mensagem")}
             >
               <Image
                 style={Style.imgHome}
@@ -84,7 +85,7 @@ export default function Dashboard({ navigation }, props) {
             </TouchableOpacity>
             <TouchableOpacity
               style={Style.retanguloAzulHome}
-              onPress={() => navigation.navigate("Conclusao")}
+              onPress={() => props.navigation.navigate("Conclusao")}
             >
               <Image
                 style={Style.imgHome}
@@ -144,7 +145,7 @@ export default function Dashboard({ navigation }, props) {
             <Text style={Style.textDashboard}>São Paulo - SP</Text>
             <TouchableOpacity
               style={Style.editarDadosBtn}
-              onPress={() => navigation.navigate("EditarDados")}
+              onPress={() => props.navigation.navigate("EditarDados")}
             >
               <Text
                 style={{ color: "white", textAlign: "center", fontSize: 14 }}
@@ -154,7 +155,7 @@ export default function Dashboard({ navigation }, props) {
             </TouchableOpacity>
           </View>
           <TouchableOpacity style={Style.enderecosBtn}
-          onPress={() => navigation.navigate("EnderecosList")}>
+          onPress={() => props.navigation.navigate("EnderecosList")}>
             <Text style={{ color: "white", textAlign: "center", fontSize: 14 }}>
               Ver lista de endereços
             </Text>

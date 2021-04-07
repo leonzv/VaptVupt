@@ -99,17 +99,19 @@ export default function Chamar({ navigation }, props) {
             }}
           >
             <View style={Style.centeredView}>
-              <View style={Style.modalView}>
+              <View style={Style.modalViewChamar}>
                 <Text style={Style.modalText}>Gravar o seguinte endereço:</Text>
                 <Text style={Style.enderecoStyle}>
                   {endereco}
                 </Text>
+                <View style={{justifyContent: 'flex-end', flex: 1,}}>
                 <TouchableOpacity
                   style={[Style.button, Style.buttonCloseChamar]}
                   onPress={() => setModalVisible(!modalVisible)}
                 >
                   <Text style={Style.textStyleClose}>OK</Text>
                 </TouchableOpacity>
+                </View>
               </View>
             </View>
           </Modal>
@@ -130,14 +132,16 @@ export default function Chamar({ navigation }, props) {
           }}
         >
           <View style={Style.centeredView}>
-            <View style={Style.modalView}>
+            <View style={Style.modalViewChamar}>
               <Text style={Style.modalText}>Agendar Entrega</Text>
-              <TouchableOpacity
-                style={[Style.button, Style.buttonCloseChamar]}
-                onPress={() => setModalVisible1(!modalVisible1)}
-              >
-                <Text style={Style.textStyleClose}>OK</Text>
-              </TouchableOpacity>
+              <View style={{justifyContent: 'flex-end', flex: 1,}}>
+                <TouchableOpacity
+                  style={[Style.button, Style.buttonCloseChamar]}
+                  onPress={() => setModalVisible1(!modalVisible1)}
+                >
+                  <Text style={Style.textStyleClose}>OK</Text>
+                </TouchableOpacity>
+                </View>
             </View>
           </View>
         </Modal>

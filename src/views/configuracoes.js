@@ -9,6 +9,7 @@ export default function Configuracoes(props) {
   const [isEnabled1, setIsEnabled1] = useState(false);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
   const toggleSwitch1 = () => setIsEnabled1((previousState) => !previousState);
+  const {goBack} = props.navigation;
   return (
     <View style={Style.container}>
     <View style={{ flexDirection: "row",}}>
@@ -86,7 +87,7 @@ export default function Configuracoes(props) {
       </View>
       <View style={{ flex: 1, justifyContent: "flex-end" }}>
         <TouchableOpacity style={Style.greenPag}
-         onPress={() => props.navigation.navigate("Home")}>
+        onPress={() => goBack('B')}>
           <Text style={{
               fontSize: 20,
               color: "white",

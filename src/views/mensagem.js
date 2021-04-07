@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   View,
   Text,
@@ -10,9 +10,9 @@ import {
 } from "react-native";
 import Style from "../style/style";
 
-export default function mensagem({ navigation }, props) {
-  const [message, setMessage] = React.useState("");
-
+export default function mensagem(props) {
+  const [message, setMessage] = useState("");
+  const {goBack} = props.navigation;
   return (
     <KeyboardAvoidingView style={Style.container} behavior='height'>
       <View style={{ flexDirection: "row",}}>
@@ -20,7 +20,7 @@ export default function mensagem({ navigation }, props) {
           <TouchableOpacity
             style={Style.circle2}
             title="Toggle drawer"
-            onPress={() => navigation.toggleDrawer()}
+            onPress={() => props.navigation.toggleDrawer()}
           />
         </TouchableOpacity>
         <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>    
@@ -108,7 +108,7 @@ export default function mensagem({ navigation }, props) {
           </Text>
         </TouchableOpacity>
         <TouchableOpacity style={Style.greenMessageBtn}
-        onPress={() => props.navigation.navigate("Home")}>
+        onPress={() => goBack('B')}>
           <Text
             style={{
               fontSize: 20,

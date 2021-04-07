@@ -7,6 +7,7 @@ export default function Contato(props) {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [desc, setDesc] = useState("");
+  const {goBack} = props.navigation;
   return (
     <View style={Style.container}>
     <View style={{ flexDirection: "row",}}>
@@ -14,7 +15,7 @@ export default function Contato(props) {
         <TouchableOpacity
           style={Style.circle2}
           title="Toggle drawer"
-          onPress={() => navigation.toggleDrawer()}
+          onPress={() => props.navigation.toggleDrawer()}
         />
       </TouchableOpacity>
       <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>    
@@ -93,7 +94,7 @@ export default function Contato(props) {
         style={{ flex: 1, justifyContent: "flex-end", alignItems: "flex-end" }}
       >
         <TouchableOpacity style={Style.greenBtn}
-        onPress={() => props.navigation.navigate("Home")}>
+        onPress={() => goBack('B')}>
           <Text
             style={{
               fontSize: 20,

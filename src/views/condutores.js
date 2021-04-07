@@ -4,7 +4,8 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import Style from "../style/style"
 import Swiper from "react-native-swiper";
 
-export default function Condutores({ navigation }, props) {
+export default function Condutores(props) {
+  const {goBack} = props.navigation;
   return (
     <View style={Style.container}>
     <View style={{ flexDirection: "row",}}>
@@ -12,7 +13,7 @@ export default function Condutores({ navigation }, props) {
         <TouchableOpacity
           style={Style.circle2}
           title="Toggle drawer"
-          onPress={() => navigation.toggleDrawer()}
+          onPress={() => props.navigation.toggleDrawer()}
         />
       </TouchableOpacity>
       <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>    
@@ -49,13 +50,13 @@ export default function Condutores({ navigation }, props) {
         activeDotColor="rgb(0,41,143)"
         dotStyle={{ width: 35, marginHorizontal: 10 }}
         activeDotStyle={{ width: 55, marginHorizontal: 10 }}>
-        <View style={{flexDirection: 'column'}}>
-            <View style={{ alignSelf: "flex-start",flexDirection: "row" }}>
+        <View style={{flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+            <View style={{flexDirection: "row" , alignItems: 'center', justifyContent: 'center'}}>
               <View style={Style.bigCircleCond}>
                 <View
                   style={Style.bigCircleCond2}
                   title="Toggle drawer"
-                  onPress={() => navigation.toggleDrawer()}
+                  onPress={() => props.navigation.toggleDrawer()}
                 />
               </View>
               <View
@@ -65,7 +66,7 @@ export default function Condutores({ navigation }, props) {
                   alignContent: "center",
                   top: 10,
                   alignSelf: "center",
-                  marginHorizontal: 60,
+                  marginHorizontal: 80,
                 }}
               >
                 <Image
@@ -127,14 +128,14 @@ export default function Condutores({ navigation }, props) {
           </View>
           <TouchableOpacity
             style={Style.btnAdmin}
-            onPress={() => navigation.navigate("Dashboard")}
+            onPress={() => props.navigation.navigate("Dashboard")}
           >
             <Text style={Style.btnAdminFont}> Ir para o admin </Text>
           </TouchableOpacity>
         </View>
       </View>
       <TouchableOpacity style={Style.greenPag}
-       onPress={() => navigation.navigate("Home")}>
+       onPress={() => goBack('B')}>
         <Text
           style={{
             fontSize: 20,

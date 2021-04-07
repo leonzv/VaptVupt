@@ -600,6 +600,13 @@ export default StyleSheet.create({
     height: "65%",
     elevation: 10,
   },
+  modalViewChamar: {
+    backgroundColor: "#00298F",
+    borderRadius: 5,
+    width: "85%",
+    height: "45%",
+    elevation: 10,
+  },
   centeredView1: {
     flex: 1,
     justifyContent: "center",
@@ -654,7 +661,7 @@ export default StyleSheet.create({
     alignSelf: "center",
     width: 45,
     height: 30,
-    margin: 10,
+    margin: 30,
   },
   textStyle: {
     color: "white",
@@ -673,6 +680,7 @@ export default StyleSheet.create({
     textAlign: "center",
     color: "white",
     fontFamily: "bariol_regular",
+    fontSize: 18,
   },
   enderecoStyle: {
     textAlign: "center",
@@ -784,7 +792,7 @@ export default StyleSheet.create({
     borderColor: "#00298F",
     marginTop: 30,
     justifyContent: "center",
-    marginLeft: 30,
+    marginLeft: '10%',
   },
   bigCircleCond2: {
     borderRadius: 100,
@@ -1206,5 +1214,13 @@ export default StyleSheet.create({
     textAlign: 'center',  
     bottom: 20,
     marginLeft: 20,
+  },
+  mapDrawerOverlay: {
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    opacity: 0.0,
+    height: '100%',
+    width: 20,
   },
 });

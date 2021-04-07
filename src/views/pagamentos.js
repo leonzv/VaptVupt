@@ -5,11 +5,12 @@ import Style from "../style/style";
 import Swiper from "react-native-swiper";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 
-export default function Pagamentos({ navigation }, props) {
+export default function Pagamentos(props) {
   const [check, setCheck] = useState(false);
   if (check == true) {
     alert("Voce concordou!");
   }
+  const {goBack} = props.navigation;
   return (
     <View style={Style.container}>
     <View style={{ flexDirection: "row",}}>
@@ -17,7 +18,7 @@ export default function Pagamentos({ navigation }, props) {
         <TouchableOpacity
           style={Style.circle2}
           title="Toggle drawer"
-          onPress={() => navigation.toggleDrawer()}
+          onPress={() => props.navigation.toggleDrawer()}
         />
       </TouchableOpacity>
       <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>    
@@ -58,7 +59,7 @@ export default function Pagamentos({ navigation }, props) {
         >
           <TouchableOpacity
             style={Style.retanguloAzulPag}
-            onPress={() => navigation.navigate("Procurar")}
+            onPress={() => props.navigation.navigate("Procurar")}
           >
             <Image
               style={Style.imgHome}
@@ -68,7 +69,7 @@ export default function Pagamentos({ navigation }, props) {
           </TouchableOpacity>
           <TouchableOpacity
             style={Style.retanguloAzulPag}
-            onPress={() => navigation.navigate("Procurar")}
+            onPress={() => props.navigation.navigate("Procurar")}
           >
             <Image
               style={Style.imgHome}
@@ -99,7 +100,7 @@ export default function Pagamentos({ navigation }, props) {
       </View>
       <View style={{ flex: 1, justifyContent: "flex-end" }}>
         <TouchableOpacity style={Style.greenPag}
-        onPress={() => navigation.navigate("Home")}>
+        onPress={() => goBack('B')}>
           <Text
             style={{
               fontSize: 20,

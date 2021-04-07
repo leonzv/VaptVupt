@@ -3,7 +3,8 @@ import "react-native-gesture-handler";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import Style from "../style/style";
 
-export default function Pagamentos({ navigation }, props) {
+export default function Pagamentos(props) {
+  const {goBack} = props.navigation;
   return (
     <View style={Style.container}>
       <View style={{ flexDirection: "row",}}>
@@ -11,7 +12,7 @@ export default function Pagamentos({ navigation }, props) {
           <TouchableOpacity
             style={Style.circle2}
             title="Toggle drawer"
-            onPress={() => navigation.toggleDrawer()}
+            onPress={() => props.navigation.toggleDrawer()}
           />
         </TouchableOpacity>
         <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>    
@@ -47,7 +48,7 @@ export default function Pagamentos({ navigation }, props) {
           <View
             style={Style.bigCircle2}
             title="Toggle drawer"
-            onPress={() => navigation.toggleDrawer()}
+            onPress={() => props.navigation.toggleDrawer()}
           />
         </View>
       </View>
@@ -69,7 +70,7 @@ export default function Pagamentos({ navigation }, props) {
       </View>
       <View style={{ flex: 1, justifyContent: "flex-end" }}>
         <TouchableOpacity style={Style.greenPag}
-        onPress={() => navigation.navigate("Home")}>
+        onPress={() => goBack('B')}>
           <Text
             style={{
               fontSize: 20,
