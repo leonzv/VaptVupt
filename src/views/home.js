@@ -47,8 +47,8 @@ export default function Home({ navigation }, props) {
         style={Style.wrapper}
         loop={false}
         activeDotColor="rgb(0,41,143)"
-        dotStyle={{ width: 35, marginHorizontal: 10, bottom: 100,}}
-        activeDotStyle={{ width: 55, marginHorizontal: 10, bottom: 100, }}
+        dotStyle={{ width: 35, marginHorizontal: 10, bottom: 80,}}
+        activeDotStyle={{ width: 55, marginHorizontal: 10, bottom: 80, }}
       >
         <TouchableOpacity
           style={Style.retanguloAzulHome}

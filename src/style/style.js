@@ -613,6 +613,13 @@ export default StyleSheet.create({
     height: "55%",
     elevation: 10,
   },
+  modalViewEnc: {
+    backgroundColor: "#00298F",
+    borderRadius: 5,
+    width: "85%",
+    height: "50%",
+    elevation: 10,
+  },
   buttonLeft: {
     width: 135,
     height: 50,
@@ -1180,8 +1187,24 @@ export default StyleSheet.create({
   },
   modalLoadText: {
     fontSize: 30,
-    fontFamily: "bariol-regular",
+    fontFamily: "bariol_regular",
     color: "white",
     textAlign: "center",
+  },
+  encontradoLeftText:{
+    fontFamily: 'bariol_regular',
+    fontSize: 16,
+    color: 'white',
+    textAlign: 'center',
+    bottom: 20,
+    marginRight: 30,
+  },
+  encontradoRightText:{
+    fontFamily: 'bariol_regular',
+    fontSize: 16,
+    color: 'white',
+    textAlign: 'center',  
+    bottom: 20,
+    marginLeft: 20,
   },
 });
