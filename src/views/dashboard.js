@@ -54,7 +54,7 @@ export default function Dashboard({ navigation }, props) {
           >
             <TouchableOpacity
               style={Style.retanguloAzulHome}
-              onPress={() => navigation.navigate("Chamar")}
+              onPress={() => navigation.navigate("Condutores")}
             >
               <Image
                 style={Style.imgHome}
@@ -70,27 +70,27 @@ export default function Dashboard({ navigation }, props) {
                 style={Style.imgHome}
                 source={require("../assets/img/moto-branca.png")}
               />
-              <Text style={Style.textRetanguloHome}> Moto </Text>
+              <Text style={Style.textRetanguloHome}> Chamar </Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={Style.retanguloAzulHome}
-              onPress={() => navigation.navigate("Chamar")}
+              onPress={() => navigation.navigate("Mensagem")}
             >
               <Image
                 style={Style.imgHome}
                 source={require("../assets/img/moto-branca.png")}
               />
-              <Text style={Style.textRetanguloHome}> VUC </Text>
+              <Text style={Style.textRetanguloHome}> Mensagem </Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={Style.retanguloAzulHome}
-              onPress={() => navigation.navigate("Chamar")}
+              onPress={() => navigation.navigate("Conclusao")}
             >
               <Image
                 style={Style.imgHome}
                 source={require("../assets/img/moto-branca.png")}
               />
-              <Text style={Style.textRetanguloHome}> Caminhão </Text>
+              <Text style={Style.textRetanguloHome}> Conclusão </Text>
             </TouchableOpacity>
           </Swiper>
         </View>

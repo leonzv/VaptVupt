@@ -1,18 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import "react-native-gesture-handler";
 import { View, Text, Image, TouchableOpacity,TextInput } from "react-native";
 import Style from "../style/style";
 
 export default function EditarDados({ navigation }, props) {
-    const [nome, setNome] = React.useState("");
-    const [cpfcnpj, setCpfcnpj] = React.useState("");
-    const [endereco, setEndereco] = React.useState("");
-    const [numero, setNumero] = React.useState("");
-    const [bairro, setBairro] = React.useState("");
-    const [uf, setUf] = React.useState("");
-    const [cidade, setCidade] = React.useState("");
-    const [pais, setPais] = React.useState("");
-    const [cep, setCep] = React.useState("");
+    const [nome, setNome] = useState("");
+    const [cpfcnpj, setCpfcnpj] = useState("");
+    const [endereco, setEndereco] = useState("");
+    const [numero, setNumero] = useState("");
+    const [bairro, setBairro] = useState("");
+    const [uf, setUf] = useState("");
+    const [cidade, setCidade] = useState("");
+    const [pais, setPais] = useState("");
+    const [cep, setCep] = useState("");
     return(
       <View style={Style.containerCadastro}>
       <View>

@@ -121,28 +121,6 @@ export function DrawerContent({ navigation }, props) {
               navigation.navigate("Contato");
             }}
           />
-          <DrawerItem
-            labelStyle={{
-              color: "white",
-              fontSize: 26,
-              fontFamily: "bariol_regular",
-            }}
-            label="Mensagem"
-            onPress={() => {
-              navigation.navigate("Mensagem");
-            }}
-          />
-          <DrawerItem
-            labelStyle={{
-              color: "white",
-              fontSize: 26,
-              fontFamily: "bariol_regular",
-            }}
-            label="Conclusão"
-            onPress={() => {
-              navigation.navigate("Conclusao");
-            }}
-          />
         </DrawerContentScrollView>
       </View>
       <View style={{backgroundColor: '#00298F',}}>
