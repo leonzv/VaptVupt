@@ -63,6 +63,8 @@ export default function Configuracoes(props) {
           minimumTrackTintColor="#346CFF"
           maximumTrackTintColor="#346CFF"
           thumbTintColor="#346CFF"
+          onValueChange={changeFontSize}
+          step={1}
         />
       </View>
       <View>
