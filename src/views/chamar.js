@@ -31,7 +31,8 @@ export default function Chamar({ navigation }, props) {
           style={{
             alignSelf: "center",
             resizeMode: "contain",
-            width: 80,
+            width: 120,
+            height: 60,
             marginLeft: '20%',
             marginRight: 30,
             flex: 1,
@@ -46,7 +47,7 @@ export default function Chamar({ navigation }, props) {
             fontSize: 24,
             textAlign: "left",
             marginLeft: 25,
-            marginVertical: 15,
+            marginVertical: 25,
             fontFamily: "bariol_regular",
           }}
         >
@@ -122,7 +123,7 @@ export default function Chamar({ navigation }, props) {
             <Text style={Style.textStyle}>Agendar Entrega</Text>
           </TouchableOpacity>
         </View>
-        <Modal //começo modal entrega
+        <Modal
           animationType='slide'
           transparent={true}
           visible={modalVisible1}

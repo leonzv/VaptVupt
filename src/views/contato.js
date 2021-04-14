@@ -24,6 +24,7 @@ export default function Contato(props) {
           alignSelf: "center",
           resizeMode: "contain",
           width: 80,
+          height: 40,
           marginLeft: '20%',
           marginRight: 30,
           flex: 1,

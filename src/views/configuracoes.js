@@ -27,6 +27,7 @@ export default function Configuracoes(props) {
           resizeMode: "contain",
           width: 80,
           marginLeft: '20%',
+          height: 40,
           marginRight: 30,
           flex: 1,
           top: 12,
@@ -63,8 +64,6 @@ export default function Configuracoes(props) {
           minimumTrackTintColor="#346CFF"
           maximumTrackTintColor="#346CFF"
           thumbTintColor="#346CFF"
-          onValueChange={changeFontSize}
-          step={1}
         />
       </View>
       <View>

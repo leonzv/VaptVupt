@@ -20,7 +20,8 @@ export default function Home(props) {
           style={{
             alignSelf: "center",
             resizeMode: "contain",
-            width: 80,
+            width: 220,
+            height: 80,
             marginLeft: '20%',
             marginRight: 30,
             flex: 1,
@@ -31,11 +32,11 @@ export default function Home(props) {
       </View>
       <Text
         style={{
-          fontSize: 22,
+          fontSize: 26,
           marginLeft: 30,
           textAlign: "left",
           marginRight: 90,
-          marginTop: 60,
+          marginTop: '15%',
           color: "#000",
           fontFamily: "bariol_regular",
         }}
@@ -43,12 +44,15 @@ export default function Home(props) {
         {" "}
         Escolha o serviço desejado abaixo
       </Text>
+      <View style={{flex: 1}}>
       <Swiper
         style={Style.wrapper}
         loop={false}
+        paginationStyle={{flex: 1,alignSelf: 'flex-start',height: '40%',}}
         activeDotColor="rgb(0,41,143)"
-        dotStyle={{ width: 35, marginHorizontal: 10, bottom: 80,}}
-        activeDotStyle={{ width: 55, marginHorizontal: 10, bottom: 80, }}
+        dotColor="rgba(0,41,143,0.5)"
+        dotStyle={{ width: 35, marginHorizontal: 10,}}
+        activeDotStyle={{ width: 55, marginHorizontal: 10,}}
       >
         <TouchableOpacity
           style={Style.retanguloAzulHome}
@@ -91,10 +95,11 @@ export default function Home(props) {
           <Text style={Style.textRetanguloHome}> Caminhão </Text>
         </TouchableOpacity>
       </Swiper>
+      </View>
       <View>
         <Text
           style={{
-            fontSize: 22,
+            fontSize: 26,
             marginLeft: 30,
             textAlign: "left",
             marginRight: 90,

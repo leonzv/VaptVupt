@@ -4,7 +4,7 @@ import Style from "../style/style";
 
 
 
-export default function modal({ navigation }) {
+export default function modal(props) {
 
   function switchModal() {
     if (modalVisible == true) {
@@ -57,7 +57,7 @@ export default function modal({ navigation }) {
               >
                 <TouchableOpacity
                   style={Style.acompanharBtn}
-                  onPress={() => navigation.navigate("Gps")}
+                  onPress={() => props.navigation.navigate("Gps")}
                 >
                   <Text style={Style.acompanharText}> Acompanhar mapa </Text>
                 </TouchableOpacity>

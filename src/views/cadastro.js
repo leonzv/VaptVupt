@@ -23,7 +23,6 @@ export default function Cadastro(props) {
     .then(() => {
       console.log('Usuário criado com sucesso!');
       alert('Usuario criado com sucesso!, Volte e faça login.')
-      props.navigation.navigate("CadastroConfirm")
     })
     .catch(error => {
       if (error.code === 'auth/email-already-in-use') {

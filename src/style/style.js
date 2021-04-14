@@ -110,12 +110,15 @@ export default StyleSheet.create({
     resizeMode: "contain",
     alignSelf: "center",
     marginVertical: 40,
+    width: 220,
+    height: 50
   },
   vaiVexImgCadastro: {
     resizeMode: "contain",
     alignSelf: "center",
-    marginTop: 15,
-    marginBottom: 10,
+    marginVertical: 40,
+    width: 220,
+    height: 50
   },
   firstImg: {
     resizeMode: "contain",
@@ -391,7 +394,7 @@ export default StyleSheet.create({
   grayBox: {
     backgroundColor: "#DCDCDC",
     width: "85%",
-    height: 100,
+    height: 110,
     alignSelf: "center",
     borderRadius: 10,
     marginTop: 10,
@@ -400,14 +403,14 @@ export default StyleSheet.create({
     justifyContent: "space-around",
   },
   grayBoxBigText: {
-    fontSize: 50,
+    fontSize: 54,
     color: "#000",
     marginLeft: 25,
     fontFamily: "bariol_regular",
   },
   grayBoxSmallText: {
     color: "#000",
-    fontSize: 14,
+    fontSize: 16,
     marginLeft: 25,
     maxWidth: 80,
     fontFamily: "bariol_regular",
@@ -417,13 +420,13 @@ export default StyleSheet.create({
     borderRadius: 5,
     alignItems: "center",
     width: "32%",
-    height: 29,
+    height: 32,
     alignSelf: "center",
     marginHorizontal: 10,
     justifyContent: "center",
   },
   btnAdminFont: {
-    fontSize: 14,
+    fontSize: 16,
     color: "#fff",
     alignSelf: "center",
     elevation: 5,

@@ -30,6 +30,7 @@ export default function EditarDados({ navigation }, props) {
             alignSelf: "center",
             resizeMode: "contain",
             width: 80,
+            height: 40,
             marginLeft: '20%',
             marginRight: 30,
             flex: 1,
