@@ -16,9 +16,10 @@ export default function Login(props) {
       <Swiper
         style={Style.wrapper}
         loop={false}
+        paginationStyle={{height: '100%', alignItems: 'flex-end',top: 15,}}
         activeDotColor="rgb(0,41,143)"
-        dotStyle={{ width: 35, marginHorizontal: 10, bottom: 50,}}
-        activeDotStyle={{ width: 55, marginHorizontal: 10, bottom: 50, }}
+        dotStyle={{ width: 45, marginHorizontal: 10, bottom: 50,}}
+        activeDotStyle={{ width: 65, marginHorizontal: 10, bottom: 50, }}
         >
         <View style={Style.retanguloAzul}>
           <Text style={Style.loginText}>

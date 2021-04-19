@@ -49,10 +49,11 @@ export default function Dashboard(props) {
           </Text>
           <Swiper
             style={Style.wrapper}
+            paginationStyle={{height: '100%', top: 50,}}
             loop={false}
             activeDotColor="rgb(0,41,143)"
-            dotStyle={{ width: 35, marginHorizontal: 10 }}
-            activeDotStyle={{ width: 55, marginHorizontal: 10 }}
+            dotStyle={{ width: 45, marginHorizontal: 10, alignSelf: 'flex-end' }}
+            activeDotStyle={{ width: 65, marginHorizontal: 10, alignSelf: 'flex-end' }}
           >
             <TouchableOpacity
               style={Style.retanguloAzulHome}
@@ -99,12 +100,13 @@ export default function Dashboard(props) {
         <View>
           <Text
             style={{
-              fontSize: 22,
+              fontSize: 24,
               marginLeft: 30,
               textAlign: "left",
               marginRight: 90,
+              marginTop: '20%',
               color: "#000",
-              marginBottom: 5,
+              marginBottom: 10,
               fontFamily: "bariol_regular",
             }}
           >
@@ -128,7 +130,7 @@ export default function Dashboard(props) {
         <View style={{ justifyContent: "flex-end", marginBottom: 30 }}>
           <Text
             style={{
-              fontSize: 22,
+              fontSize: 24,
               marginLeft: 30,
               textAlign: "left",
               marginRight: 90,

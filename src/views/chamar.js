@@ -11,7 +11,7 @@ import {
 import Style from "../style/style";
 import React, { useState } from "react";
 
-export default function Chamar({ navigation }, props) {
+export default function Chamar(props) {
   const [endereco, setEndereco] = useState("");
   const [mercadoria, setMercadoria] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
@@ -149,7 +149,7 @@ export default function Chamar({ navigation }, props) {
       </View>
       <View style={{flex: 1, justifyContent: 'flex-end'}}>
       <TouchableOpacity style={Style.greenBtn}
-      onPress={() => navigation.navigate("Gps")}>
+      onPress={() => props.navigation.navigate("Gps")}>
         <Text style={Style.motoboyText}>Chamar Motoboy</Text>
       </TouchableOpacity>
       </View>

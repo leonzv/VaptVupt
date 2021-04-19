@@ -12,6 +12,7 @@ import Configuracoes from "../views/configuracoes";
 import Sobre from "../views/sobre";
 import Chamar from "../views/chamar";
 import Conclusao from "../views/conclusao";
+import CadastroConfirm from "../views/cadastroConfirm";
 import Dashboard from "../views/dashboard";
 import LoginConfirm from "../views/loginConfirm";
 import EditarDados from "../views/editarDados";
@@ -34,6 +35,7 @@ const StackDrawer = () => {
       <Drawer.Screen options={{ swipeEnabled: false }} name="Login" component={Login} />
       <Drawer.Screen options={{ swipeEnabled: false }} name="Cadastro" component={Cadastro} />
       <Drawer.Screen options={{ swipeEnabled: false }} name="LoginConfirm" component={LoginConfirm} />
+      <Drawer.Screen options={{ swipeEnabled: false }} name="CadastroConfirm" component={CadastroConfirm} />
     </Drawer.Navigator>
   );
 }
@@ -63,6 +65,7 @@ const MainStackNavigator = () => {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Cadastro" component={Cadastro} />
         <Stack.Screen name="LoginConfirm" component={LoginConfirm} />
+        <Stack.Screen name="CadastroConfirm" component={CadastroConfirm} />
         <Stack.Screen name="MaisFavoritos" component={MaisFavoritos} />
       </Stack.Navigator>
   );

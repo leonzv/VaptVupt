@@ -1,36 +1,30 @@
 import "react-native-gesture-handler";
-import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, Image, TextInput, TouchableOpacity, KeyboardAvoidingView } from "react-native";
 import Style from "../style/style";
 import React, {useState} from "react";
 import auth from '@react-native-firebase/auth';
+import Swiper from "react-native-swiper";
 
 export default function Cadastro(props) {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-  const [cpfcnpj, setCpfcnpj] = useState("");
-  const [endereco, setEndereco] = useState("");
-  const [numero, setNumero] = useState("");
-  const [bairro, setBairro] = useState("");
-  const [uf, setUf] = useState("");
-  const [cidade, setCidade] = useState("");
-  const [pais, setPais] = useState("");
-  const [cep, setCep] = useState("");
-
+  
   const createUser  = () => {
     auth()
     .createUserWithEmailAndPassword(email, senha)
     .then(() => {
-      console.log('Usuário criado com sucesso!');
-      alert('Usuario criado com sucesso!, Volte e faça login.')
+      alert('Usuário criado com sucesso!');
+      props.navigation.navigate('CadastroConfirm');
+      alert('Agora preencha alguns dados!')
     })
     .catch(error => {
       if (error.code === 'auth/email-already-in-use') {
-        console.log('Esse email já está sendo usado');
+        alert('Esse email já está sendo usado');
       }
   
       if (error.code === 'auth/invalid-email') {
-        console.log('Esse email é invalido!');
+        alert('Esse email é invalido!');
       }
   
       console.error(error);
@@ -40,7 +34,7 @@ export default function Cadastro(props) {
     const logoff = () => {
       auth()
     .signOut()
-    .then(() => console.log('User signed out!'));
+    .then(() => alert('User signed out!'));
     }
   return (
     <View style={Style.containerCadastro}>
@@ -49,19 +43,40 @@ export default function Cadastro(props) {
           style={Style.vaiVexImgCadastro}
           source={require("../assets/img/vai-vex-logo.png")}
         />
-        <Text
-          style={{
-            marginLeft: 30,
-            fontSize: 20,
-            marginBottom: 15,
-            fontWeight: "bold",
-            fontFamily: "bariol_regular",
-          }}
-        >
-          Preencha o forumário completo:
-        </Text>
       </View>
-      <View style={Style.textBox}>
+      <View style={{flex: 2}}>
+      <Swiper
+        style={Style.wrapper}
+        loop={false}
+        paginationStyle={{height: '100%', alignItems: 'flex-end',top: 25,}}
+        activeDotColor="rgb(0,41,143)"
+        dotStyle={{ width: 45, marginHorizontal: 10, bottom: 50,}}
+        activeDotStyle={{ width: 65, marginHorizontal: 10, bottom: 50, }}
+        >
+        <View style={Style.retanguloAzul}>
+          <Text style={Style.loginText}>
+            {" "}
+            Um jeito simples e descomplicado de fazer entregas
+          </Text>
+          <Image
+            style={Style.firstImg}
+            source={require("../assets/img/moto-branca.png")}
+          />
+        </View>
+        <View style={Style.retanguloVermelho}>
+          <Text style={Style.loginText}>
+            {" "}
+            Uma simplicidade que cabe na sua mão
+          </Text>
+          <Image
+            style={Style.firstImg}
+            source={require("../assets/img/dinheiro.png")}
+          />
+        </View>
+      </Swiper>
+      </View>
+      <KeyboardAvoidingView style={{flex: 1, justifyContent: 'space-around',}}>
+      <View style={Style.textBoxCadastro}>
         <Text style={Style.textBoxFontCadastro}>Nome:</Text>
         <TextInput
           style={Style.textBoxFont}
@@ -71,7 +86,7 @@ export default function Cadastro(props) {
           autoCapitalize="words"
         />
       </View>
-      <View style={Style.textBox}>
+      <View style={Style.textBoxCadastro}>
         <Text style={Style.textBoxFontCadastro}>Email:</Text>
         <TextInput
           style={Style.textBoxFont}
@@ -81,7 +96,7 @@ export default function Cadastro(props) {
           autoCapitalize="words"
         />
       </View>
-      <View style={Style.textBox}>
+      <View style={Style.textBoxCadastro}>
         <Text style={Style.textBoxFontCadastro}>Senha:</Text>
         <TextInput
           style={Style.textBoxFont}
@@ -92,95 +107,13 @@ export default function Cadastro(props) {
           secureTextEntry={true}
         />
       </View>
-      <View style={Style.textBox}>
-        <Text style={Style.textBoxFontCadastro}>CPF/CNPJ:</Text>
-        <TextInput
-          style={Style.textBoxFont}
-          onChangeText={(text) => setCpfcnpj(text)}
-          value={cpfcnpj}
-          placeholderTextColor="#fff"
-          autoCapitalize="words"
-        />
-      </View>
-      <View style={Style.textBox}>
-        <Text style={Style.textBoxFontCadastro}>Endereço:</Text>
-        <TextInput
-          style={Style.textBoxFont}
-          onChangeText={(text) => setEndereco(text)}
-          value={endereco}
-          placeholderTextColor="#fff"
-          autoCapitalize="words"
-        />
-      </View>
-      <View style={Style.box3070}>
-        <View style={Style.textBox30}>
-          <Text style={Style.textBoxFontCadastro}>Nº:</Text>
-          <TextInput
-            style={Style.textBoxFont}
-            onChangeText={(text) => setNumero(text)}
-            value={numero}
-            placeholderTextColor="#fff"
-            autoCapitalize="words"
-          />
-        </View>
-        <View style={Style.textBox70}>
-          <Text style={Style.textBoxFontCadastro}>Bairro:</Text>
-          <TextInput
-            style={Style.textBoxFont}
-            onChangeText={(text) => setBairro(text)}
-            value={bairro}
-            placeholderTextColor="#fff"
-            autoCapitalize="words"
-          />
-        </View>
-      </View>
-      <View style={Style.box3070}>
-        <View style={Style.textBox30}>
-          <Text style={Style.textBoxFontCadastro}>UF:</Text>
-          <TextInput
-            style={Style.textBoxFont}
-            onChangeText={(text) => setUf(text)}
-            value={uf}
-            placeholderTextColor="#fff"
-            autoCapitalize="words"
-          />
-        </View>
-        <View style={Style.textBox70}>
-          <Text style={Style.textBoxFontCadastro}>Cidade:</Text>
-          <TextInput
-            style={Style.textBoxFont}
-            onChangeText={(text) => setCidade(text)}
-            value={cidade}
-            placeholderTextColor="#fff"
-            autoCapitalize="words"
-          />
-        </View>
-      </View>
-      <View style={Style.textBox}>
-        <Text style={Style.textBoxFontCadastro}>País:</Text>
-        <TextInput
-          style={Style.textBoxFont}
-          onChangeText={(text) => setPais(text)}
-          value={pais}
-          placeholderTextColor="#fff"
-          autoCapitalize="words"
-        />
-      </View>
-      <View style={Style.textBox}>
-        <Text style={Style.textBoxFontCadastro}>CEP:</Text>
-        <TextInput
-          style={Style.textBoxFont}
-          onChangeText={(text) => setCep(text)}
-          value={cep}
-          placeholderTextColor="#fff"
-          autoCapitalize="words"
-        />
-      </View>
+
+      </KeyboardAvoidingView>
       <TouchableOpacity
-        style={Style.btnComecar}
+        style={Style.btnCadastrar}
         onPress={() => createUser()}
       >
-        <Text style={Style.btnComecarFont}> Começar </Text>
+        <Text style={Style.btnCadastrarFont}> Avançar </Text>
       </TouchableOpacity>
     </View>
   );

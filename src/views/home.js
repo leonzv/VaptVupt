@@ -19,7 +19,7 @@ export default function Home(props) {
         <Image
           style={{
             alignSelf: "center",
-            resizeMode: "contain",
+            resizeMode: 'contain',
             width: 220,
             height: 80,
             marginLeft: '20%',
@@ -32,7 +32,7 @@ export default function Home(props) {
       </View>
       <Text
         style={{
-          fontSize: 26,
+          fontSize: 24,
           marginLeft: 30,
           textAlign: "left",
           marginRight: 90,
@@ -44,15 +44,14 @@ export default function Home(props) {
         {" "}
         Escolha o serviço desejado abaixo
       </Text>
-      <View style={{flex: 1}}>
+      <View style={{flex: 2, backgroundColor: 'red'}}>
       <Swiper
         style={Style.wrapper}
         loop={false}
-        paginationStyle={{flex: 1,alignSelf: 'flex-start',height: '40%',}}
+        paginationStyle={{height: '100%', alignItems: 'flex-end',top: 25,}}
         activeDotColor="rgb(0,41,143)"
-        dotColor="rgba(0,41,143,0.5)"
-        dotStyle={{ width: 35, marginHorizontal: 10,}}
-        activeDotStyle={{ width: 55, marginHorizontal: 10,}}
+        dotStyle={{ width: 45, marginHorizontal: 10, bottom: 50,}}
+        activeDotStyle={{ width: 65, marginHorizontal: 10, bottom: 50, }}
       >
         <TouchableOpacity
           style={Style.retanguloAzulHome}
@@ -96,16 +95,17 @@ export default function Home(props) {
         </TouchableOpacity>
       </Swiper>
       </View>
-      <View>
+      <View style={{flex: 1, backgroundColor: 'green'}}>
         <Text
           style={{
-            fontSize: 26,
+            fontSize: 24,
             marginLeft: 30,
             textAlign: "left",
             marginRight: 90,
             color: "#000",
             marginBottom: 5,
             fontFamily: "bariol_regular",
+            marginTop: '40%'
           }}
         >
           Corridas

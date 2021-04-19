@@ -4,10 +4,10 @@ import Style from "../style/style";
 import React from "react";
 
 export default function Sobre(props) {
-  const {goBack} = props.navigation;
+  const { goBack } = props.navigation;
   return (
     <View style={Style.container}>
-      <View style={{ flexDirection: "row",}}>
+      <View style={{ flexDirection: "row" }}>
         <TouchableOpacity style={Style.circle}>
           <TouchableOpacity
             style={Style.circle2}
@@ -15,14 +15,14 @@ export default function Sobre(props) {
             onPress={() => props.navigation.toggleDrawer()}
           />
         </TouchableOpacity>
-        <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>    
+        <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>
         <Image
           style={{
             alignSelf: "center",
             resizeMode: "contain",
             width: 80,
             height: 40,
-            marginLeft: '20%',
+            marginLeft: "20%",
             marginRight: 30,
             flex: 1,
             top: 12,
@@ -50,8 +50,7 @@ export default function Sobre(props) {
       <View
         style={{ flex: 1, justifyContent: "flex-end", alignItems: "flex-end" }}
       >
-        <TouchableOpacity style={Style.greenBtn}
-        onPress={() => goBack('B')}>
+        <TouchableOpacity style={Style.greenBtn} onPress={() => goBack("B")}>
           <Text
             style={{
               fontSize: 16,

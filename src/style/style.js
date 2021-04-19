@@ -14,7 +14,6 @@ export default StyleSheet.create({
   containerCadastro: {
     backgroundColor: "#fff",
     flex: 1,
-    justifyContent: "space-between",
   },
   containerLoad: {
     justifyContent: "center",
@@ -109,14 +108,14 @@ export default StyleSheet.create({
   vaiVexImg: {
     resizeMode: "contain",
     alignSelf: "center",
-    marginVertical: 40,
+    marginVertical: 20,
     width: 220,
     height: 50
   },
   vaiVexImgCadastro: {
     resizeMode: "contain",
     alignSelf: "center",
-    marginVertical: 40,
+    marginVertical: 20,
     width: 220,
     height: 50
   },
@@ -128,7 +127,7 @@ export default StyleSheet.create({
   retanguloAzul: {
     backgroundColor: "#00298F",
     width: "65%",
-    height: 400,
+    height: '80%',
     borderRadius: 10,
     marginLeft: 30,
     flexDirection: "column-reverse",
@@ -136,7 +135,7 @@ export default StyleSheet.create({
   retanguloAzul1: {
     backgroundColor: "#00298F",
     width: "65%",
-    height: 310,
+    height: '80%',
     borderRadius: 10,
     marginLeft: 30,
     flexDirection: "column-reverse",
@@ -144,7 +143,7 @@ export default StyleSheet.create({
   retanguloVermelho1: {
     backgroundColor: "#ED1C24",
     width: "65%",
-    height: 310,
+    height: '80%',
     borderRadius: 10,
     marginLeft: 30,
     flexDirection: "column-reverse",
@@ -160,24 +159,25 @@ export default StyleSheet.create({
   },
   btnCadastrar: {
     backgroundColor: "#fff",
-    padding: 15,
+    padding: '3.5%',
     borderColor: "#000",
     borderWidth: 2,
     borderRadius: 10,
     marginHorizontal: 30,
     alignItems: "center",
-    marginBottom: 20,
+    marginVertical: 20,
   },
   btnCadastrarFont: {
     fontSize: 18,
     color: "#000",
     fontFamily: "bariol_regular",
   },
-  wrapper: {},
+  wrapper: {
+  },
   retanguloVermelho: {
     backgroundColor: "#ED1C24",
     width: "65%",
-    height: 400,
+    height: '80%',
     borderRadius: 10,
     marginLeft: 30,
     flexDirection: "column-reverse",
@@ -185,12 +185,22 @@ export default StyleSheet.create({
   textBox: {
     backgroundColor: "#fff",
     borderColor: "#656565",
-    height: 50,
+    height: '10%',
     borderWidth: 1,
     borderRadius: 5,
     marginHorizontal: 30,
-    marginBottom: 10,
     flexDirection: "row",
+    alignItems: 'center'
+  },
+  textBoxCadastro: {
+    backgroundColor: "#fff",
+    borderColor: "#656565",
+    minHeight: '5%',
+    borderWidth: 1,
+    borderRadius: 5,
+    marginHorizontal: 30,
+    flexDirection: "row",
+    alignItems: 'center'
   },
   messageBox: {
     backgroundColor: "#fff",
@@ -205,45 +215,36 @@ export default StyleSheet.create({
   textBox1: {
     backgroundColor: "#fff",
     borderColor: "#656565",
-    height: 50,
     borderWidth: 1,
     borderRadius: 5,
     marginHorizontal: 30,
-    marginBottom: 60,
     flexDirection: "row",
-  },
-  textBox2: {
-    backgroundColor: "#fff",
-    borderColor: "#656565",
-    height: 50,
-    borderWidth: 1,
-    borderRadius: 5,
-    marginHorizontal: 30,
-    bottom: 40,
-    flexDirection: "row",
+    alignItems: 'center'
   },
   textBox30: {
     backgroundColor: "#fff",
-    height: 45,
+    height: '81%',
     borderColor: "#656565",
     borderWidth: 1,
     borderRadius: 5,
     marginBottom: 10,
-    width: "21%",
-    marginLeft: "7.5%",
+    width: "22%",
+    marginLeft: "7%",
     flexDirection: "row",
+    alignItems: 'center'
   },
   textBox70: {
     backgroundColor: "#fff",
-    height: 45,
+    height: '81%',
     borderColor: "#656565",
     borderWidth: 1,
     borderRadius: 5,
     marginBottom: 10,
-    marginRight: "7.5%",
+    marginRight: "7%",
     marginLeft: "4%",
     width: "60%",
     flexDirection: "row",
+    alignItems: 'center'
   },
   box3070: {
     flexDirection: "row",
@@ -253,9 +254,8 @@ export default StyleSheet.create({
     textAlign: "left",
     marginLeft: 10,
     color: "#656565",
-    minWidth: "90%",
-    maxWidth: "90%",
-    maxHeight: 100,
+    minWidth: "70%",
+    maxWidth: "70%",
     fontFamily: "bariol_regular",
   },
   textBoxFontChamar: {
@@ -291,18 +291,17 @@ export default StyleSheet.create({
     fontSize: 16,
     textAlign: "left",
     marginLeft: 10,
-    top: 14,
     maxHeight: 50,
     color: "#656565",
     fontFamily: "bariol_regular",
   },
   btnComecar: {
     backgroundColor: "#00298F",
-    padding: 15,
+    padding: '3.5%',
     borderRadius: 5,
     marginHorizontal: 30,
     alignItems: "center",
-    marginVertical: 20,
+    marginVertical: '5%',
   },
   btnComecarFont: {
     fontSize: 20,
@@ -361,7 +360,7 @@ export default StyleSheet.create({
   retanguloAzulHome: {
     backgroundColor: "#00298F",
     width: "85%",
-    height: 230,
+    height: 300,
     borderRadius: 10,
     marginLeft: 30,
     marginTop: 30,

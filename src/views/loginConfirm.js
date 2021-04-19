@@ -1,7 +1,7 @@
 import "react-native-gesture-handler";
 import { View, Text, Image, TextInput, TouchableOpacity, KeyboardAvoidingView } from "react-native";
 import Style from "../style/style";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Swiper from "react-native-swiper";
 import auth from "@react-native-firebase/auth";
 
@@ -12,7 +12,6 @@ export default function LoginConfirm(props) {
     auth()
     .signInWithEmailAndPassword(email, senha)
     .then(() => {
-      console.log('Usuário criado com sucesso!');
       alert('Usuario logado com sucesso!')
       props.navigation.navigate("LoadHome")
       if (email == "") {
@@ -31,12 +30,14 @@ export default function LoginConfirm(props) {
           source={require("../assets/img/vai-vex-logo.png")}
         />
       </View>
+      <View style={{flex: 2}}>
       <Swiper
         style={Style.wrapper}
         loop={false}
+        paginationStyle={{height: '100%', alignItems: 'flex-end',top: 15,}}
         activeDotColor="rgb(0,41,143)"
-        dotStyle={{ width: 35, marginHorizontal: 10, bottom: 50, }}
-        activeDotStyle={{ width: 55, marginHorizontal: 10, bottom: 50, }}
+        dotStyle={{ width: 45, marginHorizontal: 10, bottom: 50,}}
+        activeDotStyle={{ width: 65, marginHorizontal: 10, bottom: 50, }}
       >
         <View style={Style.retanguloAzul1}>
           <Text style={Style.loginText}>
@@ -59,6 +60,8 @@ export default function LoginConfirm(props) {
           />
         </View>
       </Swiper>
+      </View>
+      <View style={{flex: 1, justifyContent: 'space-around'}}>
       <View style={Style.textBox1}>
         <Text style={Style.textBoxFontCadastro}>Email:</Text>
         <TextInput
@@ -69,7 +72,7 @@ export default function LoginConfirm(props) {
           autoCapitalize="words"
         />
       </View>
-      <View style={Style.textBox2}>
+      <View style={Style.textBox1}>
         <Text style={Style.textBoxFontCadastro}>Senha:</Text>
         <TextInput
           style={Style.textBoxFont}
@@ -79,6 +82,7 @@ export default function LoginConfirm(props) {
           autoCapitalize="words"
           secureTextEntry={true}
         />
+      </View>
       </View>
       <TouchableOpacity
         style={Style.btnCadastrar}

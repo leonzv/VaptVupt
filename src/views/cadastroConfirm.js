@@ -1,10 +1,9 @@
 import "react-native-gesture-handler";
-import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, Image, TextInput, TouchableOpacity, KeyboardAvoidingView } from "react-native";
 import Style from "../style/style";
-import React, { useState } from "react";
-import BouncyCheckbox from "react-native-bouncy-checkbox";
+import React, {useState} from "react";
 
-export default function CadastroConfirm(props) {
+export default function Cadastro(props) {
   const [cpfcnpj, setCpfcnpj] = useState("");
   const [endereco, setEndereco] = useState("");
   const [numero, setNumero] = useState("");
@@ -13,12 +12,9 @@ export default function CadastroConfirm(props) {
   const [cidade, setCidade] = useState("");
   const [pais, setPais] = useState("");
   const [cep, setCep] = useState("");
-  const [Check, setCheck] = useState(false);
-  if (Check == true) {
-    alert("Voce concordou!");
-  }
+  
   return (
-    <View style={Style.containerCadastro}>
+    <KeyboardAvoidingView style={Style.containerCadastro}>
       <View>
         <Image
           style={Style.vaiVexImgCadastro}
@@ -28,7 +24,7 @@ export default function CadastroConfirm(props) {
           style={{
             marginLeft: 30,
             fontSize: 20,
-            marginBottom: 30,
+            marginTop: 45,
             fontWeight: "bold",
             fontFamily: "bariol_regular",
           }}
@@ -36,6 +32,7 @@ export default function CadastroConfirm(props) {
           Preencha o forumário completo:
         </Text>
       </View>
+      <View style={{flex: 1, justifyContent: 'space-around'}}>
       <View style={Style.textBox}>
         <Text style={Style.textBoxFontCadastro}>CPF/CNPJ:</Text>
         <TextInput
@@ -47,11 +44,11 @@ export default function CadastroConfirm(props) {
         />
       </View>
       <View style={Style.textBox}>
-        <Text style={Style.textBoxFontCadastro}>Endereço:</Text>
+        <Text style={Style.textBoxFontCadastro}>CEP:</Text>
         <TextInput
           style={Style.textBoxFont}
-          onChangeText={(text) => setEndereco(text)}
-          value={endereco}
+          onChangeText={(text) => setCep(text)}
+          value={cep}
           placeholderTextColor="#fff"
           autoCapitalize="words"
         />
@@ -101,6 +98,16 @@ export default function CadastroConfirm(props) {
         </View>
       </View>
       <View style={Style.textBox}>
+        <Text style={Style.textBoxFontCadastro}>Endereço:</Text>
+        <TextInput
+          style={Style.textBoxFont}
+          onChangeText={(text) => setEndereco(text)}
+          value={endereco}
+          placeholderTextColor="#fff"
+          autoCapitalize="words"
+        />
+      </View>
+      <View style={Style.textBox}>
         <Text style={Style.textBoxFontCadastro}>País:</Text>
         <TextInput
           style={Style.textBoxFont}
@@ -110,39 +117,13 @@ export default function CadastroConfirm(props) {
           autoCapitalize="words"
         />
       </View>
-      <View style={Style.textBox}>
-        <Text style={Style.textBoxFontCadastro}>CEP:</Text>
-        <TextInput
-          style={Style.textBoxFont}
-          onChangeText={(text) => setCep(text)}
-          value={cep}
-          placeholderTextColor="#fff"
-          autoCapitalize="words"
-        />
-      </View>
-      <View style={{ flex: 1, flexDirection: "row" }}>
-      <BouncyCheckbox
-          size={28}
-          fillColor="#0087ff"
-          unfillColor="#CFCFCF"
-          iconStyle={{
-            borderColor: "white",
-            borderWidth: 5,
-            marginLeft: 20,
-            marginTop: 30,
-          }}
-          onPress={(newValue) => setCheck(newValue)}
-        />
-        <Text style={{ color: "black", fontSize: 14, marginTop: 25, fontFamily: "bariol_regular", }}>
-          Li e estou de acordo com o termo de serviço
-        </Text>
       </View>
       <TouchableOpacity
         style={Style.btnComecar}
-        onPress={() => props.navigation.navigate("LoadHome")}
+        onPress={props.navigation.navigate("Home")}
       >
         <Text style={Style.btnComecarFont}> Começar </Text>
       </TouchableOpacity>
-    </View>
+    </KeyboardAvoidingView>
   );
 }
