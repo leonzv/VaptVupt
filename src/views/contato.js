@@ -10,37 +10,36 @@ export default function Contato(props) {
   const {goBack} = props.navigation;
   return (
     <View style={Style.container}>
-    <View style={{ flexDirection: "row",}}>
-      <TouchableOpacity style={Style.circle}>
-        <TouchableOpacity
-          style={Style.circle2}
-          title="Toggle drawer"
-          onPress={() => props.navigation.toggleDrawer()}
-        />
-      </TouchableOpacity>
-      <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>    
-      <Image
-        style={{
-          alignSelf: "center",
-          resizeMode: "contain",
-          width: 80,
-          height: 40,
-          marginLeft: '20%',
-          marginRight: 30,
-          flex: 1,
-          top: 12,
-        }}
-        source={require("../assets/img/vai-vex-logo.png")}
-      />
-    </View>
+    <View style={{ flexDirection: "row" }}>
+          <TouchableOpacity style={Style.circle}>
+            <TouchableOpacity
+              style={Style.circle2}
+              title="Toggle drawer"
+              onPress={() => props.navigation.toggleDrawer()}
+            />
+          </TouchableOpacity>
+          <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>
+          <Image
+            style={{
+              alignSelf: "center",
+              resizeMode: "contain",
+              width: 220,
+              height: 80,
+              marginLeft: '5%',
+              marginRight: 30,
+              flex: 1,
+              top: 12,
+            }}
+            source={require("../assets/img/vai-vex-logo.png")}
+          />
+        </View>
       <Text
         style={{
           fontSize: 24,
           marginLeft: 30,
           textAlign: "left",
           marginRight: 90,
-          marginTop: 50,
-          marginBottom: 20,
+          marginTop: '10%',
           color: "#000",
           fontFamily: "bariol_regular",
         }}
@@ -76,7 +75,7 @@ export default function Contato(props) {
           autoCapitalize="words"
         />
       </View>
-      <View>
+      <View style={{alignItems: 'center'}}>
         <TouchableOpacity style={Style.blueBtnEnviar}>
           <Text
             style={{

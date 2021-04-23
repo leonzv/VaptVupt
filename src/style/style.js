@@ -173,6 +173,7 @@ export default StyleSheet.create({
     fontFamily: "bariol_regular",
   },
   wrapper: {
+
   },
   retanguloVermelho: {
     backgroundColor: "#ED1C24",
@@ -360,7 +361,18 @@ export default StyleSheet.create({
   retanguloAzulHome: {
     backgroundColor: "#00298F",
     width: "85%",
-    height: 300,
+    height: '65%',
+    borderRadius: 10,
+    marginLeft: 30,
+    marginTop: 30,
+    alignItems: "center",
+    justifyContent: "center",
+    alignContent: "center",
+  },
+  retanguloAzulDashboard: {
+    backgroundColor: "#00298F",
+    width: "85%",
+    height: 200,
     borderRadius: 10,
     marginLeft: 30,
     marginTop: 30,
@@ -400,6 +412,7 @@ export default StyleSheet.create({
     marginBottom: 30,
     flexDirection: "row",
     justifyContent: "space-around",
+    alignItems: 'center'
   },
   grayBoxBigText: {
     fontSize: 54,
@@ -447,6 +460,7 @@ export default StyleSheet.create({
     position: "absolute",
     alignSelf: "center",
     bottom: 30,
+    width: '100%',
   },
   procurarBox2: {
     width: "95%",
@@ -456,6 +470,7 @@ export default StyleSheet.create({
     borderRadius: 10,
     alignSelf: "center",
     justifyContent: "center",
+    alignItems: 'center'
   },
   circleProcurar: {
     borderRadius: 50,
@@ -465,7 +480,6 @@ export default StyleSheet.create({
     borderWidth: 2,
     borderColor: "#fff",
     justifyContent: "center",
-    marginLeft: 20,
   },
   circle2Procurar: {
     borderRadius: 50,
@@ -510,7 +524,7 @@ export default StyleSheet.create({
     fontFamily: "bariol_regular",
   },
   horarioFont: {
-    fontSize: 22,
+    fontSize: 20,
     color: "white",
     textAlign: "center",
     marginLeft: 12,
@@ -518,7 +532,7 @@ export default StyleSheet.create({
     fontFamily: "bariol_regular",
   },
   horarioFont1: {
-    fontSize: 14,
+    fontSize: 12,
     color: "white",
     textAlign: "center",
     marginLeft: 12,
@@ -734,7 +748,7 @@ export default StyleSheet.create({
     fontSize: 14,
     textAlign: "left",
     marginLeft: 30,
-    marginTop: 50,
+    marginTop: '10%',
     fontFamily: "bariol_regular",
   },
   switchBtn: {
@@ -747,7 +761,6 @@ export default StyleSheet.create({
     fontSize: 14,
     textAlign: "left",
     marginLeft: 20,
-    top: 13,
     color: "#656565",
     fontFamily: "bariol_regular",
   },
@@ -760,6 +773,7 @@ export default StyleSheet.create({
     marginHorizontal: 30,
     marginTop: 20,
     flexDirection: "row",
+    alignItems: 'center'
   },
   textBoxContatoDesc: {
     backgroundColor: "#fff",

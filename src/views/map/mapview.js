@@ -273,12 +273,12 @@ export default class Map extends Component {
             <TouchableOpacity style={Style.circle2} />
           </TouchableOpacity>
         </View>
-        <View style={{ position: "absolute", alignSelf: "center", top: 300 }}>
+        <View style={{ position: "absolute", alignSelf: "center", top: 300, }}>
           <ModalLoad />
         </View>
         <View
           style={{
-            justifyContent: 'flex-end'
+            justifyContent: 'flex-end',
           }}
         >
           <View style={Style.procurarContainer}>

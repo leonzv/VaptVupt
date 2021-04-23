@@ -8,29 +8,29 @@ export default function Condutores(props) {
   const {goBack} = props.navigation;
   return (
     <View style={Style.container}>
-    <View style={{ flexDirection: "row",}}>
-      <TouchableOpacity style={Style.circle}>
-        <TouchableOpacity
-          style={Style.circle2}
-          title="Toggle drawer"
-          onPress={() => props.navigation.toggleDrawer()}
-        />
-      </TouchableOpacity>
-      <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>    
-      <Image
-        style={{
-          alignSelf: "center",
-          resizeMode: "contain",
-          width: 80,
-          height: 40,
-          marginLeft: '20%',
-          marginRight: 30,
-          flex: 1,
-          top: 12,
-        }}
-        source={require("../assets/img/vai-vex-logo.png")}
-      />
-    </View>
+    <View style={{ flexDirection: "row" }}>
+          <TouchableOpacity style={Style.circle}>
+            <TouchableOpacity
+              style={Style.circle2}
+              title="Toggle drawer"
+              onPress={() => props.navigation.toggleDrawer()}
+            />
+          </TouchableOpacity>
+          <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>
+          <Image
+            style={{
+              alignSelf: "center",
+              resizeMode: "contain",
+              width: 220,
+              height: 80,
+              marginLeft: '5%',
+              marginRight: 30,
+              flex: 1,
+              top: 12,
+            }}
+            source={require("../assets/img/vai-vex-logo.png")}
+          />
+        </View>
       <Text
         style={{
           fontSize: 22,
