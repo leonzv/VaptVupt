@@ -37,7 +37,7 @@ export default function Condutores(props) {
           marginLeft: 30,
           textAlign: "left",
           marginRight: 90,
-          marginTop: 60,
+          marginTop: '6%',
           color: "#000",
           fontFamily: "bariol_regular",
         }}
@@ -45,14 +45,16 @@ export default function Condutores(props) {
         {" "}
         Condutores
       </Text>
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1 , justifyContent: 'space-around'}}>
         <Swiper style={Style.wrapper} loop={false}
-        paginationStyle={{ bottom: 15, }}
-        activeDotColor="rgb(0,41,143)"
-        dotStyle={{ width: 35, marginHorizontal: 10 }}
-        activeDotStyle={{ width: 55, marginHorizontal: 10 }}>
+        style={Style.wrapper}
+        loop={false}
+        paginationStyle={{height: '100%', alignItems: 'flex-end', top: 10,}}
+        activeDotColor="#0038d9"
+        dotStyle={{ width: 45, marginHorizontal: 10, bottom: 50,}}
+        activeDotStyle={{ width: 65, marginHorizontal: 10, bottom: 50, }}>
         <View style={{flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
-            <View style={{flexDirection: "row" , alignItems: 'center', justifyContent: 'center'}}>
+            <View style={{flexDirection: "row" , alignItems: 'center', justifyContent: 'center', marginTop:'2%'}}>
               <View style={Style.bigCircleCond}>
                 <View
                   style={Style.bigCircleCond2}
@@ -67,7 +69,7 @@ export default function Condutores(props) {
                   alignContent: "center",
                   top: 10,
                   alignSelf: "center",
-                  marginHorizontal: 80,
+                  marginHorizontal: '18%'
                 }}
               >
                 <Image

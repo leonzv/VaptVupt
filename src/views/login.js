@@ -17,7 +17,7 @@ export default function Login(props) {
         style={Style.wrapper}
         loop={false}
         paginationStyle={{height: '100%', alignItems: 'flex-end',top: 15,}}
-        activeDotColor="rgb(0,41,143)"
+        activeDotColor="#0038d9"
         dotStyle={{ width: 45, marginHorizontal: 10, bottom: 50,}}
         activeDotStyle={{ width: 65, marginHorizontal: 10, bottom: 50, }}
         >

@@ -44,13 +44,14 @@ export default function EditarDados({ navigation }, props) {
             marginLeft: 30,
             fontSize: 22,
             marginBottom: 30,
-            marginVertical: 30,
+            marginVertical: '6%',
             fontFamily: "bariol_regular",
           }}
         >
           Editar dados pessoais
         </Text>
       </View>
+      <View style={{justifyContent: 'space-around'}}>
       <View style={Style.textBox}>
         <Text style={Style.textBoxFontCadastro}>Nome:</Text>
         <TextInput
@@ -144,6 +145,7 @@ export default function EditarDados({ navigation }, props) {
           placeholderTextColor="#fff"
           autoCapitalize="words"
         />
+      </View>
       </View>
       <View style={{flexDirection: 'row', justifyContent: 'center', width: '100%', marginBottom: 30, marginTop: 50,}}>
           <TouchableOpacity style={Style.deletarDados}>

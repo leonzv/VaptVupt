@@ -53,7 +53,7 @@ export default function Sobre(props) {
         <TouchableOpacity style={Style.greenBtn} onPress={() => goBack("B")}>
           <Text
             style={{
-              fontSize: 16,
+              fontSize: 20,
               color: "white",
               alignSelf: "center",
               textAlign: "center",

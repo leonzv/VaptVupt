@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import Style from "../style/style";
 import { DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
 
-export function DrawerContent({ navigation }, props) {
+export function DrawerContent(props) {
   const [search, setSearch] = useState("");
   return (
     <View style={{ flex: 1 }}>
@@ -14,7 +14,7 @@ export function DrawerContent({ navigation }, props) {
               <TouchableOpacity
                 style={Style.circle2}
                 title="Toggle drawer"
-                onPress={() => navigation.toggleDrawer()}
+                onPress={() => props.navigation.toggleDrawer()}
               />
             </TouchableOpacity>
             <Text
@@ -52,7 +52,7 @@ export function DrawerContent({ navigation }, props) {
             }}
             label="Início"
             onPress={() => {
-              navigation.navigate("Home");
+              props.navigation.navigate("Home");
             }}
           />
           <DrawerItem
@@ -63,7 +63,7 @@ export function DrawerContent({ navigation }, props) {
             }}
             label="Condutores"
             onPress={() => {
-              navigation.navigate("Condutores");
+              props.navigation.navigate("Condutores");
             }}
           />
           <DrawerItem
@@ -74,7 +74,7 @@ export function DrawerContent({ navigation }, props) {
             }}
             label="Mapa"
             onPress={() => {
-              navigation.navigate("Gps");
+              props.navigation.navigate("Gps");
             }}
           />
           <DrawerItem
@@ -85,7 +85,7 @@ export function DrawerContent({ navigation }, props) {
             }}
             label="Configurações"
             onPress={() => {
-              navigation.navigate("Configuracoes");
+              props.navigation.navigate("Configuracoes");
             }}
           />
           <DrawerItem
@@ -96,7 +96,7 @@ export function DrawerContent({ navigation }, props) {
             }}
             label="Pagamentos"
             onPress={() => {
-              navigation.navigate("Pagamentos");
+              props.navigation.navigate("Pagamentos");
             }}
           />
           <DrawerItem
@@ -107,7 +107,7 @@ export function DrawerContent({ navigation }, props) {
             }}
             label="Sobre"
             onPress={() => {
-              navigation.navigate("Sobre");
+              props.navigation.navigate("Sobre");
             }}
           />
           <DrawerItem
@@ -118,18 +118,18 @@ export function DrawerContent({ navigation }, props) {
             }}
             label="Contato"
             onPress={() => {
-              navigation.navigate("Contato");
+              props.navigation.navigate("Contato");
             }}
           />
         </DrawerContentScrollView>
       </View>
-      <View style={{backgroundColor: '#00298F',}}>
+      <View style={{backgroundColor: '#0038d9',}}>
         <View style={{backgroundColor: "rgba(255,255,255,0.25)",}}>
         <DrawerItem
           labelStyle={{fontSize: 20, color: 'white', fontFamily: 'bariol_regular', }}
           label="↩ Sair"
           onPress={() => {
-            navigation.navigate("Login");
+            props.navigation.navigate("Login");
           }}
         />
       </View>

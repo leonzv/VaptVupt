@@ -36,7 +36,7 @@ export default function Pagamentos(props) {
           marginLeft: 30,
           textAlign: "left",
           marginRight: 90,
-          marginTop: 30,
+          marginTop: '6%',
           color: "#000",
           fontFamily: "bariol_regular",
         }}
@@ -45,21 +45,21 @@ export default function Pagamentos(props) {
         Conclusão de entrega
       </Text>
       <View style={{ alignSelf: "center" }}>
-        <View style={Style.bigCircle}>
+        <View style={Style.bigCircleConc}>
           <View
-            style={Style.bigCircle2}
+            style={Style.bigCircle2Conc}
             title="Toggle drawer"
             onPress={() => props.navigation.toggleDrawer()}
           />
         </View>
       </View>
-      <View style={{ alignItems: "center", marginTop: 20 }}>
+      <View style={{ alignItems: "center", marginTop: '5%' }}>
         <Text style={Style.conclusaoText}>Nome do motoboy: José Fernandes dos Santos</Text>
         <Text style={Style.conclusaoText}>Tipo de transporte: Motofrete</Text>
         <Text style={Style.conclusaoText}>Forma de pagamento: Dinheiro</Text>
         <Text style={Style.conclusaoText}> Protocolo: VXS000252019</Text>
       </View>
-      <View style={{ alignItems: "center", marginTop: 20,}}>
+      <View style={{ alignItems: "center", marginTop: '1%'}}>
         <View style={Style.grayBoxConc}>
           <Text style={{alignSelf: 'center', textAlign: "center", fontSize: 24, color: "black", fontFamily: "bariol_regular", }}>
             Total(R$):{" "}
@@ -78,6 +78,7 @@ export default function Pagamentos(props) {
               color: "white",
               alignSelf: "center",
               textAlign: "center",
+              fontFamily: 'bariol_regular'
             }}
           >
             Voltar

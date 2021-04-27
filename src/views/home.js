@@ -20,7 +20,7 @@ export default function Home(props) {
             style={{
               alignSelf: "center",
               resizeMode: "contain",
-              width: 220,
+              width: 200,
               height: 80,
               marginLeft: '5%',
               marginRight: 30,
@@ -44,12 +44,12 @@ export default function Home(props) {
         {" "}
         Escolha o serviço desejado abaixo
       </Text>
-      <View style={{flex: 2}}>
+      <View style={{minHeight: 400, maxHeight: 400}}>
       <Swiper
         style={Style.wrapper}
         loop={false}
         paginationStyle={{height: '100%', alignItems: 'flex-end', top: 10,}}
-        activeDotColor="rgb(0,41,143)"
+        activeDotColor="#0038d9"
         dotStyle={{ width: 45, marginHorizontal: 10, bottom: 50,}}
         activeDotStyle={{ width: 65, marginHorizontal: 10, bottom: 50, }}
       >

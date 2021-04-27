@@ -50,11 +50,11 @@ export default function Pagamentos(props) {
         {" "}
         Pagamentos
       </Text>
-      <View style={{ flex: 1, minHeight: "12%", backgroundColor: 'red' }}>
+      <View style={{ minHeight: 300, maxHeight: 300 }}>
         <Swiper
           style={Style.wrapper}
           loop={false}
-          activeDotColor="rgb(0,41,143)"
+          activeDotColor="#0038d9"
           dotStyle={{ width: 35, marginHorizontal: 10, top: 60, }}
           activeDotStyle={{ width: 55, marginHorizontal: 10, top: 60, }}
         >
@@ -91,7 +91,7 @@ export default function Pagamentos(props) {
             borderWidth: 0,
             marginLeft: 40,
             bottom: 8,
-            marginTop: 50,
+            marginTop: '20%',
           }}
           onPress={(newValue) => setCheck(newValue)}
         />

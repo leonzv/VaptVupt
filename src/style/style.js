@@ -24,7 +24,7 @@ export default StyleSheet.create({
   textCircle: {
     textAlign: "center",
     fontSize: 14,
-    marginTop: 55,
+    marginTop: '13%',
     marginLeft: 15,
     fontFamily: "bariol_regular",
   },
@@ -34,9 +34,9 @@ export default StyleSheet.create({
     height: 60,
     width: 60,
     borderWidth: 2,
-    borderColor: "#00298F",
-    marginLeft: 35,
-    marginTop: 35,
+    borderColor: "#0038d9",
+    marginLeft: '7%',
+    marginTop: '7%',
     justifyContent: "center",
   },
   circle2: {
@@ -48,7 +48,7 @@ export default StyleSheet.create({
   },
   circleCorrida: {
     borderRadius: 200,
-    backgroundColor: "#00298F",
+    backgroundColor: "#0038d9",
     height: 140,
     width: 140,
     borderWidth: 2,
@@ -67,7 +67,7 @@ export default StyleSheet.create({
   },
   circleDraw: {
     borderRadius: 50,
-    backgroundColor: "#00298F",
+    backgroundColor: "#0038d9",
     height: 60,
     width: 60,
     borderWidth: 2,
@@ -78,7 +78,7 @@ export default StyleSheet.create({
   },
   circleFav: {
     borderRadius: 50,
-    backgroundColor: "#00298F",
+    backgroundColor: "#0038d9",
     height: 60,
     width: 60,
     borderWidth: 2,
@@ -94,7 +94,7 @@ export default StyleSheet.create({
     height: 200,
     width: 200,
     borderWidth: 2,
-    borderColor: "#00298F",
+    borderColor: "#0038d9",
     marginTop: 30,
     justifyContent: "center",
   },
@@ -103,6 +103,23 @@ export default StyleSheet.create({
     backgroundColor: "#000",
     height: 185,
     width: 185,
+    alignSelf: "center",
+  },
+  bigCircleConc: {
+    borderRadius: 100,
+    backgroundColor: "white",
+    height: 170,
+    width: 170,
+    borderWidth: 2,
+    borderColor: "#0038d9",
+    marginTop: 30,
+    justifyContent: "center",
+  },
+  bigCircle2Conc: {
+    borderRadius: 100,
+    backgroundColor: "#000",
+    height: 155,
+    width: 155,
     alignSelf: "center",
   },
   vaiVexImg: {
@@ -125,7 +142,7 @@ export default StyleSheet.create({
     bottom: 15,
   },
   retanguloAzul: {
-    backgroundColor: "#00298F",
+    backgroundColor: "#0038d9",
     width: "65%",
     height: '80%',
     borderRadius: 10,
@@ -133,7 +150,7 @@ export default StyleSheet.create({
     flexDirection: "column-reverse",
   },
   retanguloAzul1: {
-    backgroundColor: "#00298F",
+    backgroundColor: "#0038d9",
     width: "65%",
     height: '80%',
     borderRadius: 10,
@@ -141,7 +158,7 @@ export default StyleSheet.create({
     flexDirection: "column-reverse",
   },
   retanguloVermelho1: {
-    backgroundColor: "#ED1C24",
+    backgroundColor: "#d80042",
     width: "65%",
     height: '80%',
     borderRadius: 10,
@@ -175,8 +192,11 @@ export default StyleSheet.create({
   wrapper: {
 
   },
+  wrapperDashboard:{
+    maxHeight: 400
+  },
   retanguloVermelho: {
-    backgroundColor: "#ED1C24",
+    backgroundColor: "#d80042",
     width: "65%",
     height: '80%',
     borderRadius: 10,
@@ -297,7 +317,7 @@ export default StyleSheet.create({
     fontFamily: "bariol_regular",
   },
   btnComecar: {
-    backgroundColor: "#00298F",
+    backgroundColor: "#0038d9",
     padding: '3.5%',
     borderRadius: 5,
     marginHorizontal: 30,
@@ -310,7 +330,7 @@ export default StyleSheet.create({
     fontFamily: "bariol_regular",
   },
   redCircle: {
-    backgroundColor: "#ED1C24",
+    backgroundColor: "#d80042",
     borderRadius: 300,
     width: 240,
     height: 240,
@@ -323,7 +343,7 @@ export default StyleSheet.create({
     alignContent: "center",
   },
   blueCircle: {
-    backgroundColor: "#00298F",
+    backgroundColor: "#0038d9",
     borderRadius: 300,
     width: 240,
     height: 240,
@@ -350,7 +370,7 @@ export default StyleSheet.create({
     fontFamily: "bariol_regular",
   },
   btnReady: {
-    backgroundColor: "#00298F",
+    backgroundColor: "#0038d9",
     padding: 15,
     borderRadius: 5,
     marginHorizontal: 30,
@@ -359,7 +379,7 @@ export default StyleSheet.create({
     marginTop: 45,
   },
   retanguloAzulHome: {
-    backgroundColor: "#00298F",
+    backgroundColor: "#0038d9",
     width: "85%",
     height: '65%',
     borderRadius: 10,
@@ -370,7 +390,7 @@ export default StyleSheet.create({
     alignContent: "center",
   },
   retanguloAzulDashboard: {
-    backgroundColor: "#00298F",
+    backgroundColor: "#0038d9",
     width: "85%",
     height: 200,
     borderRadius: 10,
@@ -381,7 +401,7 @@ export default StyleSheet.create({
     alignContent: "center",
   },
   retanguloAzulPag: {
-    backgroundColor: "#00298F",
+    backgroundColor: "#0038d9",
     width: "80%",
     minHeight: 200,
     borderRadius: 7,
@@ -448,7 +468,7 @@ export default StyleSheet.create({
   procurarBox: {
     width: "95%",
     height: 80,
-    backgroundColor: "#00298F",
+    backgroundColor: "#0038d9",
     marginHorizontal: 15,
     borderRadius: 10,
     alignSelf: "center",
@@ -465,7 +485,7 @@ export default StyleSheet.create({
   procurarBox2: {
     width: "95%",
     height: 100,
-    backgroundColor: "#00298F",
+    backgroundColor: "#0038d9",
     marginHorizontal: 15,
     borderRadius: 10,
     alignSelf: "center",
@@ -474,7 +494,7 @@ export default StyleSheet.create({
   },
   circleProcurar: {
     borderRadius: 50,
-    backgroundColor: "#00298F",
+    backgroundColor: "#0038d9",
     height: 54,
     width: 54,
     borderWidth: 2,
@@ -554,6 +574,7 @@ export default StyleSheet.create({
     marginHorizontal: 30,
     marginVertical: 10,
     flexDirection: "row",
+    alignItems: 'center',
   },
   textBoxGuardar: {
     backgroundColor: "#ECECEC",
@@ -563,6 +584,7 @@ export default StyleSheet.create({
     marginHorizontal: 30,
     marginVertical: 10,
     flexDirection: "row",
+    alignItems: 'center',
   },
   blueBtn: {
     backgroundColor: "#346CFF",
@@ -593,7 +615,7 @@ export default StyleSheet.create({
     alignSelf: "center",
     borderRadius: 5,
     justifyContent: "center",
-    marginBottom: 40,
+    marginBottom: '7%',
   },
   motoboyText: {
     fontSize: 20,
@@ -610,14 +632,14 @@ export default StyleSheet.create({
     backgroundColor: "rgba(255,255,255,0.65)",
   },
   modalView: {
-    backgroundColor: "#00298F",
+    backgroundColor: "#0038d9",
     borderRadius: 5,
     width: "85%",
     height: "65%",
     elevation: 10,
   },
   modalViewChamar: {
-    backgroundColor: "#00298F",
+    backgroundColor: "#0038d9",
     borderRadius: 5,
     width: "85%",
     height: "45%",
@@ -630,14 +652,14 @@ export default StyleSheet.create({
     backgroundColor: "rgba(255,255,255,0.65)",
   },
   modalView1: {
-    backgroundColor: "#00298F",
+    backgroundColor: "#0038d9",
     borderRadius: 5,
     width: "85%",
     height: "55%",
     elevation: 10,
   },
   modalViewEnc: {
-    backgroundColor: "#00298F",
+    backgroundColor: "#0038d9",
     borderRadius: 5,
     width: "85%",
     height: "50%",
@@ -686,7 +708,7 @@ export default StyleSheet.create({
     fontSize: 16,
   },
   textStyleClose: {
-    color: "#00298F",
+    color: "#0038d9",
     textAlign: "center",
     fontSize: 20,
     fontFamily: "bariol_regular",
@@ -718,25 +740,25 @@ export default StyleSheet.create({
   textPagamento: {
     fontSize: 14,
     color: "black",
-    marginTop: 85,
+    marginTop: '20%',
     marginRight: 30,
     fontFamily: "bariol_regular",
     flex: 1,
   },
   greenPag: {
-    width: "85%",
+    width: "90%",
     minHeight: 50,
     maxHeight: 60,
     alignSelf: "center",
     justifyContent: "center",
     backgroundColor: "#00AA33",
-    marginBottom: 30,
+    marginBottom: '6%',
     borderRadius: 7,
     flex: 1,
   },
   grayBoxConc: {
     width: "90%",
-    height: 120,
+    height: 110,
     justifyContent: "center",
     alignContent: "center",
     backgroundColor: "#DCDCDC",
@@ -805,7 +827,7 @@ export default StyleSheet.create({
     height: 150,
     width: 150,
     borderWidth: 2,
-    borderColor: "#00298F",
+    borderColor: "#0038d9",
     marginTop: 30,
     justifyContent: "center",
     marginLeft: '10%',
@@ -831,7 +853,7 @@ export default StyleSheet.create({
     height: 35,
     marginLeft: 15,
     alignSelf: "flex-start",
-    backgroundColor: "#ED1C24",
+    backgroundColor: "#d80042",
     borderRadius: 6,
     justifyContent: "center",
   },
@@ -902,7 +924,7 @@ export default StyleSheet.create({
   deletarDados: {
     width: "38%",
     height: 50,
-    backgroundColor: "#ED1C24",
+    backgroundColor: "#d80042",
     marginLeft: 30,
     marginRight: 15,
     borderRadius: 7,
@@ -919,7 +941,7 @@ export default StyleSheet.create({
     marginHorizontal: 30,
   },
   enderecoText: {
-    maxWidth: "60%",
+    maxWidth: "50%",
     fontSize: 16,
     color: "#8F8F8F",
     fontFamily: "bariol_regular",
@@ -981,7 +1003,7 @@ export default StyleSheet.create({
   },
   drawerContent: {
     flex: 1,
-    backgroundColor: "#00298F",
+    backgroundColor: "#0038d9",
   },
   textDrawer: {
     color: "white",
@@ -1051,7 +1073,7 @@ export default StyleSheet.create({
     borderRadius: 5,
   },
   fecharText: {
-    color: "#00298F",
+    color: "#0038d9",
     fontFamily: "bariol_regular",
     textAlign: "center",
     fontSize: 14,
@@ -1072,7 +1094,7 @@ export default StyleSheet.create({
     color: "white",
   },
   acompanharText: {
-    color: "#00298F",
+    color: "#0038d9",
     fontFamily: "bariol_regular",
     textAlign: "center",
     fontSize: 16,
@@ -1185,7 +1207,7 @@ export default StyleSheet.create({
     backgroundColor: "rgba(255,255,255,0.65)",
   },
   redCircleLoad: {
-    backgroundColor: "#ED1C24",
+    backgroundColor: "#d80042",
     borderRadius: 300,
     width: 240,
     height: 240,
@@ -1198,7 +1220,7 @@ export default StyleSheet.create({
     alignContent: "center",
   },
   blueCircleLoad: {
-    backgroundColor: "#00298F",
+    backgroundColor: "#0038d9",
     borderRadius: 300,
     width: 240,
     height: 240,
