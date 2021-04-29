@@ -61,45 +61,45 @@ export default function Dashboard(props) {
               activeDotStyle={{ width: 65, marginHorizontal: 10, bottom: 50 }}
             >
               <TouchableOpacity
-                style={Style.retanguloAzulHome}
-                onPress={() => props.navigation.navigate("Chamar")}
-              >
-                <Image
-                  style={Style.imgHome}
-                  source={require("../assets/img/bicicleta.png")}
-                />
-                <Text style={Style.textRetanguloHome}> Bicicleta</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={Style.retanguloAzulHome}
-                onPress={() => props.navigation.navigate("Chamar")}
-              >
-                <Image
-                  style={Style.imgHome}
-                  source={require("../assets/img/moto-branca.png")}
-                />
-                <Text style={Style.textRetanguloHome}> Moto </Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={Style.retanguloAzulHome}
-                onPress={() => props.navigation.navigate("Chamar")}
-              >
-                <Image
-                  style={Style.imgHome}
-                  source={require("../assets/img/moto-branca.png")}
-                />
-                <Text style={Style.textRetanguloHome}> VUC </Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={Style.retanguloAzulHome}
-                onPress={() => props.navigation.navigate("Chamar")}
-              >
-                <Image
-                  style={Style.imgHome}
-                  source={require("../assets/img/moto-branca.png")}
-                />
-                <Text style={Style.textRetanguloHome}> Caminhão </Text>
-              </TouchableOpacity>
+              style={Style.retanguloAzulHome}
+              onPress={() => props.navigation.navigate("Condutores")}
+            >
+              <Image
+                style={Style.imgHome}
+                source={require("../assets/img/condutor.png")}
+              />
+              <Text style={Style.textRetanguloHome}> Condutores</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={Style.retanguloAzulHome}
+              onPress={() => props.navigation.navigate("Chamar")}
+            >
+              <Image
+                style={Style.imgHome}
+                source={require("../assets/img/moto-branca.png")}
+              />
+              <Text style={Style.textRetanguloHome}> Chamar </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={Style.retanguloAzulHome}
+              onPress={() => props.navigation.navigate("Mensagem")}
+            >
+              <Image
+                style={Style.imgHome}
+                source={require("../assets/img/moto-branca.png")}
+              />
+              <Text style={Style.textRetanguloHome}> Mensagem </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={Style.retanguloAzulHome}
+              onPress={() => props.navigation.navigate("Conclusao")}
+            >
+              <Image
+                style={Style.imgHome}
+                source={require("../assets/img/moto-branca.png")}
+              />
+              <Text style={Style.textRetanguloHome}> Conclusão </Text>
+            </TouchableOpacity>
             </Swiper>
           </View>
         </View>

@@ -49,7 +49,7 @@ export default function Condutores(props) {
         <Swiper style={Style.wrapper} loop={false}
         style={Style.wrapper}
         loop={false}
-        paginationStyle={{height: '100%', alignItems: 'flex-end', top: 10,}}
+        paginationStyle={{height: '75%', alignItems: 'flex-end', top: 10, }}
         activeDotColor="#0038d9"
         dotStyle={{ width: 45, marginHorizontal: 10, bottom: 50,}}
         activeDotStyle={{ width: 65, marginHorizontal: 10, bottom: 50, }}>
