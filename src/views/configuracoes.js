@@ -10,6 +10,7 @@ export default function Configuracoes(props) {
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
   const toggleSwitch1 = () => setIsEnabled1((previousState) => !previousState);
   const {goBack} = props.navigation;
+  console.warn(fontSize);
   return (
     <View style={Style.container}>
     <View style={{ flexDirection: "row" }}>
@@ -59,8 +60,9 @@ export default function Configuracoes(props) {
             marginLeft: 25,
             fontFamily: "bariol_regular",
           }}
+          step={1}
           minimumValue={0}
-          maximumValue={1}
+          maximumValue={4}
           minimumTrackTintColor="#346CFF"
           maximumTrackTintColor="#346CFF"
           thumbTintColor="#346CFF"

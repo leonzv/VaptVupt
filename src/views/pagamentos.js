@@ -50,7 +50,7 @@ export default function Pagamentos(props) {
         {" "}
         Pagamentos
       </Text>
-      <View style={{ minHeight: 300, maxHeight: 300 }}>
+      <View style={{ minHeight: 250, maxHeight: 300 }}>
         <Swiper
           style={Style.wrapper}
           loop={false}
@@ -80,6 +80,7 @@ export default function Pagamentos(props) {
           </TouchableOpacity>
         </Swiper>
       </View>
+      <View style={{marginTop: '20%'}}/>
       <View style={{ flex: 1, flexDirection: "row" }}>
         <BouncyCheckbox
           size={32}
@@ -90,8 +91,7 @@ export default function Pagamentos(props) {
             borderColor: "white",
             borderWidth: 0,
             marginLeft: 40,
-            bottom: 8,
-            marginTop: '20%',
+            bottom: 85,
           }}
           onPress={(newValue) => setCheck(newValue)}
         />

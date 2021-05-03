@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-
 export default StyleSheet.create({
   container: {
     backgroundColor: "#fff",
@@ -244,25 +243,23 @@ export default StyleSheet.create({
   },
   textBox30: {
     backgroundColor: "#fff",
-    height: '81%',
     borderColor: "#656565",
     borderWidth: 1,
     borderRadius: 5,
     marginBottom: 10,
     width: "22%",
-    marginLeft: "7%",
+    marginLeft: 30,
     flexDirection: "row",
     alignItems: 'center'
   },
   textBox70: {
     backgroundColor: "#fff",
-    height: '81%',
     borderColor: "#656565",
     borderWidth: 1,
     borderRadius: 5,
     marginBottom: 10,
-    marginRight: "7%",
-    marginLeft: "4%",
+    marginRight: 30,
+    marginLeft: "5%",
     width: "60%",
     flexDirection: "row",
     alignItems: 'center'
@@ -429,7 +426,7 @@ export default StyleSheet.create({
     alignSelf: "center",
     borderRadius: 10,
     marginTop: 10,
-    marginBottom: 30,
+    marginBottom: '6%',
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: 'center'
@@ -740,7 +737,6 @@ export default StyleSheet.create({
   textPagamento: {
     fontSize: 14,
     color: "black",
-    marginTop: '20%',
     marginRight: 30,
     fontFamily: "bariol_regular",
     flex: 1,
@@ -748,11 +744,11 @@ export default StyleSheet.create({
   greenPag: {
     width: "90%",
     minHeight: 50,
-    maxHeight: 60,
+    maxHeight: 50,
     alignSelf: "center",
     justifyContent: "center",
     backgroundColor: "#00AA33",
-    marginBottom: '6%',
+    marginBottom: '5%',
     borderRadius: 7,
     flex: 1,
   },
@@ -847,6 +843,7 @@ export default StyleSheet.create({
     backgroundColor: "#346CFF",
     borderRadius: 6,
     justifyContent: "center",
+    marginTop: '2%'
   },
   blueBox: {
     width: "38%",
@@ -856,6 +853,7 @@ export default StyleSheet.create({
     backgroundColor: "#d80042",
     borderRadius: 6,
     justifyContent: "center",
+    marginTop: '2%'
   },
   textCondutorBtn: {
     fontSize: 14,
@@ -953,7 +951,7 @@ export default StyleSheet.create({
     height: 35,
     borderRadius: 6,
     justifyContent: "center",
-    marginHorizontal: 20,
+    marginHorizontal: '6%',
   },
   enderecoListText: {
     color: "white",

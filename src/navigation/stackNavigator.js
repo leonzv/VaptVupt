@@ -47,7 +47,7 @@ Stack.Navigator.defaultProps = {
 
 const MainStackNavigator = () => {
   return (  
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Home" >
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="LoadHome" component={LoadHome} />
         <Stack.Screen name="Gps" component={Gps} />
