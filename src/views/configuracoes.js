@@ -1,16 +1,34 @@
 import "react-native-gesture-handler";
 import { View, Text, Switch, Image, TouchableOpacity } from "react-native";
 import Style from "../style/style";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Slider from "@react-native-community/slider";
+import {CustomText} from '../components/CustomText';
+import {FontContext} from '../contexts/FontContext';
 
-export default function Configuracoes(props) {
+export default function Configuracoes({route, navigation}) {
   const [isEnabled, setIsEnabled] = useState(false);
   const [isEnabled1, setIsEnabled1] = useState(false);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
   const toggleSwitch1 = () => setIsEnabled1((previousState) => !previousState);
-  const {goBack} = props.navigation;
-  console.warn(fontSize);
+  const {goBack} = navigation;
+  const {FONTS, onChangeFonts} = useContext(FontContext);
+  const changeFontSize = value => {
+    const updatedFonts = Object.keys(FONTS).reduce( 
+      (accumulator, key) => ({
+        ...accumulator,
+        [key]: {
+          ...FONTS[key],
+          lineHeight: FONTS[key].lineHeight,
+          fontSize: Number(FONTS[key].defaultValue) + Number(value)
+        },
+      }),
+      {},
+    );
+    updatedFonts.defaultValue = value;
+    onChangeFonts(updatedFonts);
+  };
+  console.log(onChangeFonts);
   return (
     <View style={Style.container}>
     <View style={{ flexDirection: "row" }}>
@@ -18,7 +36,7 @@ export default function Configuracoes(props) {
             <TouchableOpacity
               style={Style.circle2}
               title="Toggle drawer"
-              onPress={() => props.navigation.toggleDrawer()}
+              onPress={() => navigation.toggleDrawer()}
             />
           </TouchableOpacity>
           <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>
@@ -51,7 +69,7 @@ export default function Configuracoes(props) {
       </Text>
 
       <View>
-        <Text style={Style.textSettings}>Aumentar o tamanho da fonte:</Text>
+        <CustomText fontType="body4" style={Style.textSettings}>Aumentar o tamanho da fonte:</CustomText>
         <Slider
           style={{
             width: "90%",
@@ -60,12 +78,13 @@ export default function Configuracoes(props) {
             marginLeft: 25,
             fontFamily: "bariol_regular",
           }}
-          step={1}
           minimumValue={0}
-          maximumValue={4}
+          maximumValue={3}
           minimumTrackTintColor="#346CFF"
           maximumTrackTintColor="#346CFF"
           thumbTintColor="#346CFF"
+          step={1}
+          onValueChange={changeFontSize}
         />
       </View>
       <View>

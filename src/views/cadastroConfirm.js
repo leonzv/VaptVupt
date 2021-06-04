@@ -3,7 +3,7 @@ import { View, Text, Image, TextInput, TouchableOpacity, KeyboardAvoidingView } 
 import Style from "../style/style";
 import React, {useState} from "react";
 
-export default function Cadastro(props) {
+export default function Cadastro({navigation, route}) {
   const [cpfcnpj, setCpfcnpj] = useState("");
   const [endereco, setEndereco] = useState("");
   const [numero, setNumero] = useState("");
@@ -12,6 +12,11 @@ export default function Cadastro(props) {
   const [cidade, setCidade] = useState("");
   const [pais, setPais] = useState("");
   const [cep, setCep] = useState("");
+  
+  function btnPress(){
+    alert("Volte e faça login!");
+    navigation.navigate("Login")
+  }
   
   return (
     <KeyboardAvoidingView style={Style.containerCadastro}>
@@ -120,7 +125,7 @@ export default function Cadastro(props) {
       </View>
       <TouchableOpacity
         style={Style.btnComecar}
-        onPress={props.navigation.navigate("Home")}
+        onPress={btnPress()}
       >
         <Text style={Style.btnComecarFont}> Começar </Text>
       </TouchableOpacity>

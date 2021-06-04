@@ -5,6 +5,7 @@ import { DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
 
 export function DrawerContent(props) {
   const [search, setSearch] = useState("");
+
   return (
     <View style={{ flex: 1 }}>
       <View style={Style.drawerContent}>
@@ -123,16 +124,20 @@ export function DrawerContent(props) {
           />
         </DrawerContentScrollView>
       </View>
-      <View style={{backgroundColor: '#0038d9',}}>
-        <View style={{backgroundColor: "rgba(255,255,255,0.25)",}}>
-        <DrawerItem
-          labelStyle={{fontSize: 20, color: 'white', fontFamily: 'bariol_regular', }}
-          label="↩ Sair"
-          onPress={() => {
-            props.navigation.navigate("Login");
-          }}
-        />
-      </View>
+      <View style={{ backgroundColor: "#0038d9" }}>
+        <View style={{ backgroundColor: "rgba(255,255,255,0.25)" }}>
+          <DrawerItem
+            labelStyle={{
+              fontSize: 20,
+              color: "white",
+              fontFamily: "bariol_regular",
+            }}
+            label="↩ Sair"
+            onPress={() => {
+              props.navigation.navigate("Login");
+            }}
+          />
+        </View>
       </View>
     </View>
   );

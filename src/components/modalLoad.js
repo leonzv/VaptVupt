@@ -5,9 +5,11 @@ import {
   TouchableOpacity,
   Image,
   Pressable,
+  Animated
 } from "react-native";
 import Style from "../style/style";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+
 
 export default function modalLoad() {
   function switchModal() {
@@ -15,6 +17,19 @@ export default function modalLoad() {
       setModalVisible(!modalVisible);
       setModalVisible1(!modalVisible1);
     }
+  }
+  useEffect(() => {
+    setTimeout(() => {
+      setModalVisible(!modalVisible);
+      setModalVisible1(!modalVisible1);
+    }, 4000);
+  }, []);
+  if (modalVisible) {
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <ActivityIndicator size="large" color="blue" style={{width: '35%', height: '35%'}}/>
+      </View>
+    );
   }
   const [modalVisible, setModalVisible] = useState(false);
   const [modalVisible1, setModalVisible1] = useState(false);

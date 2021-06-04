@@ -1,4 +1,11 @@
 import { StyleSheet } from "react-native";
+import {COLORS, FONTS} from '../constants';
+const getFontStyle = (fontType) => {
+  const { defaultValue, ...fontStyle } = FONTS[fontType];
+
+  return fontStyle;
+}
+
 export default StyleSheet.create({
   container: {
     backgroundColor: "#fff",
@@ -22,7 +29,7 @@ export default StyleSheet.create({
   },
   textCircle: {
     textAlign: "center",
-    fontSize: 14,
+    ...getFontStyle("body4"),
     marginTop: '13%',
     marginLeft: 15,
     fontFamily: "bariol_regular",
@@ -166,7 +173,7 @@ export default StyleSheet.create({
   },
   loginText: {
     textAlign: "left",
-    fontSize: 18,
+    ...getFontStyle("body2"),
     fontFamily: "bariol_regular",
     color: "#fff",
     marginLeft: 20,
@@ -184,7 +191,7 @@ export default StyleSheet.create({
     marginVertical: 20,
   },
   btnCadastrarFont: {
-    fontSize: 18,
+    ...getFontStyle("body2"),
     color: "#000",
     fontFamily: "bariol_regular",
   },
@@ -239,7 +246,7 @@ export default StyleSheet.create({
     borderRadius: 5,
     marginHorizontal: 30,
     flexDirection: "row",
-    alignItems: 'center'
+    alignItems: 'center',
   },
   textBox30: {
     backgroundColor: "#fff",
@@ -268,7 +275,7 @@ export default StyleSheet.create({
     flexDirection: "row",
   },
   textBoxFont: {
-    fontSize: 16,
+    ...getFontStyle("body3"),
     textAlign: "left",
     marginLeft: 10,
     color: "#656565",
@@ -277,7 +284,7 @@ export default StyleSheet.create({
     fontFamily: "bariol_regular",
   },
   textBoxFontChamar: {
-    fontSize: 14,
+    ...getFontStyle("body4"),
     textAlign: "left",
     marginLeft: 10,
     color: "#656565",
@@ -287,7 +294,7 @@ export default StyleSheet.create({
     fontFamily: "bariol_regular",
   },
   textBoxDraw: {
-    fontSize: 14,
+    ...getFontStyle("body4"),
     textAlign: "left",
     marginHorizontal: 20,
     color: "white",
@@ -297,7 +304,7 @@ export default StyleSheet.create({
     fontFamily: "bariol_regular",
   },
   textBoxDesc: {
-    fontSize: 14,
+    ...getFontStyle("body4"),
     textAlign: "left",
     marginLeft: 10,
     color: "#656565",
@@ -306,7 +313,7 @@ export default StyleSheet.create({
     fontFamily: "bariol_regular",
   },
   textBoxFontCadastro: {
-    fontSize: 16,
+    ...getFontStyle("body3"),
     textAlign: "left",
     marginLeft: 10,
     maxHeight: 50,
@@ -322,7 +329,7 @@ export default StyleSheet.create({
     marginVertical: '5%',
   },
   btnComecarFont: {
-    fontSize: 20,
+    ...getFontStyle("body2"),
     color: "#fff",
     fontFamily: "bariol_regular",
   },
@@ -410,7 +417,7 @@ export default StyleSheet.create({
     flex: 1,
   },
   textRetanguloHome: {
-    fontSize: 26,
+    ...getFontStyle("h1"),
     color: "#fff",
     textAlign: "center",
     fontFamily: "bariol_regular",
@@ -439,7 +446,7 @@ export default StyleSheet.create({
   },
   grayBoxSmallText: {
     color: "#000",
-    fontSize: 16,
+    ...getFontStyle("body3"),
     marginLeft: 25,
     maxWidth: 80,
     fontFamily: "bariol_regular",
@@ -455,7 +462,7 @@ export default StyleSheet.create({
     justifyContent: "center",
   },
   btnAdminFont: {
-    fontSize: 16,
+    ...getFontStyle("body3"),
     color: "#fff",
     alignSelf: "center",
     elevation: 5,
@@ -525,7 +532,7 @@ export default StyleSheet.create({
     marginVertical: 20,
   },
   nameText: {
-    fontSize: 14,
+    ...getFontStyle("body4"),
     color: "white",
     alignSelf: "center",
     maxWidth: 50,
@@ -533,7 +540,7 @@ export default StyleSheet.create({
     fontFamily: "bariol_regular",
   },
   procurarFont: {
-    fontSize: 14,
+    ...getFontStyle("body4"),
     color: "white",
     textAlign: "left",
     marginLeft: 10,
@@ -541,7 +548,7 @@ export default StyleSheet.create({
     fontFamily: "bariol_regular",
   },
   horarioFont: {
-    fontSize: 20,
+    ...getFontStyle("body2"),
     color: "white",
     textAlign: "center",
     marginLeft: 12,
@@ -549,7 +556,7 @@ export default StyleSheet.create({
     fontFamily: "bariol_regular",
   },
   horarioFont1: {
-    fontSize: 12,
+    ...getFontStyle("body5"),
     color: "white",
     textAlign: "center",
     marginLeft: 12,
@@ -558,7 +565,7 @@ export default StyleSheet.create({
   circleText: {
     color: "white",
     alignSelf: "center",
-    fontSize: 26,
+    ...getFontStyle("h1"),
     textAlign: "center",
     fontFamily: "bariol_regular",
   },
@@ -615,7 +622,7 @@ export default StyleSheet.create({
     marginBottom: '7%',
   },
   motoboyText: {
-    fontSize: 20,
+    ...getFontStyle("body2"),
     color: "#fff",
     alignSelf: "center",
     elevation: 5,
@@ -702,12 +709,12 @@ export default StyleSheet.create({
     color: "white",
     fontFamily: "bariol_regular",
     textAlign: "center",
-    fontSize: 16,
+    ...getFontStyle("body3"),
   },
   textStyleClose: {
     color: "#0038d9",
     textAlign: "center",
-    fontSize: 20,
+    ...getFontStyle("body2"),
     fontFamily: "bariol_regular",
   },
   modalText: {
@@ -715,11 +722,11 @@ export default StyleSheet.create({
     textAlign: "center",
     color: "white",
     fontFamily: "bariol_regular",
-    fontSize: 18,
+    ...getFontStyle("body2"),
   },
   enderecoStyle: {
     textAlign: "center",
-    fontSize: 22,
+    ...getFontStyle("h2"),
     color: "white",
     fontFamily: "bariol_regular",
     marginHorizontal: 11,
@@ -735,7 +742,7 @@ export default StyleSheet.create({
     marginBottom: 3,
   },
   textPagamento: {
-    fontSize: 14,
+    ...getFontStyle("body4"),
     color: "black",
     marginRight: 30,
     fontFamily: "bariol_regular",
@@ -763,7 +770,7 @@ export default StyleSheet.create({
     marginVertical: 20,
   },
   textSettings: {
-    fontSize: 14,
+    ...getFontStyle("body4"),
     textAlign: "left",
     marginLeft: 30,
     marginTop: '10%',
@@ -776,7 +783,7 @@ export default StyleSheet.create({
     marginBottom: 20,
   },
   textBoxFontContato: {
-    fontSize: 14,
+    ...getFontStyle("body4"),
     textAlign: "left",
     marginLeft: 20,
     color: "#656565",
@@ -813,7 +820,7 @@ export default StyleSheet.create({
     borderRadius: 6,
   },
   textSobre: {
-    fontSize: 14,
+    ...getFontStyle("body4"),
     marginLeft: 30,
     fontFamily: "bariol_regular",
   },
@@ -856,7 +863,7 @@ export default StyleSheet.create({
     marginTop: '2%'
   },
   textCondutorBtn: {
-    fontSize: 14,
+    ...getFontStyle("body4"),
     color: "white",
     textAlign: "center",
     fontFamily: "bariol_regular",
@@ -890,11 +897,11 @@ export default StyleSheet.create({
   editarDadosBtnText: {
     color: "white",
     textAlign: "center",
-    fontSize: 20,
+    ...getFontStyle("body2"),
     fontFamily: "bariol_regular",
   },
   textDashboard: {
-    fontSize: 18,
+    ...getFontStyle("body2"),
     marginLeft: 30,
     textAlign: "left",
     marginTop: 2,
@@ -940,7 +947,7 @@ export default StyleSheet.create({
   },
   enderecoText: {
     maxWidth: "50%",
-    fontSize: 16,
+    ...getFontStyle("body3"),
     color: "#8F8F8F",
     fontFamily: "bariol_regular",
     textAlign: "left",
@@ -956,7 +963,7 @@ export default StyleSheet.create({
   enderecoListText: {
     color: "white",
     textAlign: "center",
-    fontSize: 16,
+    ...getFontStyle("body3"),
     fontFamily: "bariol_regular",
   },
   boxMessageRight: {
@@ -985,7 +992,7 @@ export default StyleSheet.create({
   },
   textMessage: {
     color: "white",
-    fontSize: 16,
+    ...getFontStyle("body3"),
     fontFamily: "bariol_regular",
     margin: 15,
   },
@@ -1005,7 +1012,7 @@ export default StyleSheet.create({
   },
   textDrawer: {
     color: "white",
-    fontSize: 26,
+    ...getFontStyle("h1"),
     fontFamily: "bariol_regular",
   },
   drawerBox: {
@@ -1023,10 +1030,10 @@ export default StyleSheet.create({
     color: "black",
     opacity: 0.6,
     fontFamily: "bariol_regular",
-    fontSize: 18,
+    ...getFontStyle("body2"),
   },
   maisFav: {
-    fontSize: 14,
+    ...getFontStyle("body4"),
     color: "white",
     textAlign: "center",
   },
@@ -1041,7 +1048,7 @@ export default StyleSheet.create({
   },
   modalFavText: {
     color: "white",
-    fontSize: 14,
+    ...getFontStyle("body4"),
     fontFamily: "bariol_regular",
     textAlign: "justify",
     alignSelf: "flex-start",
@@ -1057,7 +1064,7 @@ export default StyleSheet.create({
   },
   btnModalText: {
     color: "white",
-    fontSize: 14,
+    ...getFontStyle("body4"),
     fontFamily: "bariol_regular",
     textAlign: "center",
   },
@@ -1074,12 +1081,12 @@ export default StyleSheet.create({
     color: "#0038d9",
     fontFamily: "bariol_regular",
     textAlign: "center",
-    fontSize: 14,
+    ...getFontStyle("body4"),
   },
   conclusaoText: {
     fontFamily: "bariol_regular",
     textAlign: "center",
-    fontSize: 16,
+    ...getFontStyle("body3"),
   },
   escolherView: {
     justifyContent: "center",
@@ -1088,14 +1095,14 @@ export default StyleSheet.create({
   corridaText: {
     textAlign: "center",
     fontFamily: "bariol_regular",
-    fontSize: 20,
+    ...getFontStyle("body2"),
     color: "white",
   },
   acompanharText: {
     color: "#0038d9",
     fontFamily: "bariol_regular",
     textAlign: "center",
-    fontSize: 16,
+    ...getFontStyle("body3"),
   },
   acompanharBtn: {
     backgroundColor: "white",
@@ -1108,7 +1115,7 @@ export default StyleSheet.create({
   },
   aceitarText: {
     color: "white",
-    fontSize: 26,
+    ...getFontStyle("h1"),
     textAlign: "center",
     fontFamily: "bariol_regular",
     marginLeft: 10,
@@ -1130,7 +1137,7 @@ export default StyleSheet.create({
   },
   LocationText: {
     margin: 10,
-    fontSize: 18,
+    ...getFontStyle("body2"),
     color: "#333",
   },
   LocationTimeBox: {
@@ -1139,12 +1146,12 @@ export default StyleSheet.create({
   },
   LocationTimeText: {
     color: "#fff",
-    fontSize: 12,
+    ...getFontStyle("body5"),
     textAlign: "center",
   },
   LocationTimeTextSmall: {
     color: "#fff",
-    fontSize: 12,
+    ...getFontStyle("body5"),
     textAlign: "center",
   },
   Back: {
@@ -1166,13 +1173,13 @@ export default StyleSheet.create({
   },
 
   TypeTitle: {
-    fontSize: 20,
+    ...getFontStyle("body2"),
     color: "#222",
   },
 
   TypeDescription: {
     color: "#666",
-    fontSize: 14,
+    ...getFontStyle("body4"),
   },
   TypeImage: {
     height: 80,
@@ -1191,7 +1198,7 @@ export default StyleSheet.create({
   RequestButtonText: {
     color: "#fff",
     fontWeight: "bold",
-    fontSize: 18,
+    ...getFontStyle("body2"),
   },
   modalViewLoad: {
     backgroundColor: "transparent",
@@ -1230,14 +1237,14 @@ export default StyleSheet.create({
     alignContent: "center",
   },
   modalLoadText: {
-    fontSize: 30,
+    ...getFontStyle("body1"),
     fontFamily: "bariol_regular",
     color: "white",
     textAlign: "center",
   },
   encontradoLeftText:{
     fontFamily: 'bariol_regular',
-    fontSize: 16,
+    ...getFontStyle("body3"),
     color: 'white',
     textAlign: 'center',
     bottom: 20,
@@ -1245,7 +1252,7 @@ export default StyleSheet.create({
   },
   encontradoRightText:{
     fontFamily: 'bariol_regular',
-    fontSize: 16,
+    ...getFontStyle("body3"),
     color: 'white',
     textAlign: 'center',  
     bottom: 20,

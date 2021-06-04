@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import "react-native-gesture-handler";
 import { View, Text, Image, TouchableOpacity,TextInput } from "react-native";
 import Style from "../style/style";
-import database from '@react-native-firebase/database';
 
 export default function EditarDados({ navigation }, props) {
     const [nome, setNome] = useState("");
@@ -14,7 +13,6 @@ export default function EditarDados({ navigation }, props) {
     const [cidade, setCidade] = useState("");
     const [pais, setPais] = useState("");
     const [cep, setCep] = useState("");
-    const reference = database().ref('/nome/teste');
     return(
       <View style={Style.containerCadastro}>
       <View>
