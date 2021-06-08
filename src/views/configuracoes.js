@@ -39,12 +39,12 @@ export default function Configuracoes({route, navigation}) {
               onPress={() => navigation.toggleDrawer()}
             />
           </TouchableOpacity>
-          <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>
+          <CustomText fontType="body4" style={Style.textCircle}>Bem vindo, Emerson!</CustomText>
           <Image
             style={{
               alignSelf: "center",
               resizeMode: "contain",
-              width: 220,
+              width: 220, 
               height: 80,
               marginLeft: '5%',
               marginRight: 30,
@@ -88,7 +88,7 @@ export default function Configuracoes({route, navigation}) {
         />
       </View>
       <View>
-        <Text style={Style.textSettings}>Forçar economia de energia</Text>
+        <CustomText fontType="body4" style={Style.textSettings}>Forçar economia de energia</CustomText>
         <Switch
           trackColor={{ false: "#DBDBDB", true: "#DBDBDB" }}
           thumbColor={isEnabled ? "" : "#346CFF"}
@@ -98,7 +98,7 @@ export default function Configuracoes({route, navigation}) {
         />
       </View>
       <View>
-        <Text style={Style.textSettings}>Habilitar modo escuro</Text>
+        <CustomText fontType="body4" style={Style.textSettings}>Habilitar modo escuro</CustomText>
         <Switch
           trackColor={{ false: "#DBDBDB", true: "#DBDBDB" }}
           thumbColor={isEnabled1 ? "" : "#346CFF"}
@@ -110,13 +110,7 @@ export default function Configuracoes({route, navigation}) {
       <View style={{ flex: 1, justifyContent: "flex-end" }}>
         <TouchableOpacity style={Style.greenPag}
         onPress={() => goBack('B')}>
-          <Text style={{
-              fontSize: 20,
-              color: "white",
-              alignSelf: "center",
-              textAlign: "center",
-              fontFamily: "bariol_regular",
-            }}>Voltar</Text>
+          <CustomText fontType="h3" style={Style.voltarButton}>Voltar</CustomText>
         </TouchableOpacity>
       </View>
     </View>

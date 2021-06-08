@@ -3,6 +3,7 @@ import "react-native-gesture-handler";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import Style from "../style/style";
 import Swiper from "react-native-swiper";
+import {CustomText} from '../components/CustomText';
 
 export default function Dashboard(props) {
   const { goBack } = props.navigation;
@@ -17,7 +18,7 @@ export default function Dashboard(props) {
               onPress={() => props.navigation.toggleDrawer()}
             />
           </TouchableOpacity>
-          <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>
+          <CustomText style={Style.textCircle}>Bem vindo, Emerson!</CustomText>
           <Image
             style={{
               alignSelf: "center",
@@ -68,7 +69,7 @@ export default function Dashboard(props) {
                 style={Style.imgHome}
                 source={require("../assets/img/condutor.png")}
               />
-              <Text style={Style.textRetanguloHome}> Condutores</Text>
+              <CustomText fontType="h1"  style={Style.textRetanguloHome}> Condutores</CustomText>
             </TouchableOpacity>
             <TouchableOpacity
               style={Style.retanguloAzulHome}
@@ -78,7 +79,7 @@ export default function Dashboard(props) {
                 style={Style.imgHome}
                 source={require("../assets/img/moto-branca.png")}
               />
-              <Text style={Style.textRetanguloHome}> Chamar </Text>
+              <CustomText fontType="h1"  style={Style.textRetanguloHome}> Chamar </CustomText>
             </TouchableOpacity>
             <TouchableOpacity
               style={Style.retanguloAzulHome}
@@ -88,7 +89,7 @@ export default function Dashboard(props) {
                 style={Style.imgHome}
                 source={require("../assets/img/moto-branca.png")}
               />
-              <Text style={Style.textRetanguloHome}> Mensagem </Text>
+              <CustomText fontType="h1"  style={Style.textRetanguloHome}> Mensagem </CustomText>
             </TouchableOpacity>
             <TouchableOpacity
               style={Style.retanguloAzulHome}
@@ -98,7 +99,7 @@ export default function Dashboard(props) {
                 style={Style.imgHome}
                 source={require("../assets/img/moto-branca.png")}
               />
-              <Text style={Style.textRetanguloHome}> Conclusão </Text>
+              <CustomText fontType="h1" style={Style.textRetanguloHome}> Conclusão </CustomText>
             </TouchableOpacity>
             </Swiper>
           </View>
@@ -120,16 +121,16 @@ export default function Dashboard(props) {
             </Text>
             <View style={Style.grayBox}>
               <View>
-                <Text style={Style.grayBoxBigText}>25</Text>
-                <Text style={Style.grayBoxSmallText}>Entregas realizadas</Text>
+                <CustomText style={Style.grayBoxBigText}>25</CustomText>
+                <CustomText fontType="body3" style={Style.grayBoxSmallText}>Entregas realizadas</CustomText>
               </View>
               <View>
-                <Text style={Style.grayBoxBigText}>25</Text>
-                <Text style={Style.grayBoxSmallText}>Pedidos realizados</Text>
+                <CustomText style={Style.grayBoxBigText}>25</CustomText>
+                <CustomText fontType="body3" style={Style.grayBoxSmallText}>Pedidos realizados</CustomText>
               </View>
               <View>
-                <Text style={Style.grayBoxBigText}>25</Text>
-                <Text style={Style.grayBoxSmallText}>Créditos realizados</Text>
+                <CustomText style={Style.grayBoxBigText}>25</CustomText>
+                <CustomText fontType="body3" style={Style.grayBoxSmallText}>Créditos realizados</CustomText>
               </View>
             </View>
           </View>
@@ -150,10 +151,10 @@ export default function Dashboard(props) {
               Dados Pessoais
             </Text>
             <View style={Style.grayBoxDados}>
-              <Text style={Style.textDashboard}>Emerson Garcia</Text>
-              <Text style={Style.textDashboard}>Rua Jaú, 365</Text>
-              <Text style={Style.textDashboard}>Bairro Nova Natal</Text>
-              <Text style={Style.textDashboard}>São Paulo - SP</Text>
+              <CustomText fontType="body2" style={Style.textDashboard}>Emerson Garcia</CustomText>
+              <CustomText fontType="body2" style={Style.textDashboard}>Rua Jaú, 365</CustomText>
+              <CustomText fontType="body2" style={Style.textDashboard}>Bairro Nova Natal</CustomText>
+              <CustomText fontType="body2" style={Style.textDashboard}>São Paulo - SP</CustomText>
               <TouchableOpacity
                 style={Style.editarDadosBtn}
                 onPress={() => props.navigation.navigate("EditarDados")}

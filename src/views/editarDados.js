@@ -53,7 +53,7 @@ export default function EditarDados({ navigation }, props) {
       </View>
       <View style={{justifyContent: 'space-around'}}>
       <View style={Style.textBox}>
-        <Text style={Style.textBoxFontCadastro}>Nome:{reference}</Text>
+        <Text style={Style.textBoxFontCadastro}>Nome:</Text>
         <TextInput
           style={Style.textBoxFont}
           onChangeText={(text) => setNome(text)}

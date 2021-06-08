@@ -21,8 +21,12 @@ export default function modalLoad() {
   useEffect(() => {
     setTimeout(() => {
       setModalVisible(!modalVisible);
+    }, 2000);
+  }, []);
+  useEffect(() => {
+    setTimeout(() => {
       setModalVisible1(!modalVisible1);
-    }, 4000);
+    }, 6000);
   }, []);
   if (modalVisible) {
     return (
@@ -36,9 +40,6 @@ export default function modalLoad() {
   return (
     <View style={Style.containerLoad}>
       <View>
-        <TouchableOpacity onPress={() => setModalVisible(true)}>
-          <Image source={require("../assets/img/marker.png")} />
-        </TouchableOpacity>
         <Modal
           transparent={true}
           animationType="slide"

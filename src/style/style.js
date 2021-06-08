@@ -1,10 +1,10 @@
 import { StyleSheet } from "react-native";
-import {COLORS, FONTS} from '../constants';
+import { COLORS, FONTS } from "../constants";
 const getFontStyle = (fontType) => {
   const { defaultValue, ...fontStyle } = FONTS[fontType];
 
   return fontStyle;
-}
+};
 
 export default StyleSheet.create({
   container: {
@@ -30,7 +30,7 @@ export default StyleSheet.create({
   textCircle: {
     textAlign: "center",
     ...getFontStyle("body4"),
-    marginTop: '13%',
+    marginTop: "13%",
     marginLeft: 15,
     fontFamily: "bariol_regular",
   },
@@ -41,8 +41,8 @@ export default StyleSheet.create({
     width: 60,
     borderWidth: 2,
     borderColor: "#0038d9",
-    marginLeft: '7%',
-    marginTop: '7%',
+    marginLeft: "7%",
+    marginTop: "7%",
     justifyContent: "center",
   },
   circle2: {
@@ -133,14 +133,14 @@ export default StyleSheet.create({
     alignSelf: "center",
     marginVertical: 20,
     width: 220,
-    height: 50
+    height: 50,
   },
   vaiVexImgCadastro: {
     resizeMode: "contain",
     alignSelf: "center",
     marginVertical: 20,
     width: 220,
-    height: 50
+    height: 50,
   },
   firstImg: {
     resizeMode: "contain",
@@ -150,7 +150,7 @@ export default StyleSheet.create({
   retanguloAzul: {
     backgroundColor: "#0038d9",
     width: "65%",
-    height: '80%',
+    height: "80%",
     borderRadius: 10,
     marginLeft: 30,
     flexDirection: "column-reverse",
@@ -158,7 +158,7 @@ export default StyleSheet.create({
   retanguloAzul1: {
     backgroundColor: "#0038d9",
     width: "65%",
-    height: '80%',
+    height: "80%",
     borderRadius: 10,
     marginLeft: 30,
     flexDirection: "column-reverse",
@@ -166,7 +166,7 @@ export default StyleSheet.create({
   retanguloVermelho1: {
     backgroundColor: "#d80042",
     width: "65%",
-    height: '80%',
+    height: "80%",
     borderRadius: 10,
     marginLeft: 30,
     flexDirection: "column-reverse",
@@ -182,7 +182,7 @@ export default StyleSheet.create({
   },
   btnCadastrar: {
     backgroundColor: "#fff",
-    padding: '3.5%',
+    padding: "3.5%",
     borderColor: "#000",
     borderWidth: 2,
     borderRadius: 10,
@@ -195,16 +195,14 @@ export default StyleSheet.create({
     color: "#000",
     fontFamily: "bariol_regular",
   },
-  wrapper: {
-
-  },
-  wrapperDashboard:{
-    maxHeight: 400
+  wrapper: {},
+  wrapperDashboard: {
+    maxHeight: 400,
   },
   retanguloVermelho: {
     backgroundColor: "#d80042",
     width: "65%",
-    height: '80%',
+    height: "80%",
     borderRadius: 10,
     marginLeft: 30,
     flexDirection: "column-reverse",
@@ -212,22 +210,22 @@ export default StyleSheet.create({
   textBox: {
     backgroundColor: "#fff",
     borderColor: "#656565",
-    height: '10%',
+    height: "10%",
     borderWidth: 1,
     borderRadius: 5,
     marginHorizontal: 30,
     flexDirection: "row",
-    alignItems: 'center'
+    alignItems: "center",
   },
   textBoxCadastro: {
     backgroundColor: "#fff",
     borderColor: "#656565",
-    minHeight: '5%',
+    minHeight: "5%",
     borderWidth: 1,
     borderRadius: 5,
     marginHorizontal: 30,
     flexDirection: "row",
-    alignItems: 'center'
+    alignItems: "center",
   },
   messageBox: {
     backgroundColor: "#fff",
@@ -246,7 +244,7 @@ export default StyleSheet.create({
     borderRadius: 5,
     marginHorizontal: 30,
     flexDirection: "row",
-    alignItems: 'center',
+    alignItems: "center",
   },
   textBox30: {
     backgroundColor: "#fff",
@@ -257,7 +255,7 @@ export default StyleSheet.create({
     width: "22%",
     marginLeft: 30,
     flexDirection: "row",
-    alignItems: 'center'
+    alignItems: "center",
   },
   textBox70: {
     backgroundColor: "#fff",
@@ -269,7 +267,7 @@ export default StyleSheet.create({
     marginLeft: "5%",
     width: "60%",
     flexDirection: "row",
-    alignItems: 'center'
+    alignItems: "center",
   },
   box3070: {
     flexDirection: "row",
@@ -322,11 +320,11 @@ export default StyleSheet.create({
   },
   btnComecar: {
     backgroundColor: "#0038d9",
-    padding: '3.5%',
+    padding: "3.5%",
     borderRadius: 5,
     marginHorizontal: 30,
     alignItems: "center",
-    marginVertical: '5%',
+    marginVertical: "5%",
   },
   btnComecarFont: {
     ...getFontStyle("body2"),
@@ -385,7 +383,7 @@ export default StyleSheet.create({
   retanguloAzulHome: {
     backgroundColor: "#0038d9",
     width: "85%",
-    height: '65%',
+    height: "65%",
     borderRadius: 10,
     marginLeft: 30,
     marginTop: 30,
@@ -433,10 +431,10 @@ export default StyleSheet.create({
     alignSelf: "center",
     borderRadius: 10,
     marginTop: 10,
-    marginBottom: '6%',
+    marginBottom: "6%",
     flexDirection: "row",
     justifyContent: "space-around",
-    alignItems: 'center'
+    alignItems: "center",
   },
   grayBoxBigText: {
     fontSize: 54,
@@ -448,7 +446,7 @@ export default StyleSheet.create({
     color: "#000",
     ...getFontStyle("body3"),
     marginLeft: 25,
-    maxWidth: 80,
+    maxWidth: 82,
     fontFamily: "bariol_regular",
   },
   btnAdmin: {
@@ -484,7 +482,7 @@ export default StyleSheet.create({
     position: "absolute",
     alignSelf: "center",
     bottom: 30,
-    width: '100%',
+    width: "100%",
   },
   procurarBox2: {
     width: "95%",
@@ -494,7 +492,7 @@ export default StyleSheet.create({
     borderRadius: 10,
     alignSelf: "center",
     justifyContent: "center",
-    alignItems: 'center'
+    alignItems: "center",
   },
   circleProcurar: {
     borderRadius: 50,
@@ -578,7 +576,7 @@ export default StyleSheet.create({
     marginHorizontal: 30,
     marginVertical: 10,
     flexDirection: "row",
-    alignItems: 'center',
+    alignItems: "center",
   },
   textBoxGuardar: {
     backgroundColor: "#ECECEC",
@@ -588,7 +586,7 @@ export default StyleSheet.create({
     marginHorizontal: 30,
     marginVertical: 10,
     flexDirection: "row",
-    alignItems: 'center',
+    alignItems: "center",
   },
   blueBtn: {
     backgroundColor: "#346CFF",
@@ -619,7 +617,7 @@ export default StyleSheet.create({
     alignSelf: "center",
     borderRadius: 5,
     justifyContent: "center",
-    marginBottom: '7%',
+    marginBottom: "7%",
   },
   motoboyText: {
     ...getFontStyle("body2"),
@@ -755,7 +753,7 @@ export default StyleSheet.create({
     alignSelf: "center",
     justifyContent: "center",
     backgroundColor: "#00AA33",
-    marginBottom: '5%',
+    marginBottom: "5%",
     borderRadius: 7,
     flex: 1,
   },
@@ -773,7 +771,7 @@ export default StyleSheet.create({
     ...getFontStyle("body4"),
     textAlign: "left",
     marginLeft: 30,
-    marginTop: '10%',
+    marginTop: "10%",
     fontFamily: "bariol_regular",
   },
   switchBtn: {
@@ -798,7 +796,7 @@ export default StyleSheet.create({
     marginHorizontal: 30,
     marginTop: 20,
     flexDirection: "row",
-    alignItems: 'center'
+    alignItems: "center",
   },
   textBoxContatoDesc: {
     backgroundColor: "#fff",
@@ -808,6 +806,13 @@ export default StyleSheet.create({
     borderRadius: 5,
     marginHorizontal: 30,
     marginTop: 20,
+  },
+  voltarButton: {
+    ...getFontStyle("h3"),
+    color: "white",
+    alignSelf: "center",
+    textAlign: "center",
+    fontFamily: "bariol_regular",
   },
   blueBtnEnviar: {
     backgroundColor: "#346CFF",
@@ -833,7 +838,7 @@ export default StyleSheet.create({
     borderColor: "#0038d9",
     marginTop: 30,
     justifyContent: "center",
-    marginLeft: '10%',
+    marginLeft: "10%",
   },
   bigCircleCond2: {
     borderRadius: 100,
@@ -850,7 +855,7 @@ export default StyleSheet.create({
     backgroundColor: "#346CFF",
     borderRadius: 6,
     justifyContent: "center",
-    marginTop: '2%'
+    marginTop: "2%",
   },
   blueBox: {
     width: "38%",
@@ -860,7 +865,7 @@ export default StyleSheet.create({
     backgroundColor: "#d80042",
     borderRadius: 6,
     justifyContent: "center",
-    marginTop: '2%'
+    marginTop: "2%",
   },
   textCondutorBtn: {
     ...getFontStyle("body4"),
@@ -958,7 +963,7 @@ export default StyleSheet.create({
     height: 35,
     borderRadius: 6,
     justifyContent: "center",
-    marginHorizontal: '6%',
+    marginHorizontal: "6%",
   },
   enderecoListText: {
     color: "white",
@@ -1242,28 +1247,28 @@ export default StyleSheet.create({
     color: "white",
     textAlign: "center",
   },
-  encontradoLeftText:{
-    fontFamily: 'bariol_regular',
+  encontradoLeftText: {
+    fontFamily: "bariol_regular",
     ...getFontStyle("body3"),
-    color: 'white',
-    textAlign: 'center',
+    color: "white",
+    textAlign: "center",
     bottom: 20,
     marginRight: 30,
   },
-  encontradoRightText:{
-    fontFamily: 'bariol_regular',
+  encontradoRightText: {
+    fontFamily: "bariol_regular",
     ...getFontStyle("body3"),
-    color: 'white',
-    textAlign: 'center',  
+    color: "white",
+    textAlign: "center",
     bottom: 20,
     marginLeft: 20,
   },
   mapDrawerOverlay: {
-    position: 'absolute',
+    position: "absolute",
     left: 0,
     top: 0,
     opacity: 0.0,
-    height: '100%',
+    height: "100%",
     width: 20,
   },
 });

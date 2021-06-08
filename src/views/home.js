@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     maxHeight: 500,
   },
 });
+import {CustomText} from '../components/CustomText';
 export default function Home(props) {
   const window = useWindowDimensions();
   function responsive(){
@@ -33,7 +34,7 @@ export default function Home(props) {
             onPress={() => props.navigation.toggleDrawer()}
           />
         </TouchableOpacity>
-        <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>
+        <CustomText style={Style.textCircle}>Bem vindo, Emerson!</CustomText>
         <Image
           style={{
             alignSelf: "center",
@@ -79,7 +80,7 @@ export default function Home(props) {
               style={Style.imgHome}
               source={require("../assets/img/bicicleta.png")}
             />
-            <Text style={Style.textRetanguloHome}> Bicicleta</Text>
+            <CustomText style={Style.textRetanguloHome}> Bicicleta</CustomText>
           </TouchableOpacity>
           <TouchableOpacity
             style={Style.retanguloAzulHome}
@@ -89,7 +90,7 @@ export default function Home(props) {
               style={Style.imgHome}
               source={require("../assets/img/moto-branca.png")}
             />
-            <Text style={Style.textRetanguloHome}> Moto </Text>
+            <CustomText style={Style.textRetanguloHome}> Moto </CustomText>
           </TouchableOpacity>
           <TouchableOpacity
             style={Style.retanguloAzulHome}
@@ -99,7 +100,7 @@ export default function Home(props) {
               style={Style.imgHome}
               source={require("../assets/img/moto-branca.png")}
             />
-            <Text style={Style.textRetanguloHome}> VUC </Text>
+            <CustomText style={Style.textRetanguloHome}> VUC </CustomText>
           </TouchableOpacity>
           <TouchableOpacity
             style={Style.retanguloAzulHome}
@@ -109,7 +110,7 @@ export default function Home(props) {
               style={Style.imgHome}
               source={require("../assets/img/moto-branca.png")}
             />
-            <Text style={Style.textRetanguloHome}> Caminhão </Text>
+            <CustomText style={Style.textRetanguloHome}> Caminhão </CustomText>
           </TouchableOpacity>
         </Swiper>
       </View>
@@ -131,20 +132,20 @@ export default function Home(props) {
         </Text>
         <View style={Style.grayBox}>
           <View>
-            <Text style={Style.grayBoxBigText}>25</Text>
-            <Text style={Style.grayBoxSmallText}>Entregas</Text>
-            <Text style={Style.grayBoxSmallText}>Realizadas</Text>
+            <CustomText style={Style.grayBoxBigText}>25</CustomText>
+            <CustomText fontType="body3" style={Style.grayBoxSmallText}>Entregas</CustomText>
+            <CustomText fontType="body3" style={Style.grayBoxSmallText}>Realizadas</CustomText>
           </View>
           <View>
-            <Text style={Style.grayBoxBigText}>25</Text>
-            <Text style={Style.grayBoxSmallText}>Pedidos</Text>
-            <Text style={Style.grayBoxSmallText}>Realizados</Text>
+            <CustomText style={Style.grayBoxBigText}>25</CustomText>
+            <CustomText fontType="body3" style={Style.grayBoxSmallText}>Pedidos</CustomText>
+            <CustomText fontType="body3" style={Style.grayBoxSmallText}>Realizados</CustomText>
           </View>
           <TouchableOpacity
             style={Style.btnAdmin}
             onPress={() => props.navigation.navigate("Dashboard")}
           >
-            <Text style={Style.btnAdminFont}> Ir para o admin </Text>
+            <CustomText fontType="body3" style={Style.btnAdminFont}> Ir para o admin </CustomText>
           </TouchableOpacity>
         </View>
       </View>
