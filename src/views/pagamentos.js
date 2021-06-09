@@ -60,7 +60,7 @@ export default function Pagamentos(props) {
         >
           <TouchableOpacity
             style={Style.retanguloAzulPag}
-            onPress={() => props.navigation.navigate("Procurar")}
+            onPress={() => props.navigation.navigate("Home")}
           >
             <Image
               style={Style.imgHome}
@@ -70,7 +70,7 @@ export default function Pagamentos(props) {
           </TouchableOpacity>
           <TouchableOpacity
             style={Style.retanguloAzulPag}
-            onPress={() => props.navigation.navigate("Procurar")}
+            onPress={() => props.navigation.navigate("Home")}
           >
             <Image
               style={Style.imgHome}
@@ -81,7 +81,7 @@ export default function Pagamentos(props) {
         </Swiper>
       </View>
       <View style={{marginTop: '30%'}}/>
-      <View style={{ flex: 1, flexDirection: "row" }}>
+      <View style={{  flexDirection: "row"}}>
         <BouncyCheckbox
           size={32}
           fillColor="rgb(0,41,143)"
@@ -91,7 +91,7 @@ export default function Pagamentos(props) {
             borderColor: "white",
             borderWidth: 0,
             marginLeft: 40,
-            bottom: '60%'
+            
           }}
           onPress={(newValue) => setCheck(newValue)}
         />
