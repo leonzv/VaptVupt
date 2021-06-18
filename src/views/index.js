@@ -14,6 +14,7 @@ import Login from './login';
 import LoginConfirm from './loginConfirm';
 import MaisFavoritos from './maisFavoritos';
 import Mensagem from './mensagem';
+import Gps from './gps';
 import Pagamentos from './pagamentos';
 import Configuracoes from './configuracoes';
 import Sobre from './sobre';
@@ -31,6 +32,7 @@ export {
   LoadHome,
   MaisFavoritos,
   Mensagem,
+  Gps,
   Pagamentos,
   EditarDados,
   Login,

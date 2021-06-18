@@ -29,7 +29,7 @@ export default StyleSheet.create({
   },
   textCircle: {
     textAlign: "center",
-    ...getFontStyle("body4"),
+    ...getFontStyle("body3"),
     marginTop: "13%",
     marginLeft: 15,
     fontFamily: "bariol_regular",
@@ -271,6 +271,7 @@ export default StyleSheet.create({
   },
   box3070: {
     flexDirection: "row",
+    height: '10%',
   },
   textBoxFont: {
     ...getFontStyle("body3"),
@@ -941,6 +942,7 @@ export default StyleSheet.create({
     justifyContent: "center",
   },
   enderecoBox: {
+    minWidth: "85%",
     maxWidth: "85%",
     height: 85,
     borderBottomColor: "#707070",
@@ -952,10 +954,12 @@ export default StyleSheet.create({
   },
   enderecoText: {
     maxWidth: "50%",
+    minWidth: '50%',
     ...getFontStyle("body3"),
     color: "#8F8F8F",
     fontFamily: "bariol_regular",
     textAlign: "left",
+    marginRight: '10%',
   },
   enderecoListBtn: {
     backgroundColor: "#346CFF",

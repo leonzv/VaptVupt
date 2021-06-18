@@ -10,25 +10,10 @@ import {
 import Style from "../style/style";
 import React, { useState } from "react";
 import Swiper from "react-native-swiper";
-import auth from "@react-native-firebase/auth";
 
-export default function LoginConfirm(props) {
+export default function LoginConfirm({navigation}) {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-  const loginUser = () => {
-    auth()
-      .signInWithEmailAndPassword(email, senha)
-      .then(() => {
-        alert("Usuario logado com sucesso!");
-        props.navigation.navigate("LoadHome");
-        if (email == "") {
-          alert("Insira um email");
-        }
-        if (senha == "") {
-          alert("Insira uma senha");
-        }
-      });
-  };
 
   return (
     <KeyboardAvoidingView style={Style.container}>
@@ -92,7 +77,7 @@ export default function LoginConfirm(props) {
           />
         </View>
       </View>
-      <TouchableOpacity style={Style.btnCadastrar} onPress={() => loginUser()}>
+      <TouchableOpacity style={Style.btnCadastrar} onPress={() => navigation.navigate("Home")}>
         <Text style={Style.btnCadastrarFont}> Entrar </Text>
       </TouchableOpacity>
     </KeyboardAvoidingView>

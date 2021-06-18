@@ -15,7 +15,7 @@ export default function EnderecosList(props) {
               onPress={() => props.navigation.toggleDrawer()}
             />
           </TouchableOpacity>
-          <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>
+          <Text style={Style.textCircle}>Bem vindo, Usuário!</Text>
           <Image
             style={{
               alignSelf: "center",
@@ -49,7 +49,7 @@ export default function EnderecosList(props) {
         <ScrollView style={{ marginBottom: 30 }}>
           <View style={Style.enderecoBox}>
             <Text style={Style.enderecoText}>
-              Avenida Maracá, 800, Jd Satéliteeeee
+              Avenida Maracá, 800, Jd Satélite
             </Text>
             <TouchableOpacity
               style={Style.enderecoListBtn}

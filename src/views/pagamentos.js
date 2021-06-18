@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import "react-native-gesture-handler";
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity, ToastAndroid } from "react-native";
 import Style from "../style/style";
 import Swiper from "react-native-swiper";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 export default function Pagamentos(props) {
   const [check, setCheck] = useState(false);
-  if (check == true) {
-    alert("Voce concordou!");
-  }
+  
+    const showToastWithGravity = () => {
+      ToastAndroid.showWithGravity(
+        "Você concordou!",
+        ToastAndroid.SHORT,
+        ToastAndroid.CENTER
+        );
+      };
   const {goBack} = props.navigation;
   return (
     <View style={Style.container}>
@@ -21,7 +26,7 @@ export default function Pagamentos(props) {
               onPress={() => props.navigation.toggleDrawer()}
             />
           </TouchableOpacity>
-          <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>
+          <Text style={Style.textCircle}>Bem vindo, Usuário!</Text>
           <Image
             style={{
               alignSelf: "center",
@@ -93,7 +98,7 @@ export default function Pagamentos(props) {
             marginLeft: 40,
             
           }}
-          onPress={(newValue) => setCheck(newValue)}
+          onPress={(newValue) => {setCheck(newValue); showToastWithGravity()}}
         />
         <Text style={Style.textPagamento}>
           Declaro informar ao condutor que o pagamento será feito em dinheiro.

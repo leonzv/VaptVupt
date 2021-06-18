@@ -4,7 +4,7 @@ import Login from "../views/login";
 import Home from "../views/home";
 import Cadastro from "../views/cadastro";
 import LoadHome from "../views/loadHome";
-import Gps from "../views//map/mapview";
+import Gps from "../views/gps";
 import Condutores from "../views/condutores";
 import Contato from "../views/contato";
 import Pagamentos from "../views/pagamentos";
@@ -43,7 +43,7 @@ Stack.Navigator.defaultProps = {
 
 const MainStackNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName="Home">
+    <Stack.Navigator initialRouteName="Login">
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="LoadHome" component={LoadHome} />
       <Stack.Screen name="Gps" component={Gps} />

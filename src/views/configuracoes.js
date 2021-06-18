@@ -39,7 +39,7 @@ export default function Configuracoes({route, navigation}) {
               onPress={() => navigation.toggleDrawer()}
             />
           </TouchableOpacity>
-          <CustomText fontType="body4" style={Style.textCircle}>Bem vindo, Emerson!</CustomText>
+          <CustomText fontType="body4" style={Style.textCircle}>Bem vindo, Usuário!</CustomText>
           <Image
             style={{
               alignSelf: "center",

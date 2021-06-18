@@ -18,7 +18,7 @@ export default function Dashboard(props) {
               onPress={() => props.navigation.toggleDrawer()}
             />
           </TouchableOpacity>
-          <CustomText style={Style.textCircle}>Bem vindo, Emerson!</CustomText>
+          <CustomText style={Style.textCircle}>Bem vindo, Usuário!</CustomText>
           <Image
             style={{
               alignSelf: "center",
@@ -151,7 +151,7 @@ export default function Dashboard(props) {
               Dados Pessoais
             </Text>
             <View style={Style.grayBoxDados}>
-              <CustomText fontType="body2" style={Style.textDashboard}>Emerson Garcia</CustomText>
+              <CustomText fontType="body2" style={Style.textDashboard}>Usuário Garcia</CustomText>
               <CustomText fontType="body2" style={Style.textDashboard}>Rua Jaú, 365</CustomText>
               <CustomText fontType="body2" style={Style.textDashboard}>Bairro Nova Natal</CustomText>
               <CustomText fontType="body2" style={Style.textDashboard}>São Paulo - SP</CustomText>

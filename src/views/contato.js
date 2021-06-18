@@ -18,7 +18,7 @@ export default function Contato(props) {
               onPress={() => props.navigation.toggleDrawer()}
             />
           </TouchableOpacity>
-          <Text style={Style.textCircle}>Bem vindo, Emerson!</Text>
+          <Text style={Style.textCircle}>Bem vindo, Usuário!</Text>
           <Image
             style={{
               alignSelf: "center",

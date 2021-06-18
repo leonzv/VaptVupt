@@ -2,40 +2,13 @@ import "react-native-gesture-handler";
 import { View, Text, Image, TextInput, TouchableOpacity, KeyboardAvoidingView } from "react-native";
 import Style from "../style/style";
 import React, {useState} from "react";
-import auth from '@react-native-firebase/auth';
 import Swiper from "react-native-swiper";
 
-export default function Cadastro(props) {
+export default function Cadastro({navigation}) {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-  
-  const createUser  = () => {
-    auth()
-    .createUserWithEmailAndPassword(email, senha)
-    .then(() => {
-      alert('Usuário criado com sucesso!');
-      props.navigation.navigate('CadastroConfirm');
-      alert('Agora preencha alguns dados!')
-    })
-    .catch(error => {
-      if (error.code === 'auth/email-already-in-use') {
-        alert('Esse email já está sendo usado');
-      }
-  
-      if (error.code === 'auth/invalid-email') {
-        alert('Esse email é invalido!');
-      }
-  
-      console.error(error);
-    });
-    
-  }
-    const logoff = () => {
-      auth()
-    .signOut()
-    .then(() => alert('User signed out!'));
-    }
+
   return (
     <View style={Style.containerCadastro}>
       <View>
@@ -111,7 +84,7 @@ export default function Cadastro(props) {
       </KeyboardAvoidingView>
       <TouchableOpacity
         style={Style.btnCadastrar}
-        onPress={() => createUser()}
+        onPress={() => navigation.navigate("CadastroConfirm")}
       >
         <Text style={Style.btnCadastrarFont}> Avançar </Text>
       </TouchableOpacity>

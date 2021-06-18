@@ -26,15 +26,19 @@ export default function modalLoad() {
   useEffect(() => {
     setTimeout(() => {
       setModalVisible1(!modalVisible1);
-    }, 6000);
+    }, 4500);
   }, []);
-  if (modalVisible) {
-    return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <ActivityIndicator size="large" color="blue" style={{width: '35%', height: '35%'}}/>
-      </View>
-    );
-  }
+  useEffect(() => {
+    setTimeout(() => {
+      setModalVisible(modalVisible);
+    }, 5000);
+  }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      setModalVisible1(modalVisible1);
+    }, 9000);
+  }, []);
+
   const [modalVisible, setModalVisible] = useState(false);
   const [modalVisible1, setModalVisible1] = useState(false);
   return (

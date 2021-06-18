@@ -34,7 +34,7 @@ export default function Home(props) {
             onPress={() => props.navigation.toggleDrawer()}
           />
         </TouchableOpacity>
-        <CustomText style={Style.textCircle}>Bem vindo, Emerson!</CustomText>
+        <CustomText style={Style.textCircle}>Bem vindo, Usuário!</CustomText>
         <Image
           style={{
             alignSelf: "center",

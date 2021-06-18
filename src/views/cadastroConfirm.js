@@ -1,9 +1,10 @@
 import "react-native-gesture-handler";
-import { View, Text, Image, TextInput, TouchableOpacity, KeyboardAvoidingView } from "react-native";
+import { View, Text, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, ToastAndroid,} from "react-native";
 import Style from "../style/style";
 import React, {useState} from "react";
+import HideWithKeyboard from "react-native-hide-with-keyboard";
 
-export default function Cadastro({navigation, route}) {
+export default function CadastroConfirm({navigation, route}) {
   const [cpfcnpj, setCpfcnpj] = useState("");
   const [endereco, setEndereco] = useState("");
   const [numero, setNumero] = useState("");
@@ -12,15 +13,18 @@ export default function Cadastro({navigation, route}) {
   const [cidade, setCidade] = useState("");
   const [pais, setPais] = useState("");
   const [cep, setCep] = useState("");
-  
-  function btnPress(){
-    alert("Volte e faça login!");
-    navigation.navigate("Login")
+
+  function BackToLogin(){
+    ToastAndroid.showWithGravity(
+      "Faça Login!",
+      ToastAndroid.SHORT,
+      ToastAndroid.CENTER
+    );
+    navigation.navigate("Login");
   }
-  
   return (
     <KeyboardAvoidingView style={Style.containerCadastro}>
-      <View>
+      <HideWithKeyboard>
         <Image
           style={Style.vaiVexImgCadastro}
           source={require("../assets/img/vai-vex-logo.png")}
@@ -36,7 +40,7 @@ export default function Cadastro({navigation, route}) {
         >
           Preencha o forumário completo:
         </Text>
-      </View>
+      </HideWithKeyboard>
       <View style={{flex: 1, justifyContent: 'space-around'}}>
       <View style={Style.textBox}>
         <Text style={Style.textBoxFontCadastro}>CPF/CNPJ:</Text>
@@ -125,7 +129,7 @@ export default function Cadastro({navigation, route}) {
       </View>
       <TouchableOpacity
         style={Style.btnComecar}
-        onPress={btnPress()}
+        onPress={() => BackToLogin()}
       >
         <Text style={Style.btnComecarFont}> Começar </Text>
       </TouchableOpacity>
