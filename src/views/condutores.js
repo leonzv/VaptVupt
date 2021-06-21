@@ -4,8 +4,8 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import Style from "../style/style";
 import Swiper from "react-native-swiper";
 
-export default function Condutores(props) {
-  const { goBack } = props.navigation;
+export default function Condutores({navigation}) {
+  const { goBack } = navigation;
   return (
     <View style={Style.container}>
       <View style={{ flexDirection: "row" }}>
@@ -13,7 +13,7 @@ export default function Condutores(props) {
           <TouchableOpacity
             style={Style.circle2}
             title="Toggle drawer"
-            onPress={() => props.navigation.toggleDrawer()}
+            onPress={() => navigation.toggleDrawer()}
           />
         </TouchableOpacity>
         <Text style={Style.textCircle}>Bem vindo, Usuário!</Text>
@@ -75,7 +75,7 @@ export default function Condutores(props) {
                 <View
                   style={Style.bigCircleCond2}
                   title="Toggle drawer"
-                  onPress={() => props.navigation.toggleDrawer()}
+                  onPress={() => navigation.toggleDrawer()}
                 />
               </View>
               <View
@@ -110,6 +110,11 @@ export default function Condutores(props) {
             >
               <TouchableOpacity style={Style.redBox}>
                 <Text style={Style.textCondutorBtn}>Avaliar condutor</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={Style.blueBox1}
+              onPress={() => navigation.navigate("Mensagem")}
+              >
+                <Text style={Style.textCondutorBtn}>Mensagem</Text>
               </TouchableOpacity>
               <TouchableOpacity style={Style.blueBox}>
                 <Text style={Style.textCondutorBtn}>Deletar condutor</Text>
@@ -137,7 +142,7 @@ export default function Condutores(props) {
                 <View
                   style={Style.bigCircleCond2}
                   title="Toggle drawer"
-                  onPress={() => props.navigation.toggleDrawer()}
+                  onPress={() => navigation.toggleDrawer()}
                 />
               </View>
               <View
@@ -173,68 +178,10 @@ export default function Condutores(props) {
               <TouchableOpacity style={Style.redBox}>
                 <Text style={Style.textCondutorBtn}>Avaliar condutor</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={Style.blueBox}>
-                <Text style={Style.textCondutorBtn}>Deletar condutor</Text>
-              </TouchableOpacity>
-            </View>
-            <View />
-          </View>
-          </View>
-          <View>
-          <View
-            style={{
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "center",
-                marginTop: "2%",
-              }}
-            >
-              <View style={Style.bigCircleCond}>
-                <View
-                  style={Style.bigCircleCond2}
-                  title="Toggle drawer"
-                  onPress={() => props.navigation.toggleDrawer()}
-                />
-              </View>
-              <View
-                style={{
-                  justifyContent: "center",
-                  alignItems: "center",
-                  alignContent: "center",
-                  top: 10,
-                  alignSelf: "center",
-                  marginHorizontal: "18%",
-                }}
+              <TouchableOpacity style={Style.blueBox1}
+              onPress={() => navigation.navigate("Mensagem")}
               >
-                <Image
-                  style={{ resizeMode: "contain", width: 80, height: 80 }}
-                  source={require("../assets/img/bicicletaPreta.png")}
-                />
-                <Text style={{ fontSize: 20, fontFamily: "bariol_regular" }}>
-                  Luiz Silva
-                </Text>
-                <Text style={{ fontSize: 16, fontFamily: "bariol_regular" }}>
-                  Bicicleta
-                </Text>
-              </View>
-            </View>
-            <View
-              style={{
-                flexDirection: "row",
-                alignSelf: "center",
-                justifyContent: "space-around",
-                marginTop: 15,
-              }}
-            >
-              <TouchableOpacity style={Style.redBox}>
-                <Text style={Style.textCondutorBtn}>Avaliar condutor</Text>
+                <Text style={Style.textCondutorBtn}>Mensagem</Text>
               </TouchableOpacity>
               <TouchableOpacity style={Style.blueBox}>
                 <Text style={Style.textCondutorBtn}>Deletar condutor</Text>
@@ -263,7 +210,7 @@ export default function Condutores(props) {
                 <View
                   style={Style.bigCircleCond2}
                   title="Toggle drawer"
-                  onPress={() => props.navigation.toggleDrawer()}
+                  onPress={() => navigation.toggleDrawer()}
                 />
               </View>
               <View
@@ -298,6 +245,79 @@ export default function Condutores(props) {
             >
               <TouchableOpacity style={Style.redBox}>
                 <Text style={Style.textCondutorBtn}>Avaliar condutor</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={Style.blueBox1}
+              onPress={() => navigation.navigate("Mensagem")}
+              >
+                <Text style={Style.textCondutorBtn}>Mensagem</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={Style.blueBox}>
+                <Text style={Style.textCondutorBtn}>Deletar condutor</Text>
+              </TouchableOpacity>
+            </View>
+            <View />
+          </View>
+          </View>
+          <View>
+          <View
+            style={{
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+                marginTop: "2%",
+              }}
+            >
+              <View style={Style.bigCircleCond}>
+                <View
+                  style={Style.bigCircleCond2}
+                  title="Toggle drawer"
+                  onPress={() => navigation.toggleDrawer()}
+                />
+              </View>
+              <View
+                style={{
+                  justifyContent: "center",
+                  alignItems: "center",
+                  alignContent: "center",
+                  top: 10,
+                  alignSelf: "center",
+                  marginHorizontal: "18%",
+                }}
+              >
+                <Image
+                  style={{ resizeMode: "contain", width: 80, height: 80 }}
+                  source={require("../assets/img/bicicletaPreta.png")}
+                />
+                <Text style={{ fontSize: 20, fontFamily: "bariol_regular" }}>
+                  Luiz Silva
+                </Text>
+                <Text style={{ fontSize: 16, fontFamily: "bariol_regular" }}>
+                  Bicicleta
+                </Text>
+              </View>
+            </View>
+            <View
+              style={{
+                flexDirection: "row",
+                alignSelf: "center",
+                justifyContent: "space-around",
+                marginTop: 15,
+              }}
+            >
+              <TouchableOpacity style={Style.redBox}>
+                <Text style={Style.textCondutorBtn}>Avaliar condutor</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={Style.blueBox1}
+              onPress={() => navigation.navigate("Mensagem")}
+              >
+                <Text style={Style.textCondutorBtn}>Mensagem</Text>
               </TouchableOpacity>
               <TouchableOpacity style={Style.blueBox}>
                 <Text style={Style.textCondutorBtn}>Deletar condutor</Text>
@@ -335,7 +355,7 @@ export default function Condutores(props) {
           </View>
           <TouchableOpacity
             style={Style.btnAdmin}
-            onPress={() => props.navigation.navigate("Dashboard")}
+            onPress={() => navigation.navigate("Dashboard")}
           >
             <Text style={Style.btnAdminFont}> Ir para o admin </Text>
           </TouchableOpacity>

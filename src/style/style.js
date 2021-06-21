@@ -420,6 +420,7 @@ export default StyleSheet.create({
     color: "#fff",
     textAlign: "center",
     fontFamily: "bariol_regular",
+    right: 2
   },
   imgHome: {
     resizeMode: "contain",
@@ -432,7 +433,7 @@ export default StyleSheet.create({
     alignSelf: "center",
     borderRadius: 10,
     marginTop: 10,
-    marginBottom: "6%",
+    marginBottom: "7%",
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
@@ -849,7 +850,7 @@ export default StyleSheet.create({
     alignSelf: "center",
   },
   redBox: {
-    width: "38%",
+    width: "25%",
     height: 35,
     alignSelf: "flex-end",
     marginRight: 15,
@@ -859,11 +860,20 @@ export default StyleSheet.create({
     marginTop: "2%",
   },
   blueBox: {
-    width: "38%",
+    width: "25%",
     height: 35,
     marginLeft: 15,
     alignSelf: "flex-start",
     backgroundColor: "#d80042",
+    borderRadius: 6,
+    justifyContent: "center",
+    marginTop: "2%",
+  },
+  blueBox1: {
+    width: "25%",
+    height: 35,
+    alignSelf: "center",
+    backgroundColor: "#346CFF",
     borderRadius: 6,
     justifyContent: "center",
     marginTop: "2%",

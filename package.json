@@ -27,6 +27,7 @@
     "expo-updates": "^0.4.2",
     "install": "^0.13.0",
     "json-server": "^0.16.3",
+    "lodash.filter": "^4.6.0",
     "native-base": "^2.15.2",
     "react": "17.0.1",
     "react-dom": "16.13.1",

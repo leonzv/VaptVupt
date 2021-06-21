@@ -29,7 +29,7 @@ export function DrawerContent(props) {
                 fontFamily: "bariol_regular",
               }}
             >
-              Bem vindo, Emerson!
+              Bem vindo, Usuário!
             </Text>
           </View>
           <View style={{ flexDirection: "row" }}>
@@ -76,6 +76,17 @@ export function DrawerContent(props) {
             label="Mapa"
             onPress={() => {
               props.navigation.navigate("Gps");
+            }}
+          />
+          <DrawerItem
+            labelStyle={{
+              color: "white",
+              fontSize: 26,
+              fontFamily: "bariol_regular",
+            }}
+            label="Mensagem"
+            onPress={() => {
+              props.navigation.navigate("Mensagem");
             }}
           />
           <DrawerItem

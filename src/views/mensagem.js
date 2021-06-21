@@ -44,7 +44,7 @@ export default function mensagem(props) {
           marginLeft: 30,
           textAlign: "left",
           marginRight: 90,
-          marginTop: 15,
+          marginTop: 25,
           color: "#000",
           fontFamily: "bariol_regular",
         }}
@@ -54,9 +54,6 @@ export default function mensagem(props) {
       </Text>
       <ScrollView style={{ marginBottom: 15 }}>
         <View>
-          <View style={Style.boxMessageRight}>
-            <Text style={Style.textMessage}>Boa tarde!</Text>
-          </View>
           <View style={Style.boxMessageLeft}>
             <Text style={Style.textMessage}>Olá, está chegando?</Text>
           </View>
@@ -64,23 +61,10 @@ export default function mensagem(props) {
             <Text style={Style.textMessage}> Sim, Estou chegando! </Text>
           </View>
           <View style={Style.boxMessageLeft}>
-            <Text style={Style.textMessage}> Mensagem teste</Text>
+            <Text style={Style.textMessage}> Onde você está?</Text>
           </View>
           <View style={Style.boxMessageRight}>
-            <Text style={Style.textMessage}> Mensagem teste 123</Text>
-          </View>
-          <View style={Style.boxMessageLeft}>
-            <Text style={Style.textMessage}>
-              {" "}
-              Mensagem teste Mensagem teste Mensagem teste Mensagem teste
-              Mensagem teste Mensagem teste
-            </Text>
-          </View>
-          <View style={Style.boxMessageRight}>
-            <Text style={Style.textMessage}> Mensagem</Text>
-          </View>
-          <View style={Style.boxMessageLeft}>
-            <Text style={Style.textMessage}> Teste</Text>
+            <Text style={Style.textMessage}> Chego em 5 minutos.</Text>
           </View>
         </View>
       </ScrollView>

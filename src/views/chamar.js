@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import Style from "../style/style";
 import React, { useState } from "react";
+import {CustomText} from '../components/CustomText';
 
 export default function Chamar(props) {
   const [endereco, setEndereco] = useState("");
@@ -26,7 +27,7 @@ export default function Chamar(props) {
               onPress={() => props.navigation.toggleDrawer()}
             />
           </TouchableOpacity>
-          <Text style={Style.textCircle}>Bem vindo, Usuário!</Text>
+          <CustomText fontType="body3" style={Style.textCircle}>Bem vindo, Usuário!</CustomText>
           <Image
             style={{
               alignSelf: "center",
@@ -55,7 +56,7 @@ export default function Chamar(props) {
           Chamar um motoboy{" "}
         </Text>
         <View style={Style.textBoxChamar}>
-          <Text style={Style.textBoxFontCadastro}>Endereço de entrega:</Text>
+          <CustomText fontType="body3" style={Style.textBoxFontCadastro}>Endereço de entrega:</CustomText>
           <TextInput
             style={Style.textBoxFontChamar}
             onChangeText={(text) => setEndereco(text)}
@@ -65,7 +66,7 @@ export default function Chamar(props) {
           />
         </View>
         <View style={Style.textBoxChamar}>
-          <Text style={Style.textBoxFontCadastro}>Tipo de mercadoria:</Text>
+          <CustomText fontType="body3" style={Style.textBoxFontCadastro}>Tipo de mercadoria:</CustomText>
           <TextInput
             style={Style.textBoxFontChamar}
             onChangeText={(text) => setMercadoria(text)}
@@ -76,10 +77,10 @@ export default function Chamar(props) {
         </View>
         <View style={Style.blackLineHorizontal} />
         <View style={Style.textBoxGuardar}>
-          <Text style={Style.textBoxFontCadastro}>{endereco}</Text>
+          <CustomText fontType="body3" style={Style.textBoxFontCadastro}>{endereco}</CustomText>
         </View>
         <View style={Style.textBoxGuardar}>
-          <Text style={Style.textBoxFontCadastro}>{mercadoria}</Text>
+          <CustomText fontType="body3" style={Style.textBoxFontCadastro}>{mercadoria}</CustomText>
         </View>
       </View>
       <View style={{flexDirection: "row", alignItems: 'center', }}>
@@ -87,7 +88,7 @@ export default function Chamar(props) {
           style={[Style.buttonLeft, Style.buttonOpen]}
           onPress={() => setModalVisible(true)}
         >
-          <Text style={Style.textStyle}>Gravar Endereço</Text>
+          <CustomText fontType="body3" style={Style.textStyle}>Gravar Endereço</CustomText>
         </TouchableOpacity>
         <View style={Style.centeredView}>
           <Modal //começo modal gravar
@@ -95,7 +96,6 @@ export default function Chamar(props) {
             transparent={true}
             visible={modalVisible}
             onRequestClose={() => {
-              Alert.alert("Modal has been closed.");
               setModalVisible(!modalVisible);
             }}
           >
@@ -120,7 +120,7 @@ export default function Chamar(props) {
             style={[Style.buttonRight, Style.buttonOpen]}
             onPress={() => setModalVisible1(true)}
           >
-            <Text style={Style.textStyle}>Agendar Entrega</Text>
+            <CustomText fontType="body3" style={Style.textStyle}>Agendar Entrega</CustomText>
           </TouchableOpacity>
         </View>
         <Modal
@@ -128,7 +128,6 @@ export default function Chamar(props) {
           transparent={true}
           visible={modalVisible1}
           onRequestClose={() => {
-            Alert.alert("Modal has been closed.");
             setModalVisible1(!modalVisible1);
           }}
         >
@@ -140,7 +139,7 @@ export default function Chamar(props) {
                   style={[Style.button, Style.buttonCloseChamar]}
                   onPress={() => setModalVisible1(!modalVisible1)}
                 >
-                  <Text style={Style.textStyleClose}>OK</Text>
+                  <CustomText fontType="body2" style={Style.textStyleClose}>OK</CustomText>
                 </TouchableOpacity>
                 </View>
             </View>
@@ -150,7 +149,7 @@ export default function Chamar(props) {
       <View style={{flex: 1, justifyContent: 'flex-end'}}>
       <TouchableOpacity style={Style.greenBtn}
       onPress={() => props.navigation.navigate("Gps")}>
-        <Text style={Style.motoboyText}>Chamar Motoboy</Text>
+        <CustomText fonttType="body2" style={Style.motoboyText}>Chamar Motoboy</CustomText>
       </TouchableOpacity>
       </View>
     </View>
